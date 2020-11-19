@@ -1,17 +1,17 @@
-require 'formula'
-
 class Sshpass < Formula
-  url 'http://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz'
-  homepage 'http://sourceforge.net/projects/sshpass'
-  sha256 'c6324fcee608b99a58f9870157dfa754837f8c48be3df0f5e2f3accf145dee60'
+  homepage "https://sourceforge.net/projects/sshpass/"
+  url "https://downloads.sourceforge.net/project/sshpass/sshpass/1.06/sshpass-1.06.tar.gz"
+  sha256 "c6324fcee608b99a58f9870157dfa754837f8c48be3df0f5e2f3accf145dee60"
 
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
+    system "./configure", "--disable-debug",
+                          "--disable-dependency-tracking",
+                          "--disable-silent-rules",
                           "--prefix=#{prefix}"
-    system "make install"
+    system "make", "install"
   end
 
-  def test
+  test do
     system "sshpass"
   end
 end
