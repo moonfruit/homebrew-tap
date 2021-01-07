@@ -7,6 +7,8 @@ class WlpWebprofile8 < Formula
 
   bottle :unneeded
 
+  depends_on "openjdk"
+
   def install
     rm_rf Dir["bin/**/*.bat"]
 
