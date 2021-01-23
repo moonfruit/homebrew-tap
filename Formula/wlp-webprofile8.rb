@@ -1,8 +1,8 @@
 class WlpWebprofile8 < Formula
   desc "IBM WebSphere Liberty Web Profile 8"
   homepage "https://www.ibm.com/cloud/websphere-liberty"
-  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/20.0.0.12/wlp-webProfile8-20.0.0.12.zip"
-  sha256 "c49069e1e33bc253ff69f507594156e3cd267492ef8b9dfb24d2a975c78a900c"
+  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/21.0.0.1/wlp-webProfile8-21.0.0.1.zip"
+  sha256 "7754b7cca1375401b09961db7f72218b4d83fc6533bd445782c1b8a9e2d63880"
 
   livecheck do
     url "https://www.ibm.com/support/pages/node/6250961#asset/runtimes-wlp-javaee8"
