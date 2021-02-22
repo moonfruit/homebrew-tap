@@ -21,6 +21,6 @@ class WlpWebprofile8 < Formula
   end
 
   test do
-    system "server"
+    system libexec/"bin/server", "version"
   end
 end
