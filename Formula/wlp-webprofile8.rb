@@ -5,7 +5,7 @@ class WlpWebprofile8 < Formula
   sha256 "dc42a7a4af3af15edb103ae32a28d5e04e4f12e0df1b5b2edd92805f50a0ab6a"
 
   livecheck do
-    url "https://www.ibm.com/support/pages/node/6250961#asset/runtimes-wlp-javaee8"
+    url "https://www.ibm.com/support/pages/websphere-liberty-developers"
     regex(/wlp-webProfile8[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
