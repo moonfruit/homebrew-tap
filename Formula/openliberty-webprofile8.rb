@@ -1,8 +1,8 @@
 class OpenlibertyWebprofile8 < Formula
   desc "Implementation of Jakarta EE Web Profile 8"
   homepage "https://openliberty.io"
-  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/release/2021-05-27_1900/openliberty-webProfile8-21.0.0.6.zip"
-  sha256 "ca4563039433affca1786146eae359da1851e62ffac5cc3671ef9630347befdd"
+  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/release/2021-06-29_1900/openliberty-webProfile8-21.0.0.7.zip"
+  sha256 "81ca14590f345457a9d5415acff3af59d7ae8d1b551c24256031f0b85f0da185"
   license "EPL-1.0"
 
   livecheck do
