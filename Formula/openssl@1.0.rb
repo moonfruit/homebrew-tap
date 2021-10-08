@@ -6,8 +6,7 @@ class OpensslAT10 < Formula
   mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.0.2t.tar.gz"
   sha256 "14cb464efe7ac6b54799b34456bd69558a749a4931ecfd9cf9f71d7881cac7bc"
 
-  keg_only :provided_by_macos,
-    "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
+  keg_only :versioned_formula
 
   def install
     # OpenSSL will prefer the PERL environment variable if set over $PATH
@@ -62,14 +61,15 @@ class OpensslAT10 < Formula
     (openssldir/"cert.pem").atomic_write(valid_certs.join("\n") << "\n")
   end
 
-  def caveats; <<~EOS
-    A CA file has been bootstrapped using certificates from the SystemRoots
-    keychain. To add additional certificates (e.g. the certificates added in
-    the System keychain), place .pem files in
-      #{openssldir}/certs
-    and run
-      #{opt_bin}/c_rehash
-  EOS
+  def caveats
+    <<~EOS
+      A CA file has been bootstrapped using certificates from the SystemRoots
+      keychain. To add additional certificates (e.g. the certificates added in
+      the System keychain), place .pem files in
+        #{openssldir}/certs
+      and run
+        #{opt_bin}/c_rehash
+    EOS
   end
 
   test do
