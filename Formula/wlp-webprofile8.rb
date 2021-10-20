@@ -9,8 +9,6 @@ class WlpWebprofile8 < Formula
     regex(/wlp-webProfile8[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
-  bottle :unneeded
-
   depends_on "openjdk"
 
   def install
