@@ -4,8 +4,8 @@ cask "macast" do
 
   url "https://github.com/xfangfang/Macast/releases/download/v#{version}/Macast-MacOS-v#{version}.dmg"
   name "macast"
-  desc "https://github.com/xfangfang/Macast"
-  homepage "DLNA Media Renderer"
+  desc "DLNA Media Renderer"
+  homepage "https://github.com/xfangfang/Macast"
 
   app "Macast.app"
 end
