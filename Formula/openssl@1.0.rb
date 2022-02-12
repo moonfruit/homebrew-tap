@@ -1,10 +1,15 @@
 class OpensslAT10 < Formula
   desc "SSL/TLS cryptography library"
   homepage "https://openssl.org/"
-  url "https://www.openssl.org/source/openssl-1.0.2t.tar.gz"
-  mirror "https://dl.bintray.com/homebrew/mirror/openssl-1.0.2t.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.0.2t.tar.gz"
-  sha256 "14cb464efe7ac6b54799b34456bd69558a749a4931ecfd9cf9f71d7881cac7bc"
+  url "https://www.openssl.org/source/openssl-1.0.2u.tar.gz"
+  mirror "https://dl.bintray.com/homebrew/mirror/openssl-1.0.2u.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.0.2u.tar.gz"
+  sha256 "ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16"
+
+  livecheck do
+    url "https://www.openssl.org/source/old/1.0.2/"
+    regex(/href=.*?openssl[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
+  end
 
   keg_only :versioned_formula
 
