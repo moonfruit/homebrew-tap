@@ -7,5 +7,10 @@ cask "macast" do
   desc "DLNA Media Renderer"
   homepage "https://github.com/xfangfang/Macast"
 
+  livecheck do
+    url :homepage
+    strategy :github_latest
+  end
+
   app "Macast.app"
 end
