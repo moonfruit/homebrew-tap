@@ -1,6 +1,6 @@
 cask "macast" do
-  version "0.65"
-  sha256 "495e9cc012ecf2a40ff9b44620b3ad27a16845eecc186f13e2a851ce40c163c7"
+  version "0.7"
+  sha256 "076500271e727f11f02eebb2731d2e6e80cf80d5f077fc1191293660312e2cfa"
 
   url "https://github.com/xfangfang/Macast/releases/download/v#{version}/Macast-MacOS-v#{version}.dmg"
   name "macast"
