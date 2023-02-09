@@ -15,7 +15,7 @@ class Ethr < Formula
       exec "#{bin}/ethr -s -port #{port}"
     end
     sleep 1
-    system "ethr", "-d", "1s", "-c", "127.0.0.1", "-port", port
+    system "#{bin}/ethr", "-d", "1s", "-c", "127.0.0.1", "-port", port
 
     assert_match '"Type":"TestResult"', File.read(testpath/"ethrc.log")
   end
