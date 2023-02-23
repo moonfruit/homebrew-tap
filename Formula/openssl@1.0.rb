@@ -11,6 +11,13 @@ class OpensslAT10 < Formula
 
   keg_only :versioned_formula
 
+  patch do
+    on_arm do
+      url "https://gist.githubusercontent.com/felixbuenemann/5f4dcb30ebb3b86e1302e2ec305bac89/raw/b339a33ff072c9747df21e2558c36634dd62c195/openssl-1.0.2u-darwin-arm64.patch"
+      sha256 "4ad22bcfc85171a25f035b6fc47c7140752b9ed7467bb56081c76a0a3ebf1b9f"
+    end
+  end
+
   def install
     # OpenSSL will prefer the PERL environment variable if set over $PATH
     # which can cause some odd edge cases & isn't intended. Unset for safety,
@@ -27,7 +34,7 @@ class OpensslAT10 < Formula
       no-zlib
       shared
       enable-cms
-      darwin64-x86_64-cc
+      darwin64-#{Hardware::CPU.arch}-cc
       enable-ec_nistp_64_gcc_128
     ]
     system "perl", "./Configure", *args
