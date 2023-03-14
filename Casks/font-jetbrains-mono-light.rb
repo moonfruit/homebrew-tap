@@ -27,6 +27,8 @@ cask "font-jetbrains-mono-light" do
   font "fonts/ttf/JetBrainsMono-Medium.ttf"
   font "fonts/ttf/JetBrainsMono-MediumItalic.ttf"
   font "fonts/ttf/JetBrainsMono-Regular.ttf"
+  font "fonts/ttf/JetBrainsMono-SemiBold.ttf"
+  font "fonts/ttf/JetBrainsMono-SemiBoldItalic.ttf"
   font "fonts/ttf/JetBrainsMono-Thin.ttf"
   font "fonts/ttf/JetBrainsMono-ThinItalic.ttf"
   font "fonts/variable/JetBrainsMono-Italic[wght].ttf"
