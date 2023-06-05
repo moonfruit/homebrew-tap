@@ -8,8 +8,7 @@ cask "font-jetbrains-mono-nerd-light" do
   homepage "https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono"
 
   livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    cask "font-jetbrains-mono-nerd-font"
   end
 
   conflicts_with cask: "font-jetbrains-mono-nerd-font"
