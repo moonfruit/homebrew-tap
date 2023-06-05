@@ -9,8 +9,7 @@ cask "font-jetbrains-mono-light" do
   homepage "https://www.jetbrains.com/lp/mono"
 
   livecheck do
-    url "https://github.com/JetBrains/JetBrainsMono"
-    strategy :gitHub_latest
+    cask "font-jetbrains-mono"
   end
 
   conflicts_with cask: "font-jetbrains-mono"
