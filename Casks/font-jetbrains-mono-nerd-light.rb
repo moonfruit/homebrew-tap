@@ -1,6 +1,6 @@
 cask "font-jetbrains-mono-nerd-light" do
-  version "3.0.1"
-  sha256 "c049e5efdbcaf32d66eb07cc1c658f4d7127dcca22abc376ee4b75fb9bd6466a"
+  version "3.0.2"
+  sha256 "4991258b7c97071238a7459f0d3bf81a893ae7b0c849dbc47ad52833a8db7f55"
 
   url "https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/JetBrainsMono.tar.xz"
   name "JetBrains Mono Nerd Font"
