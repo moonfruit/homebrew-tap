@@ -1,8 +1,8 @@
 cask "canon-mf-ufr2-printer" do
-  version "10.19.15"
-  sha256 "042821d27cddff8d35489be405be6fb6758a74e2357dcf8b86a6decc26d7aaef"
+  version "10.19.16"
+  sha256 "883486e9090fa71b21286a676ceb6794224b0e5126260c6bcab8be3f3bab9b03"
 
-  url "https://gdlp01.c-wss.com/gds/8/0100011758/05/mac-UFRII-LIPSLX-v#{version.no_dots}-02.dmg",
+  url "https://gdlp01.c-wss.com/gds/8/0100011758/06/mac-UFRII-LIPSLX-v#{version.no_dots}-02.dmg"
       verified: "gdlp01.c-wss.com/gds/"
   name "Canon MF UFRII/UFRII LT Printer Driver & Utilities"
   desc "Printer UFRII/UFRII LT driver & utilities for Canon imageCLASS MF printers"
