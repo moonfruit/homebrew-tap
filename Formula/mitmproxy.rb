@@ -1,4 +1,4 @@
-class MitmproxyFormula < Formula
+class Mitmproxy < Formula
   include Language::Python::Virtualenv
 
   desc "Intercept, modify, replay, save HTTP/S traffic"
