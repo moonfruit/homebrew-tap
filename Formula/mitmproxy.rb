@@ -96,7 +96,7 @@ class Mitmproxy < Formula
   end
 
   resource "mitmproxy-macos" do
-    url "https://files.pythonhosted.org/packages/7a/5e/58aa030425269b10138e8d404256434c5d2a514e57ad68095610f46c52c3/mitmproxy_macos-0.3.11.tar.gz?.patch"
+    url "https://files.pythonhosted.org/packages/7a/5e/58aa030425269b10138e8d404256434c5d2a514e57ad68095610f46c52c3/mitmproxy_macos-0.3.11.tar.gz"
     sha256 "b521a0cd29ff85ec5ff26f5dee5fc0e221e0968c3904e3bce3cddcd930b0b5c7"
   end
 
