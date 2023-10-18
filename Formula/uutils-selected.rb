@@ -23,7 +23,7 @@ class UutilsSelected < Formula
     system "gmake", "install",
            "PREFIX=#{prefix}",
            "PROFILE=release", "MULTICALL=y",
-           "UTILS=dircolors hashsum realpath relpath"
+           "UTILS=dircolors hashsum realpath"
 
     bin.install_symlink "coreutils" => "md5sum"
     bin.install_symlink "coreutils" => "sha1sum"
