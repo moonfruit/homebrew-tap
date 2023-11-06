@@ -3,8 +3,8 @@ class Mitmproxy < Formula
 
   desc "Intercept, modify, replay, save HTTP/S traffic"
   homepage "https://mitmproxy.org"
-  url "https://github.com/mitmproxy/mitmproxy/archive/10.1.1.tar.gz"
-  sha256 "da9af007877772eb6adac33a1e4f0e743b0567a02c1d755a99c6cefdfadf437e"
+  url "https://github.com/mitmproxy/mitmproxy/archive/10.1.3.tar.gz"
+  sha256 "7f399de886cf193e053b9535f5b529675b43382023d4f8c41010980d9e50245c"
   license "MIT"
   head "https://github.com/mitmproxy/mitmproxy.git", branch: "main"
 
