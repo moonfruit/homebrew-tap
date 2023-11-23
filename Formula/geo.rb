@@ -7,6 +7,10 @@ class Geo < Formula
   license "GPL-3.0-only"
   head "https://github.com/MetaCubeX/geo.git"
 
+  livecheck do
+    skip "Not released, use head only"
+  end
+
   depends_on "go" => :build
 
   def install
