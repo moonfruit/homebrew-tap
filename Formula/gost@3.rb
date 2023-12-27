@@ -11,6 +11,12 @@ class GostAT3 < Formula
     url :stable
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/new"
+    sha256 cellar: :any_skip_relocation, ventura:      "5624d52572ade743032ba3ce8aa95b2c83c0127124ce14bda0dfc95b41787c06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "284d320aa5c67fc7b866e76070bff68f9592a5446fd957f3b770c9a3e614e6e9"
+  end
+
   keg_only :versioned_formula
 
   depends_on "go" => :build
