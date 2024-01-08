@@ -1,8 +1,8 @@
 class UgrepIndexer < Formula
   desc "Monotonic indexer to speed up ugrep"
   homepage "https://github.com/Genivia/ugrep-indexer"
-  url "https://github.com/Genivia/ugrep-indexer/archive/refs/tags/v0.9.5.tar.gz"
-  sha256 "bea5f9b9ade0abd32e4d643f909ee98349413468c1792dad0b1dfa688cf74227"
+  url "https://github.com/Genivia/ugrep-indexer/archive/refs/tags/v0.9.5-2.tar.gz"
+  sha256 "02d303ea482ba38862e6da4257106188da34a488c2390ed0846b6a53352079b1"
   license "BSD-3-Clause"
 
   depends_on "xz"
