@@ -5,7 +5,12 @@ class UgrepIndexer < Formula
   sha256 "02d303ea482ba38862e6da4257106188da34a488c2390ed0846b6a53352079b1"
   license "BSD-3-Clause"
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "brotli"
+  depends_on "lz4"
   depends_on "xz"
+  depends_on "zstd"
 
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
