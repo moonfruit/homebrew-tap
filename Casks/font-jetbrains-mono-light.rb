@@ -14,22 +14,6 @@ cask "font-jetbrains-mono-light" do
 
   conflicts_with cask: "font-jetbrains-mono"
 
-  font "fonts/ttf/JetBrainsMono-Bold.ttf"
-  font "fonts/ttf/JetBrainsMono-BoldItalic.ttf"
-  font "fonts/ttf/JetBrainsMono-ExtraBold.ttf"
-  font "fonts/ttf/JetBrainsMono-ExtraBoldItalic.ttf"
-  font "fonts/ttf/JetBrainsMono-ExtraLight.ttf"
-  font "fonts/ttf/JetBrainsMono-ExtraLightItalic.ttf"
-  font "fonts/ttf/JetBrainsMono-Italic.ttf"
-  font "fonts/ttf/JetBrainsMono-Light.ttf"
-  font "fonts/ttf/JetBrainsMono-LightItalic.ttf"
-  font "fonts/ttf/JetBrainsMono-Medium.ttf"
-  font "fonts/ttf/JetBrainsMono-MediumItalic.ttf"
-  font "fonts/ttf/JetBrainsMono-Regular.ttf"
-  font "fonts/ttf/JetBrainsMono-SemiBold.ttf"
-  font "fonts/ttf/JetBrainsMono-SemiBoldItalic.ttf"
-  font "fonts/ttf/JetBrainsMono-Thin.ttf"
-  font "fonts/ttf/JetBrainsMono-ThinItalic.ttf"
   font "fonts/variable/JetBrainsMono-Italic[wght].ttf"
   font "fonts/variable/JetBrainsMono[wght].ttf"
 end
