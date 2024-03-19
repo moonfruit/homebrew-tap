@@ -1,15 +1,10 @@
 class Geo < Formula
   desc "Manager for geo resources"
   homepage "https://github.com/MetaCubeX/geo"
-  url "https://github.com/MetaCubeX/geo/archive/refs/tags/latest.tar.gz"
-  version "latest"
-  sha256 "a0ff1ae6961188a684b2809f87d3e3ac42efd504ae98bf1cde1e93a6bd868867"
+  url "https://github.com/MetaCubeX/geo/archive/refs/tags/v1.1.tar.gz"
+  sha256 "5429d31a1076918d868d7ff6d18a83bd4abe89e766c1ffeea048b47c4026f122"
   license "GPL-3.0-only"
   head "https://github.com/MetaCubeX/geo.git"
-
-  livecheck do
-    skip "Not released, use head only"
-  end
 
   depends_on "go" => :build
 
