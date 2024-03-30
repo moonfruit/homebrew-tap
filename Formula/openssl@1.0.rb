@@ -12,6 +12,11 @@ class OpensslAT10 < Formula
   keg_only :versioned_formula
 
   patch do
+    url "https://raw.githubusercontent.com/lavabit/magma/682101e08114be9b006aadb228943c487dfb1abf/lib/patches/openssl/1.0.2_update_expiring_certificates.patch"
+    sha256 "095276ed70550d87305de552e686107543d7c7225a32079da22a9ad1c1e895ad"
+  end
+
+  patch do
     on_arm do
       url "https://gist.githubusercontent.com/felixbuenemann/5f4dcb30ebb3b86e1302e2ec305bac89/raw/b339a33ff072c9747df21e2558c36634dd62c195/openssl-1.0.2u-darwin-arm64.patch"
       sha256 "4ad22bcfc85171a25f035b6fc47c7140752b9ed7467bb56081c76a0a3ebf1b9f"
@@ -24,6 +29,9 @@ class OpensslAT10 < Formula
     # along with perl modules in PERL5LIB.
     ENV.delete("PERL")
     ENV.delete("PERL5LIB")
+
+    # -O2 or greater with clang > 13 causes elliptic curve miscompilation on arm64
+    ENV.O1 if OS.mac? && Hardware::CPU.arm? && (MacOS.version >= :monterey) && (ENV.compiler == :clang)
 
     ENV.deparallelize
     args = %W[
@@ -84,7 +92,7 @@ class OpensslAT10 < Formula
 
   test do
     # Make sure the necessary .cnf file exists, otherwise OpenSSL gets moody.
-    assert_predicate HOMEBREW_PREFIX/"etc/openssl@1.0/openssl.cnf", :exist?,
+    assert_predicate openssldir/"openssl.cnf", :exist?,
             "OpenSSL requires the .cnf file for some functionality"
 
     # Check OpenSSL itself functions as expected.
