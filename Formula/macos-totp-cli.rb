@@ -10,7 +10,7 @@ class MacosTotpCli < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", "totp"
     bin.install "totp"
-    ENV["PATH"] = "#{bin}:#{ENV["PATH"]}"
+    ENV.prepend_path "PATH", bin
     generate_completions_from_executable("totp", "completion", base_name: "totp")
   end
 
