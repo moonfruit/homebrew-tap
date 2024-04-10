@@ -1,8 +1,8 @@
 class MacosTotpCli < Formula
   desc "Simple TOTP CLI, powered by keychain of macOS"
   homepage "https://github.com/simnalamburt/macos-totp-cli"
-  url "https://github.com/simnalamburt/macos-totp-cli/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "afb947ac9b0cb227a302e81f6faf1f9c8bbadc169bba2445d9104cbb7200eeb2"
+  url "https://github.com/simnalamburt/macos-totp-cli/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "82cc7c7798de320dd23b91c7fcdc76bfc3b4b60184397a5b25f025e639cfee3c"
   license any_of: ["Apache-2.0", "MIT"]
 
   depends_on "go" => :build
