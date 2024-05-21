@@ -48,6 +48,6 @@ class Tscurl < Formula
   end
 
   test do
-    system "#{bin}/tscurl", "--tlcp", "-k", "https://ebssec.boc.cn/"
+    system "#{bin}/tscurl", "--tlcp", "-fk", "https://ebssec.boc.cn/"
   end
 end
