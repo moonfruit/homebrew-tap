@@ -1,14 +1,14 @@
 cask "gmcurl" do
-  arch arm: "arm", intel: "x64"
+  arch arm: "aarch64", intel: "x64"
 
-  version "1.0.1"
-  sha256 arm:   "307972f9b27b0b730991c732b478c644bff775780ce222eaa91988f565c77676",
-         intel: "d727694761438de933c02dbbfc4699ae73d0a1d9270354ac8e3cc8ab96293051"
+  version "1.0.2"
+  sha256 arm:   "f1d45abad41ad792d371d73a8f16f9a60e5ce3af6c91b73fd73cec8eb3d9c3fd",
+         intel: "aeaf7aa7e01157ec890f9b96b7e7c9aac468396e6517a1e83e2ad6171ef03ba2"
 
-  url "https://www.gmssl.cn/gmssl/down/gmcurl_macos_#{arch}"
+  url "https://curl.gmssl.cn/down/gmcurl_macos_#{arch}"
   name "gmcurl"
   desc "CURL with TLCP support"
-  homepage "https://www.gmssl.cn/"
+  homepage "https://curl.gmssl.cn"
 
   binary "gmcurl_macos_#{arch}", target: "gmcurl"
 end
