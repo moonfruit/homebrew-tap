@@ -9,6 +9,7 @@ class GostAT3 < Formula
 
   livecheck do
     url :stable
+    regex(/^v?(\d+(?:\.\d+)+-nightly\.\d+)$/i)
   end
 
   bottle do
