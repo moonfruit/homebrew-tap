@@ -8,7 +8,7 @@ cask "gmcurl" do
   url "https://curl.gmssl.cn/down/gmcurl_macos_#{arch}"
   name "gmcurl"
   desc "CURL with TLCP support"
-  homepage "https://curl.gmssl.cn"
+  homepage "https://curl.gmssl.cn/"
 
   binary "gmcurl_macos_#{arch}", target: "gmcurl"
 end
