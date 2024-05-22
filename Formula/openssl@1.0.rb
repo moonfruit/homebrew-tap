@@ -48,8 +48,8 @@ class OpensslAT10 < Formula
     system "perl", "./Configure", *args
     system "make", "depend"
     system "make"
-    system "make", "test"
     system "make", "install", "MANDIR=#{man}", "MANSUFFIX=ssl"
+    system "make", "test"
   end
 
   def openssldir
