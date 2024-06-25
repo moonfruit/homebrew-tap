@@ -1,8 +1,8 @@
 class Impl < Formula
   desc "Go method stub generator"
   homepage "https://github.com/josharian/impl"
-  url "https://github.com/josharian/impl/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "838b01f1b3529998baa40736895f38b52e2a778308b31bd0876a5f68b45f9a6e"
+  url "https://github.com/josharian/impl/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "fcc2344f5386583a2cfda9b0830e347eb6e8b946c0b3e3260bbb4b8479eb2c25"
   license "MIT"
   head "https://github.com/josharian/impl.git", branch: "main"
 
