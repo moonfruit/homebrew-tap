@@ -1,8 +1,8 @@
 cask "canon-mf-ufr2-printer" do
-  version "10.19.17,4,0100012234,01"
-  sha256 "193b27a3a18f2bdf7102e813dd48ce8b611833102daf9c15b9d2b77bdd7f06bf"
+  version "10.19.19,06,4,0100012234,02"
+  sha256 "61b1d8e977dc3382b8956ac49915394cab353bd24f6f694638722ffe2f33f377"
 
-  url "https://gdlp01.c-wss.com/gds/#{version.csv.second}/#{version.csv.third}/#{version.csv.fourth}/mac-UFRII-LIPSLX-v#{version.csv.first.no_dots}-02.dmg",
+  url "https://gdlp01.c-wss.com/gds/#{version.csv.third}/#{version.csv.fourth}/#{version.csv.fifth}/mac-UFRII-LIPSLX-v#{version.csv.first.no_dots}-#{version.csv.second}.dmg",
       verified: "gdlp01.c-wss.com/gds/"
   name "Canon MF UFRII/UFRII LT Printer Driver & Utilities"
   desc "Printer UFRII/UFRII LT driver & utilities for Canon imageCLASS MF printers"
@@ -23,8 +23,8 @@ cask "canon-mf-ufr2-printer" do
           headers = Homebrew::Livecheck::Strategy.page_headers(download_url)
           headers&.map { |item| item["location"] }
                  &.reject(&:blank?)
-                 &.map { |item| item.match(%r{(\d+)/(\d+)/(\d+)/mac-.*-v(\d\d)(\d\d)(\d\d)}) }
-                 &.map { |item| "#{item[4]}.#{item[5]}.#{item[6]},#{item[1]},#{item[2]},#{item[3]}" }
+                 &.map { |item| item.match(%r{(\d+)/(\d+)/(\d+)/mac-.*-v(\d\d)(\d\d)(\d\d)-(\d+)}) }
+                 &.map { |item| "#{item[4]}.#{item[5]}.#{item[6]},#{item[7]},#{item[1]},#{item[2]},#{item[3]}" }
         end
       end
       &.flatten
