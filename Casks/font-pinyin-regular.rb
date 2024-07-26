@@ -1,6 +1,6 @@
 cask "font-pinyin-regular" do
-  version "1.7.0"
-  sha256 "28d74b9920c01bc1b1397deb8e7b69157ec14f0faaf53d0584f28751a44f6319"
+  version "1.8.0"
+  sha256 "1fe86bbc1ca5eb01c28f2a6ddc96c2b9a846e5deace23f64795f950389424b70"
 
   url "https://github.com/jaywcjlove/pinyin-font/releases/download/v#{version}/pinyin-regular.ttf"
   name "font-pinyin-regular"
