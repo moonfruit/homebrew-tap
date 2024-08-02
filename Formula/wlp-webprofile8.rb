@@ -12,7 +12,7 @@ class WlpWebprofile8 < Formula
   depends_on "openjdk"
 
   def install
-    rm_rf Dir["bin/**/*.bat"]
+    rm Dir["bin/**/*.bat"]
 
     prefix.install_metafiles
     libexec.install Dir["*"]
