@@ -5,6 +5,12 @@ class Doge < Formula
   sha256 "7049e2ccd6907f4f4222b8ea84160d65b57aadbbee9498da353a00c576bc647e"
   license "EUPL-1.2"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, ventura:      "96d60875ad1f70a102fbff78bbaf9bff0b157ef7f2c7c5aac88cce6be7749ff9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2e67ed413f0fa8a9a8997475b30c91dee9e9b2099f888f82b2eef9df98f1fee1"
+  end
+
   depends_on "pandoc" => :build
   depends_on "rust" => :build
 
