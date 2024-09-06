@@ -7,7 +7,10 @@ class UutilsSelected < Formula
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "45680cd99eccce54014eb580cfd37b4b50c1c9a80d56b9a4c05ac035d123ed18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "99acd41a9429f02f11cf72fbe49d560b864ef9ea87019bc4058645f126cd7f61"
   end
 
   depends_on "make" => :build
