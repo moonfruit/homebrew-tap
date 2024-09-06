@@ -5,6 +5,13 @@ class Tongsuo < Formula
   sha256 "57c2741750a699bfbdaa1bbe44a5733e9c8fc65d086c210151cfbc2bbd6fc975"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    rebuild 1
+    sha256 arm64_sonoma: "32746f7c5b072ddc3d2b3e94c05cd53b2cfbf401011d4693faad97f8238107e8"
+    sha256 x86_64_linux: "fdef6a83b2ed94388b176a1a7ac34703edef0a766b00adee0c8e5e4ea3826eb8"
+  end
+
   keg_only "conflicts with openssl"
 
   depends_on "ca-certificates"
