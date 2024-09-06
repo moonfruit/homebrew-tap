@@ -5,6 +5,10 @@ class Sshpass < Formula
   sha256 "ad1106c203cbb56185ca3bad8c6ccafca3b4064696194da879f81c8d7bdfeeda"
   license "GPL-2.0-or-later"
 
+  bottle do
+    rebuild 1
+  end
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
