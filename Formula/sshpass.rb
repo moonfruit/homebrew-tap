@@ -6,7 +6,10 @@ class Sshpass < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "fe9b2044e79835c571f71c9f2a7652d8b936bb43e189c8c688c8b82f14c9333d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a71675768773d57572dede559c54d1068a110b0f6d919cba523c4ec6c45bc32e"
   end
 
   def install
