@@ -11,11 +11,13 @@ class OpensslAT10 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    rebuild 1
+    rebuild 2
     sha256 arm64_sonoma: "b4e18a7dc29695b7900e0618b0259f8a030f5b3690132d1aee981a4eb02c7f81"
   end
 
   keg_only :versioned_formula
+
+  depends_on "ca-certificates"
 
   patch do
     url "https://raw.githubusercontent.com/lavabit/magma/682101e08114be9b006aadb228943c487dfb1abf/lib/patches/openssl/1.0.2_update_expiring_certificates.patch"
@@ -40,6 +42,7 @@ class OpensslAT10 < Formula
     ENV.O1 if OS.mac? && Hardware::CPU.arm? && (MacOS.version >= :monterey) && (ENV.compiler == :clang)
 
     ENV.deparallelize
+
     args = %W[
       --prefix=#{prefix}
       --openssldir=#{openssldir}
@@ -48,9 +51,16 @@ class OpensslAT10 < Formula
       no-zlib
       shared
       enable-cms
-      darwin64-#{Hardware::CPU.arch}-cc
-      enable-ec_nistp_64_gcc_128
     ]
+    if OS.mac?
+      args += %W[darwin64-#{Hardware::CPU.arch}-cc enable-ec_nistp_64_gcc_128]
+    elsif Hardware::CPU.intel?
+      args << (Hardware::CPU.is_64_bit? ? "linux-x86_64" : "linux-elf")
+    elsif Hardware::CPU.arm?
+      args << (Hardware::CPU.is_64_bit? ? "linux-aarch64" : "linux-armv4")
+    end
+
+    openssldir.mkpath
     system "perl", "./Configure", *args
     system "make", "depend"
     system "make"
@@ -63,34 +73,16 @@ class OpensslAT10 < Formula
   end
 
   def post_install
-    keychains = %w[
-      /System/Library/Keychains/SystemRootCertificates.keychain
-    ]
-
-    certs_list = `security find-certificate -a -p #{keychains.join(" ")}`
-    certs = certs_list.scan(
-      /-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m,
-    )
-
-    valid_certs = certs.select do |cert|
-      IO.popen("#{bin}/openssl x509 -inform pem -checkend 0 -noout", "w") do |openssl_io|
-        openssl_io.write(cert)
-        openssl_io.close_write
-      end
-
-      $CHILD_STATUS.success?
-    end
-
-    openssldir.mkpath
-    (openssldir/"cert.pem").atomic_write(valid_certs.join("\n") << "\n")
+    rm(openssldir/"cert.pem") if (openssldir/"cert.pem").exist?
+    openssldir.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
   end
 
   def caveats
     <<~EOS
-      A CA file has been bootstrapped using certificates from the SystemRoots
-      keychain. To add additional certificates (e.g. the certificates added in
-      the System keychain), place .pem files in
+      A CA file has been bootstrapped using certificates from the system
+      keychain. To add additional certificates, place .pem files in
         #{openssldir}/certs
+
       and run
         #{opt_bin}/c_rehash
     EOS
