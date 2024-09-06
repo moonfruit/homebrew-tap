@@ -6,6 +6,10 @@ class Impl < Formula
   license "MIT"
   head "https://github.com/josharian/impl.git", branch: "main"
 
+  bottle do
+    rebuild 1
+  end
+
   depends_on "go"
 
   def install
