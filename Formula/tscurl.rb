@@ -11,6 +11,13 @@ class Tscurl < Formula
     regex(/^v?(\d+(?:\.\d+)+)(?:-SM)?$/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma: "80d3d9fe19815a530dd2a26ead3c206fbc998ed82a3d26e3b48d03ae0d54aafe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c7312c03ea8282ce9eabfdcd5d11262fb7cfbbf7e1bae45cb20a767a31185878"
+  end
+
   keg_only "conflicts with curl"
 
   depends_on "autoconf" => :build
