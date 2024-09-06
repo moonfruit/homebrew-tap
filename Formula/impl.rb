@@ -7,7 +7,10 @@ class Impl < Formula
   head "https://github.com/josharian/impl.git", branch: "main"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "c63b76ded2ce8b2b6efa74fa69960030de6966549bdc25872318c37a57b241bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "36c6714e2457541373ee661e81b949b81cc71beb3f642c4bba2fd8f9512845a2"
   end
 
   depends_on "go"
