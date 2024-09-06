@@ -6,7 +6,10 @@ class Ngrrram < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "412362be27d054a21a61ff4647bcc82b0eceeaf584e83faf7160bc941423a735"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a89ee5bc7e54eb77e97782ecb9cfa2e3daed162985a4d2fe1c67cb2b72743fa6"
   end
 
   depends_on "rust" => :build
