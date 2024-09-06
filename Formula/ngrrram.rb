@@ -5,6 +5,10 @@ class Ngrrram < Formula
   sha256 "6979fe829e773489cc22e45e37784565f2b8e514047e48e64909fa5ff93696af"
   license "GPL-3.0-or-later"
 
+  bottle do
+    rebuild 1
+  end
+
   depends_on "rust" => :build
 
   def install
