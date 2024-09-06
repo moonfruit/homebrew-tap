@@ -5,6 +5,10 @@ class MacosTotpCli < Formula
   sha256 "82cc7c7798de320dd23b91c7fcdc76bfc3b4b60184397a5b25f025e639cfee3c"
   license any_of: ["Apache-2.0", "MIT"]
 
+  bottle do
+    rebuild 1
+  end
+
   depends_on "go" => :build
 
   def install
