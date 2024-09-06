@@ -25,7 +25,7 @@ class Tscurl < Formula
   uses_from_macos "zlib"
 
   def install
-    system "patch <tongsuo.patch"
+    system "git", "apply", "tongsuo.patch"
     system "autoreconf", "-fi"
 
     args = %W[
