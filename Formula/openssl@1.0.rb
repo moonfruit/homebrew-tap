@@ -9,6 +9,10 @@ class OpensslAT10 < Formula
     regex(/href=.*?openssl[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
+  bottle do
+    rebuild 1
+  end
+
   keg_only :versioned_formula
 
   patch do
