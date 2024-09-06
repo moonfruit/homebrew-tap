@@ -6,6 +6,10 @@ class UutilsSelected < Formula
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
+  bottle do
+    rebuild 1
+  end
+
   depends_on "make" => :build
   depends_on "rust" => :build
 
