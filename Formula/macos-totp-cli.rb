@@ -12,6 +12,7 @@ class MacosTotpCli < Formula
   end
 
   depends_on "go" => :build
+  depends_on :macos
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", "totp"
