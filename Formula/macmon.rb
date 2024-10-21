@@ -7,7 +7,7 @@ class Macmon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fde7f6673926f9776a4e688fe04332dcabe8db7f164af32c1e62702f9695071d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e9ea15754fb52b74c655f6f02b98a694cb596486cdc87cf0256d78f9f071d55"
   end
 
   depends_on "rust" => :build
