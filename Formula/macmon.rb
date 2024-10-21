@@ -1,8 +1,8 @@
 class Macmon < Formula
   desc "Sudoless performance monitor for Apple Silicon"
   homepage "https://github.com/vladkens/macmon"
-  url "https://github.com/vladkens/macmon/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "4c1ae56cda1566a902843db72c5a3dd9612abb4500aa9d2ad022c4c2bf0b07cd"
+  url "https://github.com/vladkens/macmon/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "7c027b14b07bf8b5932de2264914057a6e57abc58d5af0e17c17ba6e0c74f3ff"
   license "MIT"
 
   bottle do
