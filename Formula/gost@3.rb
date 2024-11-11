@@ -1,9 +1,9 @@
 class GostAT3 < Formula
   desc "Go simple tunnel"
   homepage "https://gost.run/"
-  url "https://github.com/go-gost/gost/archive/refs/tags/v3.0.0-nightly.20241102.tar.gz"
-  version "3.0.0-nightly.20241102"
-  sha256 "6e8cc952eae6b37b96d5e165ae4e60c5ec54fd73e6fe9edb7a0c33705f6b8480"
+  url "https://github.com/go-gost/gost/archive/refs/tags/v3.0.0-nightly.20241107.tar.gz"
+  version "3.0.0-nightly.20241107"
+  sha256 "05341224b2097288994986de505d2f81363cc92f7e383be28d034e1d59121fee"
   license "MIT"
   head "https://github.com/go-gost/gost.git", branch: "master"
 
