@@ -7,6 +7,11 @@ cask "font-pinyin-wenkai" do
   desc "Font for Chinese characters with Pinyin"
   homepage "https://github.com/jeffreyxuan/toneoz-font-pinyin-wenkai"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   font "ToneOZ-Pinyin-WenKai-Bold.ttf"
   font "ToneOZ-Pinyin-WenKai-Light.ttf"
   font "ToneOZ-Pinyin-WenKai-Regular.ttf"
