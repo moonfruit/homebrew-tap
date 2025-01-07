@@ -18,7 +18,6 @@ class UutilsSelected < Formula
   on_macos do
     conflicts_with "coreutils", because: "uutils-selected and coreutils install some same binaries"
     conflicts_with "uutils-coreutils", because: "uutils-selected and coreutils install some same binaries"
-    conflicts_with "aardvark_shell_utils", because: "both install `realpath` binaries"
     conflicts_with "md5sha1sum", because: "both install `md5sum` and `sha1sum` binaries"
   end
 
