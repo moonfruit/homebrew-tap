@@ -5,6 +5,13 @@ class P7zipAll < Formula
   sha256 "c35640020e8f044b425d9c18e1808ff9206dc7caf77c9720f57eb0849d714cd1"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "415a9125ee790de98d88db11f4c271fc95089d360f8c69ad17a564d51552e6da"
+    sha256 cellar: :any_skip_relocation, ventura:       "79441182e6f8c1fcf76582b0c58f222c47a919a6a41bc90c7fb3054b827adea8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5cbef26913ec528291d2267631c26e8aa0b1c2fc0e3d8cc34af0cb64120feed"
+  end
+
   conflicts_with "p7zip", because: "both install `7z` binary"
 
   def install
