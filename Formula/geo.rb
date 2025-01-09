@@ -21,6 +21,6 @@ class Geo < Formula
   end
 
   test do
-    system "#{bin}/geo", "--help"
+    system bin/"geo", "--help"
   end
 end

@@ -21,6 +21,6 @@ class Impl < Formula
   end
 
   test do
-    system "#{bin}/impl", "Test", "io.Reader"
+    system bin/"impl", "Test", "io.Reader"
   end
 end

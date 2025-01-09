@@ -19,6 +19,6 @@ class Ngrrram < Formula
   end
 
   test do
-    system "#{bin}/ngrrram", "--help"
+    system bin/"ngrrram", "--help"
   end
 end
