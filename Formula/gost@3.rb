@@ -14,9 +14,9 @@ class GostAT3 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3ebe0307303ec1ee229ca5e2ecbe0892040ce1aa82255c1094976471b28836e"
-    sha256 cellar: :any_skip_relocation, ventura:       "42237af5324ab072078605bac1ff52180c237ef59b52ff3f068e7cbf9baba774"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66827c59eccac749e698c5443a8c8a76206158e3ed8da972cc5cd194fc465f44"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c47b46a614317e4daeb35ed8a4d26e6263395a4bac17e8d7ad5401ed8557ba9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "4f78b95f5da3e7c409c6e4611f6ab88f1ac9fe59562c2cc78eda2006ed8f9ccb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8f714bdb67e971aa892d03cab3c2a17453531bb63a7b1877331dabd9a2ad513"
   end
 
   keg_only :versioned_formula
