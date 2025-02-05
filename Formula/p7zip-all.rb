@@ -12,6 +12,8 @@ class P7zipAll < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5cbef26913ec528291d2267631c26e8aa0b1c2fc0e3d8cc34af0cb64120feed"
   end
 
+  keg_only :versioned_formula
+
   conflicts_with "p7zip", because: "both install `7z` binary"
 
   def install
