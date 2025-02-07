@@ -5,6 +5,10 @@ class P7zipAll < Formula
   sha256 "c35640020e8f044b425d9c18e1808ff9206dc7caf77c9720f57eb0849d714cd1"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
+  livecheck do
+    formula "p7zip"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "415a9125ee790de98d88db11f4c271fc95089d360f8c69ad17a564d51552e6da"
