@@ -21,14 +21,16 @@ class OpensslAT10 < Formula
   depends_on "ca-certificates"
 
   patch do
-    url "https://raw.githubusercontent.com/lavabit/magma/682101e08114be9b006aadb228943c487dfb1abf/lib/patches/openssl/1.0.2_update_expiring_certificates.patch"
-    sha256 "095276ed70550d87305de552e686107543d7c7225a32079da22a9ad1c1e895ad"
+    url "https://gist.github.com/moonfruit/585c8973f9b97657de777e0c9eef22b2/raw/ee6744ce1685f691885e91f97cb4396d280a8e7d/openssl-1.0.2u-update-expiring-certificates.patch"
+    sha256 "ccef15995b9983abf2bbaff7e12a867f7cd712a8ae341d4435da11df2ee1302b"
   end
 
   patch do
-    on_arm do
-      url "https://gist.githubusercontent.com/felixbuenemann/5f4dcb30ebb3b86e1302e2ec305bac89/raw/b339a33ff072c9747df21e2558c36634dd62c195/openssl-1.0.2u-darwin-arm64.patch"
-      sha256 "4ad22bcfc85171a25f035b6fc47c7140752b9ed7467bb56081c76a0a3ebf1b9f"
+    on_macos do
+      on_arm do
+        url "https://gist.githubusercontent.com/felixbuenemann/5f4dcb30ebb3b86e1302e2ec305bac89/raw/b339a33ff072c9747df21e2558c36634dd62c195/openssl-1.0.2u-darwin-arm64.patch"
+        sha256 "4ad22bcfc85171a25f035b6fc47c7140752b9ed7467bb56081c76a0a3ebf1b9f"
+      end
     end
   end
 
