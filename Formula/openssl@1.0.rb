@@ -41,8 +41,8 @@ class OpensslAT10 < Formula
     ENV.delete("PERL")
     ENV.delete("PERL5LIB")
 
-    # -O2 or greater with clang > 13 causes elliptic curve miscompilation on arm64
-    ENV.O1 if OS.mac? && Hardware::CPU.arm? && (MacOS.version >= :monterey) && (ENV.compiler == :clang)
+    # -O2 or greater with clang > 13 causes elliptic curve miscompilation
+    ENV.O1 if OS.mac? && MacOS.version >= :monterey && ENV.compiler == :clang
 
     ENV.deparallelize
 
