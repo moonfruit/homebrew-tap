@@ -5,7 +5,7 @@ class OpensslAT10 < Formula
   sha256 "ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16"
 
   livecheck do
-    url "https://www.openssl.org/source/old/1.0.2/"
+    url "https://openssl-library.org/source/old/1.0.2/"
     regex(/href=.*?openssl[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
