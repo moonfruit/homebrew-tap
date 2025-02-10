@@ -7,7 +7,7 @@ class Tscurl < Formula
   head "https://github.com/Tongsuo-Project/curl.git"
 
   livecheck do
-    url :head
+    url :stable
     regex(/^v?(\d+(?:\.\d+)+)(?:-SM)?$/i)
   end
 
