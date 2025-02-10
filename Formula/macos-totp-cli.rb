@@ -4,6 +4,7 @@ class MacosTotpCli < Formula
   url "https://github.com/simnalamburt/macos-totp-cli/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "82cc7c7798de320dd23b91c7fcdc76bfc3b4b60184397a5b25f025e639cfee3c"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
