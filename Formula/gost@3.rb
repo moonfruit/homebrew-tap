@@ -11,6 +11,13 @@ class GostAT3 < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fba60bb2df6e6af90506d361d307e9ffff4af8e56972f87013563fd5b25b8a2e"
+    sha256 cellar: :any_skip_relocation, ventura:       "2ef3b864afa68cbc2cdbfe8cc7e24d01413a199fab704ed62800168fd7e802c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75315495396204dd1aa23485003b77e4ac8d417cad3f29592d0d8f96705c2788"
+  end
+
   keg_only :versioned_formula
 
   depends_on "go" => :build
