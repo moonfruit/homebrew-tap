@@ -8,9 +8,9 @@ class Tongsuo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    rebuild 1
-    sha256 arm64_sonoma: "32746f7c5b072ddc3d2b3e94c05cd53b2cfbf401011d4693faad97f8238107e8"
-    sha256 x86_64_linux: "fdef6a83b2ed94388b176a1a7ac34703edef0a766b00adee0c8e5e4ea3826eb8"
+    sha256 arm64_sequoia: "97173e21f65b3f2a2d901d9e2d5ce46a8259429a17e8beeea29c1482c9dd3865"
+    sha256 ventura:       "3291ff389ad436d14e276987a6e9a31f5614901382efecdb72c0dda5bd1402f1"
+    sha256 x86_64_linux:  "8112d1f46e5d5a334312b79b3cb47f2c3cd15700f6f97c393606eafa6397a12d"
   end
 
   keg_only "conflicts with openssl"
