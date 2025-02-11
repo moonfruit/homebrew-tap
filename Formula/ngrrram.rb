@@ -8,9 +8,9 @@ class Ngrrram < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "412362be27d054a21a61ff4647bcc82b0eceeaf584e83faf7160bc941423a735"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a89ee5bc7e54eb77e97782ecb9cfa2e3daed162985a4d2fe1c67cb2b72743fa6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "556780c319249acc4f987ac68d3786afe35e63f5736bf02ac4e5de2c6430f365"
+    sha256 cellar: :any_skip_relocation, ventura:       "e214ec0dbb59bbab4d4907947f1d22e94200f6269bc48f876220d5f5bac54055"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09f2a531d79d67345956348c7f4367df57f92e696e47d65eb0646f731ff71fb0"
   end
 
   depends_on "rust" => :build
