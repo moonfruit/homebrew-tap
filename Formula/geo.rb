@@ -9,9 +9,9 @@ class Geo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7df5070dda603a2ab7c5f00caf9805a77102b786dc9b390d4028250d2282a3b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4c1b5dd1abe1e7e39158e89bcc0cad23c2f6e3b4f145ce11d01bfa09198201a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50d3698057d523fba2fe48bf40d3d4306cc8ac5cc3088dda48bdb1c560c03db6"
+    sha256 cellar: :any_skip_relocation, ventura:       "9085ba2b7f7bc744472fcf57e9447ffd8923ce97e175d6dcc99f14e8bf77645f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce128bf6501a2bb7c7e1555fb6d3e4e1c72e82f0f31a6196dea57fab91752f74"
   end
 
   depends_on "go" => :build
