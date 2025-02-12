@@ -16,7 +16,7 @@ class MacosTotpCli < Formula
   depends_on :macos
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", "totp"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: "totp")
     bin.install "totp"
     ENV.prepend_path "PATH", bin
     generate_completions_from_executable("totp", "completion", base_name: "totp")
