@@ -32,12 +32,12 @@ class WlpWebprofile8 < Formula
 
     begin
       system bin/"wlp-webprofile8", "start"
-      assert_predicate testpath/"servers/.pid/defaultServer.pid", :exist?
+      assert_path_exists testpath/"servers/.pid/defaultServer.pid"
     ensure
       system bin/"wlp-webprofile8", "stop"
     end
 
-    refute_predicate testpath/"servers/.pid/defaultServer.pid", :exist?
+    refute_path_exists testpath/"servers/.pid/defaultServer.pid"
     assert_match "<feature>webProfile-8.0</feature>", (testpath/"servers/defaultServer/server.xml").read
   end
 end

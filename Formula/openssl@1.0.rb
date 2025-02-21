@@ -94,8 +94,7 @@ class OpensslAT10 < Formula
 
   test do
     # Make sure the necessary .cnf file exists, otherwise OpenSSL gets moody.
-    assert_predicate openssldir/"openssl.cnf", :exist?,
-            "OpenSSL requires the .cnf file for some functionality"
+    assert_path_exists openssldir/"openssl.cnf", "OpenSSL requires the .cnf file for some functionality"
 
     # Check OpenSSL itself functions as expected.
     (testpath/"testfile.txt").write("This is a test file")
