@@ -7,9 +7,9 @@ class Goimports < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83f929f42c693c98667be95e33fef703700164f4da619e0d22ef2c8f3e9caa5f"
-    sha256 cellar: :any_skip_relocation, ventura:       "b679543b6c76ff3edfe5b0c1ab1c9244915acd38e74ef2b79a96bb0f80f3c5b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f273798e6206328a3907e46694b0597f50351bc8c32ea6b47c6ac1e0e662d0e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "513d9b7c43227b9c3801696aeb50ac82e6e911caa713650cf0a48596f0b6b6ce"
+    sha256 cellar: :any_skip_relocation, ventura:       "fe9e986045de7f20fb1b1f266f2d3c04ac0e4a15371f53a0aa3b48a62634ae6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8a5a226a2751756d95a649aab5f9330bae9c22dc530d61fbf42047239be0cce"
   end
 
   depends_on "go"
