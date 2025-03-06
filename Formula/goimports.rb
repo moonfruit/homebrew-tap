@@ -1,8 +1,8 @@
 class Goimports < Formula
   desc "Go Tool for updating import lines"
   homepage "https://golang.org/x/tools"
-  url "https://github.com/golang/tools/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "c1e93ac3be804264bbe3779418caa6728944472cf5bc9368365657e31c1b4a2e"
+  url "https://github.com/golang/tools/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "e5d74f1e63a1ee669e75e76668cea1b110e2b9d19c67710f60939ee38070a5a7"
   license "BSD-3-Clause"
 
   bottle do
