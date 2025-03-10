@@ -1,10 +1,9 @@
 class Tscurl < Formula
   desc "CURL that support TLCP"
   homepage "https://github.com/Tongsuo-Project/curl"
-  url "https://github.com/Tongsuo-Project/curl/archive/refs/tags/v2023.10.31-SM.tar.gz"
-  sha256 "4251c0200d8c97947c7163a1b5cfe5ed38d7b8f4b7680f73c62b9d42a0568059"
+  url "https://github.com/Tongsuo-Project/curl/archive/refs/tags/v2025.3.9-SM.tar.gz"
+  sha256 "5948965f5b9c2975fe5ced0d152fcf1cce66ecf138afde6cfe24a8b615013240"
   license "curl"
-  revision 1
   head "https://github.com/Tongsuo-Project/curl.git"
 
   livecheck do
@@ -34,24 +33,20 @@ class Tscurl < Formula
 
   def install
     system "git", "apply", "tongsuo.patch"
-    system "autoreconf", "-fi"
+    system "autoreconf", "--force", "--install", "--verbose"
 
     args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --disable-ldap
-      --prefix=#{prefix}
       --program-prefix=ts
-      --with-ca-fallback
-      --with-openssl=#{Formula["tongsuo"].opt_prefix}
+      --disable-silent-rules
+      --with-ssl=#{Formula["tongsuo"].opt_prefix}
       --without-ca-bundle
       --without-ca-path
-      --without-default-ssl-backend
-      --without-librtmp
+      --with-ca-fallback
+      --without-ldap
+      --without-libpsl
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
