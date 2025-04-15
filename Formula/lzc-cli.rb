@@ -1,8 +1,8 @@
 class LzcCli < Formula
   desc "Client for Lazycat hardware"
   homepage "https://www.npmjs.com/package/@lazycatcloud/lzc-cli"
-  url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-1.2.63.tgz"
-  sha256 "1ff63716d79b529805b8e7985da37a7a45882a08b7fcde72489d435dfa2df17a"
+  url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-1.2.64.tgz"
+  sha256 "de02d59ae57dcc0527a966a747b05eb499fa9ce0405c047c228951d076ee68f5"
   license "ISC"
 
   bottle do
@@ -17,9 +17,17 @@ class LzcCli < Formula
   def install
     system "npm", "install", *std_npm_args
 
-    rm(Dir[libexec/"**/dprint-node.{linux,win32}-*.node"])
-    rm(Dir[libexec/"**/dprint-node.darwin-x64.node"]) if Hardware::CPU.arm?
-    rm(Dir[libexec/"**/dprint-node.darwin-arm64.node"]) if Hardware::CPU.intel?
+    rm(Dir[libexec/"**/dprint-node.win32-*.node"])
+    if OS.mac?
+      rm(Dir[libexec/"**/dprint-node.linux-*.node"])
+      rm(Dir[libexec/"**/dprint-node.darwin-x64.node"]) if Hardware::CPU.arm?
+      rm(Dir[libexec/"**/dprint-node.darwin-arm64.node"]) if Hardware::CPU.intel?
+    else
+      rm(Dir[libexec/"**/dprint-node.darwin-*.node"])
+      rm(Dir[libexec/"**/dprint-node.linux-*-musl.node"])
+      rm(Dir[libexec/"**/dprint-node.linux-x64-*.node"]) if Hardware::CPU.arm?
+      rm(Dir[libexec/"**/dprint-node.linux-arm64-*.node"]) if Hardware::CPU.intel?
+    end
 
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
