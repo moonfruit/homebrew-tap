@@ -7,8 +7,8 @@ end
 class OracleInstantclient < Formula
   desc "Instant Client for Oracle"
   homepage "https://www.oracle.com/database/technologies/instant-client.html"
-  url "https://download.oracle.com/otn_software/mac/instantclient/233023/instantclient-basic-macos.arm64-23.3.0.23.09-1.dmg"
-  sha256 "1bcddb583870f70c232d579edb8a32fd58497028a4eff1ad28ece0397ba8d7fe"
+  url "https://download.oracle.com/otn_software/mac/instantclient/233023/instantclient-basic-macos.arm64-23.3.0.23.09-2.dmg"
+  sha256 "ff6fcfb8e2a231a9e0eae858691fe854451b375e654adf4a62331981a60e9569"
   license :cannot_represent
 
   livecheck do
