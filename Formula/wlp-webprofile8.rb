@@ -1,8 +1,8 @@
 class WlpWebprofile8 < Formula
   desc "Jakarta EE and MicroProfile application server (Jakarta EE Web Profile 8)"
   homepage "https://www.ibm.com/cloud/websphere-liberty"
-  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/25.0.0.5/wlp-webProfile8-25.0.0.5.zip"
-  sha256 "e88a5a19d4551327f1013a58189ec00d8691f286ae2fc22a88d1cd7f914490f2"
+  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/25.0.0.6/wlp-webProfile8-25.0.0.6.zip"
+  sha256 "7f72011a52917100aed735ee66ed6afca041f9cf85545fa0ed61347d57573b1d"
 
   livecheck do
     url "https://www.ibm.com/support/pages/websphere-liberty-developers"
