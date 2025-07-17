@@ -1,7 +1,9 @@
 require "formula_installer"
 
 FormulaInstaller.class_eval do
-  def fix_dynamic_linkage(keg); end
+  define_method(:fix_dynamic_linkage) do |_keg|
+    nil
+  end
 end
 
 class OracleInstantclient < Formula
