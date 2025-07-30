@@ -36,7 +36,8 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - run: brew test-bot --only-tap-syntax
+      - if: matrix.os != 'ubuntu-22.04'
+        run: brew test-bot --only-tap-syntax
 
       - name: Base64-encode GITHUB_TOKEN for HOMEBREW_DOCKER_REGISTRY_TOKEN
         id: base64-encode
