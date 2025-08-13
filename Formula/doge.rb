@@ -1,8 +1,8 @@
 class Doge < Formula
   desc "Reviving A command-line DNS client"
   homepage "https://github.com/Dj-Codeman/doge/"
-  url "https://github.com/Dj-Codeman/doge/archive/refs/tags/v0.2.8.tar.gz"
-  sha256 "4cc82936a7258aa182de9ff48562d7423e8afe1dfd1095e1fe9114e636a67f96"
+  url "https://github.com/Dj-Codeman/doge/archive/refs/tags/v0.2.9.tar.gz"
+  sha256 "21d459f1f88d6a1e001a747b84782f180c01de8f3c39f3a1389c352b2f2edc88"
   license "EUPL-1.2"
 
   bottle do
