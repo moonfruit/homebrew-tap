@@ -1,8 +1,8 @@
 class LzcCli < Formula
   desc "Client for Lazycat hardware"
   homepage "https://www.npmjs.com/package/@lazycatcloud/lzc-cli"
-  url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-1.3.8.tgz"
-  sha256 "b8c9ceedc0ae483a594acfc36252cd2fa627e256c86d7bb0f3b9ca1899d2ca9e"
+  url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-1.3.10.tgz"
+  sha256 "720bf8b05e9d8f2407855816f66b5f1b4790f6455a45fbd1b33b0bf64f38b100"
   license "ISC"
 
   bottle do
