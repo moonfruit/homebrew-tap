@@ -7,9 +7,9 @@ class QwenCode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbe6eaa03294f89499b1b6b24eac6fafe9a722ed930041d0ec525024dcf6e361"
-    sha256 cellar: :any_skip_relocation, ventura:       "3801e3a69eb944a967fbc92b19650f892d2baa7723fa3289ac303b588f8b26f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9d8560e03729479f01ad52fb83c2cf687a2078212e87346e4901d9efc3fda26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "554ed4612712f733fdb4e90d3f3dedfcd457ede6b676e04c736cc598cd383b9a"
+    sha256 cellar: :any_skip_relocation, ventura:       "a193e9e1b76984ec86cf81acb86461bede0656f32d4d61c6b8f46ab7ee7dd09c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef4a51becb5a4cb160d2054c60ed471d7623db94390ef525aa7a6897fa35ff8e"
   end
 
   depends_on "node"
