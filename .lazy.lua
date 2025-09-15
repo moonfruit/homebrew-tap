@@ -1,4 +1,3 @@
-print("Loading astrolsp.lua")
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
