@@ -1,26 +1,28 @@
+print("Loading astrolsp.lua")
+---@type LazySpec
 return {
-  {
-    "neovim/nvim-lspconfig",
+    "AstroNvim/astrolsp",
+    ---@type AstroLSPOpts
     opts = {
-      servers = {
-        rubocop = {
-          cmd = { "brew", "rubocop", "--lsp" },
+        servers = {
+            "rubocop",
+            "sorbet",
         },
-        sorbet = {
-          cmd = { "brew", "typecheck", "--lsp" },
+        ---@diagnostic disable: missing-fields
+        config = {
+            ruby_lsp = {
+                capabilities = {
+                    general = {
+                        positionEncodings = { "utf-16" }
+                    },
+                },
+            },
+            rubocop = {
+                cmd = { "brew", "rubocop", "--lsp" },
+            },
+            sorbet = {
+                cmd = { "brew", "typecheck", "--lsp" },
+            }
         },
-      },
     },
-  },
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters = {
-        rubocop = {
-          command = "brew",
-          prepend_args = { "rubocop" },
-        },
-      },
-    },
-  },
 }
