@@ -8,9 +8,9 @@ class P7zipAll < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "415a9125ee790de98d88db11f4c271fc95089d360f8c69ad17a564d51552e6da"
-    sha256 cellar: :any_skip_relocation, ventura:       "79441182e6f8c1fcf76582b0c58f222c47a919a6a41bc90c7fb3054b827adea8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5cbef26913ec528291d2267631c26e8aa0b1c2fc0e3d8cc34af0cb64120feed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "8c1f2e1e4a240b60492086cff5024df1a526d6456ca440b8345bb861bb2a695b"
+    sha256 cellar: :any_skip_relocation, ventura:      "8799378f1ba0bb315f0d9557a3bf0370931052e9cabea31c9dd4bc8fc84c4f6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a6995a7cb4fa11cff52828c502af41998d485d3cf89bbf799090e9707e42a87c"
   end
 
   keg_only :versioned_formula
