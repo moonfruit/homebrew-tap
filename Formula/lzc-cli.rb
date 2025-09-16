@@ -8,9 +8,9 @@ class LzcCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any,                 arm64_sequoia: "cc7ce36be6f78f777b2cac5bb85c9e17f3f300b5f050d3fb0db4c1f9818c3dcd"
-    sha256 cellar: :any,                 ventura:       "a1bce9cb7527ac08c3fbe531bdb2a5bea7a76684f606ebd5a5b73b96741ec13e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abd0ba88a9ba5a1cf0b703aeea479c69eadfb7513910838c68974e7124ca677d"
+    sha256 cellar: :any,                 arm64_tahoe:   "718f44eff8c30fb239fbd8c38109cca253300072daea04215108f13c358c4126"
+    sha256 cellar: :any,                 arm64_sequoia: "0886b4054410aa99eb880f0ca2bb41f7fd2ed28bbf3c6b925eef64c29bd03970"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f4fce817b3bb1baa59e7a651ca05ec41322f5d93cb3df8c9a56a58f712448ba"
   end
 
   depends_on "node"
