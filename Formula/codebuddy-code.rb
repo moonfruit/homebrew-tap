@@ -1,10 +1,9 @@
 class CodebuddyCode < Formula
   desc "AI-powered command-line workflow tool for developers"
   homepage "https://cnb.cool/codebuddy/codebuddy-code"
-  url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-1.0.17.tgz"
-  sha256 "5ecf492c97387924ee5deda3b44be7f8c09b7ddf9033111bcbbc791d657937c1"
+  url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-1.0.19.tgz"
+  sha256 "49193ddc33552500ec493142e17c55a1afdd13b2cdb3fe1d727755aabae8c741"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
