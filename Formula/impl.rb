@@ -9,9 +9,9 @@ class Impl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13dd70dac89fdca7625ea64bfa22a292a41fc5b82e1685123306f1f38220b491"
-    sha256 cellar: :any_skip_relocation, ventura:       "88356a73896546e8a5e6f91b7eea6caad9954d73ca6f50ff4c19399bb7a6e0fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "746bab4360ba336829bd38cfeaa1a34ca70deac5499f7b8365a2e3ca17b5acda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8968cf06a7543f104bbbdca8f01a2c25b2fd711b3cd3264a80083eacdf75b878"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2fcdff68ebc32c424fa294123e6ab5c19d4abae04ee4a2bc570f2fced704e23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25218c1d427d8cf982c2efb42d2a3129a671654c3cfbacf98af2c402a89199a4"
   end
 
   depends_on "go"
