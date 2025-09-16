@@ -4,6 +4,7 @@ class CodebuddyCode < Formula
   url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-1.0.17.tgz"
   sha256 "5ecf492c97387924ee5deda3b44be7f8c09b7ddf9033111bcbbc791d657937c1"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
