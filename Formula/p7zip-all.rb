@@ -4,10 +4,7 @@ class P7zipAll < Formula
   url "https://github.com/p7zip-project/p7zip/archive/refs/tags/v17.06.tar.gz"
   sha256 "c35640020e8f044b425d9c18e1808ff9206dc7caf77c9720f57eb0849d714cd1"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-
-  livecheck do
-    formula "p7zip"
-  end
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
@@ -17,8 +14,6 @@ class P7zipAll < Formula
   end
 
   keg_only :versioned_formula
-
-  conflicts_with "p7zip", because: "both install `7z` binary"
 
   def install
     if OS.mac?
