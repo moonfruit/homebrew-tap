@@ -10,7 +10,7 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ubuntu-22.04, macos-15, macos-26]
+        os: [ubuntu-22.04, macos-13, macos-26]
     runs-on: ${{ matrix.os }}
     permissions:
       actions: read
@@ -36,8 +36,7 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - if: matrix.os != 'ubuntu-22.04'
-        run: brew test-bot --only-tap-syntax
+      - run: brew test-bot --only-tap-syntax
 
       - name: Base64-encode GITHUB_TOKEN for HOMEBREW_DOCKER_REGISTRY_TOKEN
         id: base64-encode
