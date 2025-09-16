@@ -4,7 +4,7 @@ class Ngrrram < Formula
   url "https://github.com/wintermute-cell/ngrrram/archive/refs/tags/v1.0.3.tar.gz"
   sha256 "6979fe829e773489cc22e45e37784565f2b8e514047e48e64909fa5ff93696af"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
