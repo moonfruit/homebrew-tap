@@ -4,7 +4,7 @@ class GostAT3 < Formula
   url "https://github.com/go-gost/gost/archive/refs/tags/v3.2.4.tar.gz"
   sha256 "893aedaaf9b701e6847d14e63a0e5609245dae099e3124f3f1095c44595f7b5e"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/go-gost/gost.git", branch: "master"
 
   livecheck do
