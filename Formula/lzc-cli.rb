@@ -4,7 +4,7 @@ class LzcCli < Formula
   url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-1.3.10.tgz"
   sha256 "720bf8b05e9d8f2407855816f66b5f1b4790f6455a45fbd1b33b0bf64f38b100"
   license "ISC"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
