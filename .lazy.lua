@@ -1,27 +1,33 @@
----@type LazySpec
-return {
-  "AstroNvim/astrolsp",
-  ---@type AstroLSPOpts
-  opts = {
-    servers = {
-      "rubocop",
-      "sorbet",
-    },
-    ---@diagnostic disable: missing-fields
-    config = {
-      ruby_lsp = {
-        capabilities = {
-          general = {
-            positionEncodings = { "utf-16" },
+local astronvim, _ = pcall(require, "astronvim")
+
+if astronvim then
+  ---@type LazySpec
+  return {
+    "AstroNvim/astrolsp",
+    ---@type AstroLSPOpts
+    opts = {
+      servers = {
+        "rubocop",
+        "sorbet",
+      },
+      ---@diagnostic disable: missing-fields
+      config = {
+        ruby_lsp = {
+          capabilities = {
+            general = {
+              positionEncodings = { "utf-16" },
+            },
           },
         },
-      },
-      rubocop = {
-        cmd = { "brew", "rubocop", "--lsp" },
-      },
-      sorbet = {
-        cmd = { "brew", "typecheck", "--lsp" },
+        rubocop = {
+          cmd = { "brew", "rubocop", "--lsp" },
+        },
+        sorbet = {
+          cmd = { "brew", "typecheck", "--lsp" },
+        },
       },
     },
-  },
-}
+  }
+end
+
+return {}
