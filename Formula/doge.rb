@@ -8,9 +8,8 @@ class Doge < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e5685487aa73dce46822ccdeca4e57eb23205fb761f710a74f2cb9f1990eae5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50da4a267ebeab4cf7c3255a1704de563d041221a13980c56f328afdac6d72c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56a007f15784a6ba76773e62bf59d83d863db4d4fca9f89fdeafe120fc0f7444"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "bb92e5646fc4f7109dde4e2d1cb3110e653ebaa5d00bba3f2be5fd7fbbbfacef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "51e295cf63120952ce0b3587104a1fdeb8bf3e8bf1401e08e9b4c0b8995bbb1d"
   end
 
   depends_on "pandoc" => :build
