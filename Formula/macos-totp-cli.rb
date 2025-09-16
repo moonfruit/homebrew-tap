@@ -8,9 +8,8 @@ class MacosTotpCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36ba0372175b80bd80e6eee17057834e47d274e897f2e6c550e14d88967dd1a9"
-    sha256 cellar: :any_skip_relocation, ventura:       "e620a7484422ee383e15d8ebceae68567d8bd23cb9a04a48c76ce6faf52d430b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "6b0c4afdea9931590e38b06b7c063b4857e97b34bcba373edd626a72cfc48583"
+    sha256 cellar: :any_skip_relocation, ventura:     "217241fc6800252c18d47d44ad8a9d07aaad462d72c6b0a9e15b01f0a0d2e5f0"
   end
 
   depends_on "go" => :build
