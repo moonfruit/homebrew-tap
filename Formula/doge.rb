@@ -4,6 +4,7 @@ class Doge < Formula
   url "https://github.com/Dj-Codeman/doge/archive/refs/tags/v0.2.9.tar.gz"
   sha256 "21d459f1f88d6a1e001a747b84782f180c01de8f3c39f3a1389c352b2f2edc88"
   license "EUPL-1.2"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
