@@ -4,6 +4,7 @@ class UutilsSelected < Formula
   url "https://github.com/uutils/coreutils/archive/refs/tags/0.2.2.tar.gz"
   sha256 "4a847a3aaf241d11f07fdc04ef36d73c722759675858665bc17e94f56c4fbfb3"
   license "MIT"
+  revision 1
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   livecheck do
