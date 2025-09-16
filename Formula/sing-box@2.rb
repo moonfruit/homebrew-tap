@@ -4,6 +4,7 @@ class SingBoxAT2 < Formula
   url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.13.0-alpha.15.tar.gz"
   sha256 "f428b71d7ddc3caa45b833ccd77a62843622db9a02a2f28c11d10b7dadd771eb"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   livecheck do
