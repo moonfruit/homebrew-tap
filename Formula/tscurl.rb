@@ -4,7 +4,8 @@ class Tscurl < Formula
   url "https://github.com/Tongsuo-Project/curl/archive/refs/tags/v2025.3.9-SM.tar.gz"
   sha256 "5948965f5b9c2975fe5ced0d152fcf1cce66ecf138afde6cfe24a8b615013240"
   license "curl"
-  head "https://github.com/Tongsuo-Project/curl.git"
+  revision 1
+  head "https://github.com/Tongsuo-Project/curl.git", branch: "master"
 
   livecheck do
     url :stable
