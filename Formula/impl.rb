@@ -4,7 +4,7 @@ class Impl < Formula
   url "https://github.com/josharian/impl/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "fcc2344f5386583a2cfda9b0830e347eb6e8b946c0b3e3260bbb4b8479eb2c25"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/josharian/impl.git", branch: "main"
 
   bottle do
