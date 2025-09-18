@@ -30,4 +30,32 @@ if astronvim then
   }
 end
 
-return {}
+---@type LazySpec
+return {
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        rubocop = {
+          cmd = { "brew", "rubocop", "--lsp" },
+        },
+        sorbet = {
+          mason = false,
+          cmd = { "brew", "typecheck", "--lsp" },
+        },
+      },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters = {
+        rubocop = {
+          command = "brew",
+          prepend_args = { "rubocop" },
+        },
+      },
+    },
+  },
+}
