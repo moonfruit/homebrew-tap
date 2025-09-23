@@ -1,3 +1,20 @@
+local servers = {
+  ruby_lsp = {
+    capabilities = {
+      general = {
+        positionEncodings = { "utf-16" },
+      },
+    },
+  },
+  rubocop = {
+    cmd = { "brew", "rubocop", "--lsp" },
+  },
+  sorbet = {
+    mason = false,
+    cmd = { "brew", "typecheck", "--lsp" },
+  },
+}
+
 local astronvim, _ = pcall(require, "astronvim")
 
 if astronvim then
@@ -10,22 +27,7 @@ if astronvim then
         "rubocop",
         "sorbet",
       },
-      ---@diagnostic disable: missing-fields
-      config = {
-        ruby_lsp = {
-          capabilities = {
-            general = {
-              positionEncodings = { "utf-16" },
-            },
-          },
-        },
-        rubocop = {
-          cmd = { "brew", "rubocop", "--lsp" },
-        },
-        sorbet = {
-          cmd = { "brew", "typecheck", "--lsp" },
-        },
-      },
+      config = servers,
     },
   }
 end
@@ -35,26 +37,15 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      servers = {
-        rubocop = {
-          cmd = { "brew", "rubocop", "--lsp" },
-        },
-        sorbet = {
-          mason = false,
-          cmd = { "brew", "typecheck", "--lsp" },
-        },
-      },
+      servers = servers,
     },
   },
   {
     "stevearc/conform.nvim",
     optional = true,
     opts = {
-      formatters = {
-        rubocop = {
-          command = "brew",
-          prepend_args = { "rubocop" },
-        },
+      formatters_by_ft = {
+        ruby = {},
       },
     },
   },
