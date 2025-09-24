@@ -1,10 +1,10 @@
 class Doge < Formula
   desc "Reviving A command-line DNS client"
-  homepage "https://github.com/Dj-Codeman/doge/"
-  url "https://github.com/Dj-Codeman/doge/archive/refs/tags/v0.2.9.tar.gz"
+  homepage "https://github.com/Dj-Codeman/dog_community/"
+  url "https://github.com/Dj-Codeman/dog_community/archive/refs/tags/v0.2.9.tar.gz"
   sha256 "21d459f1f88d6a1e001a747b84782f180c01de8f3c39f3a1389c352b2f2edc88"
   license "EUPL-1.2"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
@@ -14,11 +14,6 @@ class Doge < Formula
 
   depends_on "pandoc" => :build
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "openssl@3"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
