@@ -4,6 +4,7 @@ class SingBoxAT2 < Formula
   url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.13.0-alpha.18.tar.gz"
   sha256 "afc7d9c04590bbdeefdbe28a512eb6723956c639303b582425f7aef04241baa3"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   livecheck do
@@ -32,6 +33,8 @@ class SingBoxAT2 < Formula
       with_tailscale
       with_utls
       with_wireguard
+      badlinkname
+      tfogo_checklinkname0
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"sing-box", tags: tags.join(",")), "./cmd/sing-box"
     generate_completions_from_executable(bin/"sing-box", "completion")
