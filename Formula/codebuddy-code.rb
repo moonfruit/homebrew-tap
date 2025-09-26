@@ -1,8 +1,8 @@
 class CodebuddyCode < Formula
   desc "AI-powered command-line workflow tool for developers"
   homepage "https://cnb.cool/codebuddy/codebuddy-code"
-  url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-1.1.6.tgz"
-  sha256 "bee45b03d8f9fc188480ed97b0f87a34a73a48728d3c4d94b83c1c718f8f22de"
+  url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-1.3.0.tgz"
+  sha256 "4595a11e4f8f71ee911c0e45e719cceb33dbb4aa479c8b582df2f0d7a1f77b09"
   license "MIT"
 
   bottle do
@@ -12,9 +12,12 @@ class CodebuddyCode < Formula
   end
 
   depends_on "node"
+  depends_on "pcre2"
 
   def install
     system "npm", "install", *std_npm_args
+    rm(Dir[libexec/"**/x64-darwin/**"]) if OS.mac? && Hardware::CPU.arm?
+    rm(Dir[libexec/"**/arm64-linux/**"]) if OS.linux? && Hardware::CPU.intel?
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
