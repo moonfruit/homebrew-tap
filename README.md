@@ -258,7 +258,7 @@ brew install --cask moonfruit/tap/<cask>
 
 ## 📄 License
 
-Each package follows its respective license. Please check the corresponding Formula and Cask files for details.
+All Casks and Formulae themselves are licensed under the MIT License. However, each package follows its respective license. Please check the corresponding Formula and Cask files for details.
 
 ## 🤝 Contributing
 
