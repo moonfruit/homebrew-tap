@@ -1,6 +1,6 @@
 class Tongsuo < Formula
   desc "Modern Cryptographic Primitives and Protocols Library"
-  homepage "https://www.tongsuo.net"
+  homepage "https://www.tongsuo.net/"
   url "https://github.com/Tongsuo-Project/Tongsuo/archive/refs/tags/8.4.0.tar.gz"
   sha256 "57c2741750a699bfbdaa1bbe44a5733e9c8fc65d086c210151cfbc2bbd6fc975"
   license "Apache-2.0"
