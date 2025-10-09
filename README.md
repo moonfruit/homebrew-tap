@@ -34,7 +34,7 @@ brew install --cask moonfruit/tap/<cask>
 
 - **Homepage**: [sing-box](https://sing-box.sagernet.org/)
 - **Repository**: [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
-- **Description**: Universal proxy platform supporting multiple protocols for network proxying
+- **Description**: Universal proxy platform supporting multiple protocols for network proxying (nightly)
 
 #### 🗺️ geo
 

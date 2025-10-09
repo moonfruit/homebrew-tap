@@ -32,7 +32,7 @@ brew install --cask moonfruit/tap/<cask>
 
 - **主页**：[sing-box](https：//sing-box.sagernet.org/)
 - **仓库**：[SagerNet/sing-box](https：//github.com/SagerNet/sing-box)
-- **简介**：通用代理平台，支持多种协议的网络代理工具
+- **简介**：通用代理平台，支持多种协议的网络代理工具 (nightly)
 
 #### 🗺️ geo
 
