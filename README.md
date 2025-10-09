@@ -88,12 +88,6 @@ brew install --cask moonfruit/tap/<cask>
 - **Repository**: [Tongsuo-Project/curl](https://github.com/Tongsuo-Project/curl)
 - **Description**: cURL tool with TLCP support using Tongsuo
 
-#### 🔐 gmcurl
-
-- **Homepage**: [gmcurl](https://curl.gmssl.cn/)
-- **Repository**: N/A
-- **Description**: cURL tool with TLCP support
-
 #### 🔑 openssl@1.0
 
 - **Homepage**: [OpenSSL](https://openssl.org/)
@@ -121,6 +115,18 @@ brew install --cask moonfruit/tap/<cask>
 - **Description**: Jakarta EE and MicroProfile application server (Jakarta EE Web Profile 10)
 
 ### Utilities
+
+#### ⌨️ im-select
+
+- **Homepage**: [im-select](https://github.com/moonfruit/im-select)
+- **Repository**: [moonfruit/im-select](https://github.com/moonfruit/im-select)
+- **Description**: macOS input methods selector
+
+#### ⌨️ macism
+
+- **Homepage**: [macism](https://github.com/laishulu/macism)
+- **Repository**: [laishulu/macism](https://github.com/laishulu/macism)
+- **Description**: Reliable CLI macOS input source manager
 
 #### 🎨 colorsvn
 
@@ -155,6 +161,12 @@ brew install --cask moonfruit/tap/<cask>
 - **Homepage**: [iQIYI Video](https://app.iqiyi.com/mac/player/index.html)
 - **Repository**: N/A
 - **Description**: iQIYI video player
+
+#### 🔐 gmcurl
+
+- **Homepage**: [gmcurl](https://curl.gmssl.cn/)
+- **Repository**: N/A
+- **Description**: cURL tool with TLCP support
 
 #### 🌐 ethr
 

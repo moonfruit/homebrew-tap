@@ -86,12 +86,6 @@ brew install --cask moonfruit/tap/<cask>
 - **仓库**：[Tongsuo-Project/curl](https：//github.com/Tongsuo-Project/curl)
 - **简介**：使用 tongsuo 支持 TLCP 的 cURL 工具
 
-#### 🔐 gmcurl
-
-- **主页**：[gmcurl](https：//curl.gmssl.cn/)
-- **仓库**：N/A
-- **简介**：支持 TLCP 的 cURL 工具
-
 #### 🔑 openssl@1.0
 
 - **主页**：[OpenSSL](https：//openssl.org/)
@@ -119,6 +113,18 @@ brew install --cask moonfruit/tap/<cask>
 - **简介**：Jakarta EE 和 MicroProfile 应用服务器（Jakarta EE Web Profile 10）
 
 ### 实用工具
+
+#### ⌨️ im-select
+
+- **主页**：[im-select](https://github.com/moonfruit/im-select)
+- **仓库**：[moonfruit/im-select](https://github.com/moonfruit/im-select)
+- **简介**：macOS 输入法选择器
+
+#### ⌨️ macism
+
+- **主页**：[macism](https://github.com/laishulu/macism)
+- **仓库**：[laishulu/macism](https://github.com/laishulu/macism)
+- **简介**：可靠的命令行 macOS 输入源管理器
 
 #### 🎨 colorsvn
 
@@ -153,6 +159,12 @@ brew install --cask moonfruit/tap/<cask>
 - **主页**：[爱奇艺视频](https：//app.iqiyi.com/mac/player/index.html)
 - **仓库**：N/A
 - **简介**：爱奇艺视频播放器(iQIYI)
+
+#### 🔐 gmcurl
+
+- **主页**：[gmcurl](https：//curl.gmssl.cn/)
+- **仓库**：N/A
+- **简介**：支持 TLCP 的 cURL 工具
 
 #### 🌐 ethr
 
