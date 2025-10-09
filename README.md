@@ -82,7 +82,7 @@ brew install --cask moonfruit/tap/<cask>
 
 #### 🌐 tscurl
 
-- **主页**: [Tongsuo curl](https://github.com/Tongsuo-Project/curl)
+- **主页**: [Tongsuo cURL](https://github.com/Tongsuo-Project/curl)
 - **仓库**: [Tongsuo-Project/curl](https://github.com/Tongsuo-Project/curl)
 - **简介**: 使用 tongsuo 支持 TLCP 的 cURL 工具
 
