@@ -66,13 +66,13 @@ brew install --cask moonfruit/tap/<cask>
 - **仓库**: N/A
 - **简介**: Lazycat 硬件客户端工具
 
+### 安全与加密
+
 #### 🔐 macos-totp-cli
 
 - **主页**: [macos-totp-cli](https://github.com/simnalamburt/macos-totp-cli)
 - **仓库**: [simnalamburt/macos-totp-cli](https://github.com/simnalamburt/macos-totp-cli)
 - **简介**: 简单的 TOTP 命令行工具,基于 macOS 钥匙串
-
-### 安全与加密
 
 #### 🔒 tongsuo
 
@@ -240,7 +240,7 @@ brew install --cask moonfruit/tap/<cask>
 
 - **主页**: [拼音文楷](https://github.com/jeffreyxuan/toneoz-font-pinyin-wenkai)
 - **仓库**: [jeffreyxuan/toneoz-font-pinyin-wenkai](https://github.com/jeffreyxuan/toneoz-font-pinyin-wenkai)
-- **简介**: ToneOZ 拼音文楷字体 - 包含拼音注音的中文字体
+- **简介**: ToneOZ 拼音文楷字体,包含拼音注音的中文字体
 
 ##### font-pinyin-wenkai-light
 
