@@ -34,12 +34,6 @@ brew install --cask moonfruit/tap/<cask>
 - **仓库**：[SagerNet/sing-box](https：//github.com/SagerNet/sing-box)
 - **简介**：通用代理平台，支持多种协议的网络代理工具
 
-#### 🚇 gost@3
-
-- **主页**：[GOST](https：//gost.run/)
-- **仓库**：[go-gost/gost](https：//github.com/go-gost/gost)
-- **简介**：GO Simple Tunnel - 简单而强大的隧道工具
-
 #### 🗺️ geo
 
 - **主页**： [geo](https：//github.com/MetaCubeX/geo)

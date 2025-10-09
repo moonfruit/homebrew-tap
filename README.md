@@ -36,12 +36,6 @@ brew install --cask moonfruit/tap/<cask>
 - **Repository**: [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - **Description**: Universal proxy platform supporting multiple protocols for network proxying
 
-#### 🚇 gost@3
-
-- **Homepage**: [GOST](https://gost.run/)
-- **Repository**: [go-gost/gost](https://github.com/go-gost/gost)
-- **Description**: GO Simple Tunnel - A simple yet powerful tunneling tool
-
 #### 🗺️ geo
 
 - **Homepage**: [geo](https://github.com/MetaCubeX/geo)
