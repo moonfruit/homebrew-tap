@@ -14,7 +14,6 @@ class WlpWebprofile8 < Formula
   def install
     rm Dir["bin/**/*.bat"]
 
-    prefix.install_metafiles
     libexec.install Dir["*"]
     (bin/"wlp-webprofile8").write_env_script "#{libexec}/bin/server",
                                              Language::Java.overridable_java_home_env
