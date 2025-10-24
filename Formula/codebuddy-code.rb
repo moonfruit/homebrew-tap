@@ -7,8 +7,8 @@ class CodebuddyCode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any,                 arm64_tahoe:  "04542abe264243e97f3cc1d240ebfbd1c4c849a01218e4adf69b5bc140abe989"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b6d67f8ebab98fa2eaf54ec79c9eab05e731047d94ce559116f6b74b9634708"
+    sha256 cellar: :any,                 arm64_tahoe:  "8847af82c12212a8ec40026ade03fb6a6e9f2cfa62b5a13c8b21d99df99e522a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "06920bd5ec6a84f34cdfad4c0ec140e41276ff9fd1a5b8759e99cbd89d459740"
   end
 
   depends_on "node"
