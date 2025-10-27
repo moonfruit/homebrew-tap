@@ -22,9 +22,11 @@ class UutilsSelected < Formula
 
   on_macos do
     conflicts_with "coreutils", because: "uutils-selected and coreutils install some same binaries"
-    conflicts_with "uutils-coreutils", because: "uutils-selected and coreutils install some same binaries"
-    conflicts_with "md5sha1sum", because: "both install `md5sum` and `sha1sum` binaries"
   end
+
+  conflicts_with "uutils-coreutils", because: "uutils-selected and coreutils install some same binaries"
+  conflicts_with "md5sha1sum", because: "both install `md5sum` and `sha1sum` binaries"
+  conflicts_with "bash-completion@2", because: "both install completions for commands similar to `md5sum`"
 
   def install
     man1.mkpath
