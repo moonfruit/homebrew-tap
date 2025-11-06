@@ -31,7 +31,7 @@ cask "canon-mf-ufr2-printer" do
     end
   end
 
-  depends_on macos: ">= :el_capitan"
+  depends_on macos: ">= :catalina"
 
   pkg "UFRII_LT_LIPS_LX_Installer.pkg"
 
