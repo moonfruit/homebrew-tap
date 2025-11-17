@@ -7,5 +7,9 @@ cask "font-source-han-serif" do
   desc "OpenType Pan-CJK fonts"
   homepage "https://github.com/adobe-fonts/source-han-serif"
 
+  livecheck do
+    cask "font-source-han-serif-vf"
+  end
+
   font "SourceHanSerif.ttc"
 end
