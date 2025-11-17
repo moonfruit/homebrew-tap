@@ -4,6 +4,7 @@ class UutilsSelected < Formula
   url "https://github.com/uutils/coreutils/archive/refs/tags/0.4.0.tar.gz"
   sha256 "5f0c3f97b807e72edccc844c6a685ec9862199f16a665df07de5b1d20ec21233"
   license "MIT"
+  revision 1
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   livecheck do
@@ -25,8 +26,6 @@ class UutilsSelected < Formula
   end
 
   conflicts_with "uutils-coreutils", because: "uutils-selected and coreutils install some same binaries"
-  conflicts_with "md5sha1sum", because: "both install `md5sum` and `sha1sum` binaries"
-  conflicts_with "bash-completion@2", because: "both install completions for commands similar to `md5sum`"
 
   def install
     man1.mkpath
@@ -35,10 +34,7 @@ class UutilsSelected < Formula
     system "gmake", "install",
            "PREFIX=#{prefix}",
            "PROFILE=release", "MULTICALL=y",
-           "UTILS=basenc dircolors factor hashsum hostid numfmt pinky realpath shred shuf tac"
-
-    bin.install_symlink "coreutils" => "md5sum"
-    bin.install_symlink "coreutils" => "sha1sum"
+           "UTILS=basenc dircolors factor hashsum nproc numfmt pinky realpath shred shuf tac timeout"
   end
 
   test do
