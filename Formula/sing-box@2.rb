@@ -4,6 +4,7 @@ class SingBoxAT2 < Formula
   url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.13.0-alpha.29.tar.gz"
   sha256 "e24b7d83056e25b284a2125058a56877bfd69d50ecacc6f44f32e9d9cdcd9278"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   livecheck do
@@ -24,9 +25,11 @@ class SingBoxAT2 < Formula
     ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} -buildid= -checklinkname=0"
     tags = %w[
       with_acme
+      with_ccm
       with_clash_api
       with_dhcp
       with_gvisor
+      with_ocm
       with_quic
       with_tailscale
       with_utls
