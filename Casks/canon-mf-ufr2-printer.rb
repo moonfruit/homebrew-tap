@@ -9,12 +9,16 @@ cask "canon-mf-ufr2-printer" do
   homepage "https://hk.canon/en/support"
 
   livecheck do
-    url "https://hk.canon/en/support/get-search-result-content?id=imageRUNNER+2206N&os=macOS+14"
-    regex(/Printer\s+Driver.*\sV(\d+(?:\.\d+)+)\s/)
-    strategy :json do |json|
-      json["data"]&.select { |item| item["title"]&.match?(regex) }
-                  &.map { |item| "https://hk.canon#{item["url"]}" }
-                  &.map do |page_url|
+    url "https://hk.canon/hong-kong/en/support/imageRUNNER%202206__%202206N/get-search-result-content", post_form: {
+      q:  "Printer Driver",
+      os: "macOS 26",
+    }
+    regex(/href="([^"]*)"/i)
+    strategy :page_match do |page, regex|
+      page.scan(regex)
+          &.map { |href| "https://hk.canon#{href[0]}" }
+          &.reject(&:blank?)
+          &.map do |page_url|
         page = Homebrew::Livecheck::Strategy.page_content(page_url)[:content]
         page.scan(/data-url="([^"]*)"/)
             &.map { |item| item&.first&.gsub("&amp;", "&") }
