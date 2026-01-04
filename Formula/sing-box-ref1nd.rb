@@ -1,9 +1,9 @@
 class SingBoxRef1nd < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org/"
-  url "https://github.com/reF1nd/sing-box/archive/refs/tags/v1.13.0-alpha.35-reF1nd.tar.gz"
-  version "1.13.0-alpha.35-reF1nd"
-  sha256 "1fc258888d3d84cfc3298705f53308d8f752833bd62897fac6ba502f688bde43"
+  url "https://github.com/reF1nd/sing-box/archive/refs/tags/v1.13.0-alpha.36-reF1nd.tar.gz"
+  version "1.13.0-alpha.36-reF1nd"
+  sha256 "3d7949103405ae007e7b1ceae408ecc3e217443d503b5642a448259eef0bd79e"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
@@ -38,8 +38,8 @@ class SingBoxRef1nd < Formula
       badlinkname
       tfogo_checklinkname0
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin/"sing-box", tags: tags.join(",")), "./cmd/sing-box"
-    generate_completions_from_executable(bin/"sing-box", "completion")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"sing-box", tags:), "./cmd/sing-box"
+    generate_completions_from_executable(bin/"sing-box", shell_parameter_format: :cobra)
   end
 
   service do
