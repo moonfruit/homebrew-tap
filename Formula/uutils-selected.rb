@@ -4,7 +4,7 @@ class UutilsSelected < Formula
   url "https://github.com/uutils/coreutils/archive/refs/tags/0.5.0.tar.gz"
   sha256 "83535e10c3273c31baa2f553dfa0ceb4148914e9c1a9c5b00d19fbda5b2d4d7d"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   livecheck do
@@ -27,8 +27,6 @@ class UutilsSelected < Formula
   def install
     man1.mkpath
 
-    inreplace "GNUmakefile", "$(SELINUX_PROGS)", ""
-
     utils = %w[
       basenc
       dircolors
@@ -40,6 +38,7 @@ class UutilsSelected < Formula
       realpath
       shred
       shuf
+      stdbuf
       tac
       timeout
     ]
