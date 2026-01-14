@@ -29,7 +29,20 @@ class UutilsSelected < Formula
 
     inreplace "GNUmakefile", "$(SELINUX_PROGS)", ""
 
-    utils = %w[basenc dircolors factor hashsum nproc numfmt pinky realpath shred shuf tac timeout]
+    utils = %w[
+      basenc
+      dircolors
+      factor
+      hashsum
+      nproc
+      numfmt
+      pinky
+      realpath
+      shred
+      shuf
+      tac
+      timeout
+    ]
 
     args = %W[
       PREFIX=#{prefix}
