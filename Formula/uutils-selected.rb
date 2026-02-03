@@ -1,10 +1,9 @@
 class UutilsSelected < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils (selected)"
   homepage "https://github.com/uutils/coreutils"
-  url "https://github.com/uutils/coreutils/archive/refs/tags/0.5.0.tar.gz"
-  sha256 "83535e10c3273c31baa2f553dfa0ceb4148914e9c1a9c5b00d19fbda5b2d4d7d"
+  url "https://github.com/uutils/coreutils/archive/refs/tags/0.6.0.tar.gz"
+  sha256 "f751b8209ec05ae304941a727e42a668dcc45674986252f44d195ed43ccfad2f"
   license "MIT"
-  revision 2
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   livecheck do
@@ -31,7 +30,7 @@ class UutilsSelected < Formula
       basenc
       dircolors
       factor
-      hashsum
+      b2sum
       nproc
       numfmt
       pinky
@@ -57,7 +56,10 @@ class UutilsSelected < Formula
 
   test do
     (testpath/"test").write("test")
-    (testpath/"test.sha1").write("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 test")
-    system bin/"hashsum", "--sha1", "-c", "test.sha1"
+    (testpath/"test.b2").write(
+      "a71079d42853dea26e453004338670a53814b78137ffbed07603a41d76a483aa" \
+      "9bc33b582f77d30a65e6f29a896c0411f38312e1d66e0bf16386c86a89bea572 test",
+    )
+    system bin/"b2sum", "-c", "test.b2"
   end
 end
