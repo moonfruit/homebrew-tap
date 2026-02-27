@@ -1,8 +1,8 @@
 class Dog < Formula
   desc "Tiny command-line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH"
   homepage "https://github.com/natesales/q"
-  url "https://github.com/natesales/q/archive/refs/tags/v0.19.11.tar.gz"
-  sha256 "c13dbb556f2eaa26c7bd66632a3ced4026f26486f6563104e919e3cc6d7776ce"
+  url "https://github.com/natesales/q/archive/refs/tags/v0.19.12.tar.gz"
+  sha256 "1f56ebfb93fd380dee734cca9227149de2491c49db7b2c0f21019fd463081e4c"
   license "GPL-3.0-only"
 
   bottle do
