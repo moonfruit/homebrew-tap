@@ -7,8 +7,8 @@ class Dog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "e02b1918d98e4f768b53d3c41fd13e1c68039a482ffa6550f32a4545e5f3ef93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2ee31ec3d24dbf50f799262849516dea0802bba5a6278a695a4ebec113ea3c63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "a625f869898c3539ac321baa41c86f9b5de025d9a949a11604341a3efe8a4665"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6280631fd5539d448a48609ad66600e1dfe1fab67f45958b96a6324689dac9ae"
   end
 
   depends_on "go" => :build
