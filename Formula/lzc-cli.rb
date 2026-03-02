@@ -1,8 +1,8 @@
 class LzcCli < Formula
   desc "Client for Lazycat hardware"
   homepage "https://www.npmjs.com/package/@lazycatcloud/lzc-cli"
-  url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-1.3.15.tgz"
-  sha256 "419a3334d83474a2c29a7a71be052990766ce73e63f85e4ac5851be6474c0b64"
+  url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-1.3.16.tgz"
+  sha256 "935be7f3586ff53f98727747f5c872807e58eeee43de7cfdfe422d3bbb7252f3"
   license "ISC"
 
   bottle do
@@ -17,15 +17,38 @@ class LzcCli < Formula
     system "npm", "install", *std_npm_args
 
     rm(Dir[libexec/"**/dprint-node.win32-*.node"])
+
+    rm(Dir[libexec/"**/prebuilds/android-*/*.bare"])
+    rm(Dir[libexec/"**/prebuilds/ios-*/*.bare"])
+
     if OS.mac?
       rm(Dir[libexec/"**/dprint-node.linux-*.node"])
-      rm(Dir[libexec/"**/dprint-node.darwin-x64.node"]) if Hardware::CPU.arm?
-      rm(Dir[libexec/"**/dprint-node.darwin-arm64.node"]) if Hardware::CPU.intel?
+      rm(Dir[libexec/"**/prebuilds/linux-*/*.bare"])
+
+      if Hardware::CPU.arm?
+        rm(Dir[libexec/"**/dprint-node.darwin-x64.node"])
+        rm(Dir[libexec/"**/prebuilds/darwin-x64/*.bare"])
+      end
+
+      if Hardware::CPU.intel?
+        rm(Dir[libexec/"**/dprint-node.darwin-arm64.node"])
+        rm(Dir[libexec/"**/prebuilds/darwin-arm64/*.bare"])
+      end
+
     else
       rm(Dir[libexec/"**/dprint-node.darwin-*.node"])
       rm(Dir[libexec/"**/dprint-node.linux-*-musl.node"])
-      rm(Dir[libexec/"**/dprint-node.linux-x64-*.node"]) if Hardware::CPU.arm?
-      rm(Dir[libexec/"**/dprint-node.linux-arm64-*.node"]) if Hardware::CPU.intel?
+      rm(Dir[libexec/"**/prebuilds/darwin-*/*.bare"])
+
+      if Hardware::CPU.arm?
+        rm(Dir[libexec/"**/dprint-node.linux-x64-*.node"])
+        rm(Dir[libexec/"**/prebuilds/linux-x64/*.bare"])
+      end
+
+      if Hardware::CPU.intel?
+        rm(Dir[libexec/"**/dprint-node.linux-arm64-*.node"])
+        rm(Dir[libexec/"**/prebuilds/linux-arm64/*.bare"])
+      end
     end
 
     bin.install_symlink Dir["#{libexec}/bin/*"]
