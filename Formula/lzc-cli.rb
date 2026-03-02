@@ -4,6 +4,7 @@ class LzcCli < Formula
   url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-1.3.16.tgz"
   sha256 "935be7f3586ff53f98727747f5c872807e58eeee43de7cfdfe422d3bbb7252f3"
   license "ISC"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
@@ -16,39 +17,16 @@ class LzcCli < Formula
   def install
     system "npm", "install", *std_npm_args
 
-    rm(Dir[libexec/"**/dprint-node.win32-*.node"])
+    cpu = Hardware::CPU.arm? ? "arm64" : "x64"
+    os  = OS.mac? ? "darwin" : "linux"
 
-    rm(Dir[libexec/"**/prebuilds/android-*/*.bare"])
-    rm(Dir[libexec/"**/prebuilds/ios-*/*.bare"])
+    Dir[libexec/"**/dprint-node.*.node"].each do |f|
+      name = File.basename(f)
+      rm(f) if name.exclude?("#{os}-#{cpu}") || name.include?("-musl")
+    end
 
-    if OS.mac?
-      rm(Dir[libexec/"**/dprint-node.linux-*.node"])
-      rm(Dir[libexec/"**/prebuilds/linux-*/*.bare"])
-
-      if Hardware::CPU.arm?
-        rm(Dir[libexec/"**/dprint-node.darwin-x64.node"])
-        rm(Dir[libexec/"**/prebuilds/darwin-x64/*.bare"])
-      end
-
-      if Hardware::CPU.intel?
-        rm(Dir[libexec/"**/dprint-node.darwin-arm64.node"])
-        rm(Dir[libexec/"**/prebuilds/darwin-arm64/*.bare"])
-      end
-
-    else
-      rm(Dir[libexec/"**/dprint-node.darwin-*.node"])
-      rm(Dir[libexec/"**/dprint-node.linux-*-musl.node"])
-      rm(Dir[libexec/"**/prebuilds/darwin-*/*.bare"])
-
-      if Hardware::CPU.arm?
-        rm(Dir[libexec/"**/dprint-node.linux-x64-*.node"])
-        rm(Dir[libexec/"**/prebuilds/linux-x64/*.bare"])
-      end
-
-      if Hardware::CPU.intel?
-        rm(Dir[libexec/"**/dprint-node.linux-arm64-*.node"])
-        rm(Dir[libexec/"**/prebuilds/linux-arm64/*.bare"])
-      end
+    Dir[libexec/"**/prebuilds/*"].each do |d|
+      rm_r(d) if File.directory?(d) && File.basename(d) != "#{os}-#{cpu}"
     end
 
     bin.install_symlink Dir["#{libexec}/bin/*"]
