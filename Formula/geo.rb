@@ -4,7 +4,7 @@ class Geo < Formula
   url "https://github.com/MetaCubeX/geo/archive/refs/tags/v1.1.tar.gz"
   sha256 "5429d31a1076918d868d7ff6d18a83bd4abe89e766c1ffeea048b47c4026f122"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
   head "https://github.com/MetaCubeX/geo.git", branch: "master"
 
   bottle do
@@ -18,7 +18,7 @@ class Geo < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/geo"
-    generate_completions_from_executable(bin/"geo", "completion")
+    generate_completions_from_executable(bin/"geo", shell_parameter_format: :cobra)
   end
 
   test do
