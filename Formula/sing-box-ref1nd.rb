@@ -1,11 +1,11 @@
 class SingBoxRef1nd < Formula
   desc "Universal proxy platform"
-  homepage "https://sing-box.sagernet.org/"
-  url "https://github.com/reF1nd/sing-box/archive/refs/tags/v1.13.1-beta.1-reF1nd.tar.gz"
-  version "1.13.1-beta.1-reF1nd"
-  sha256 "d9beab5db026add378a78afd11f0af47e6d9e4de63e82f04684aff749cc310b2"
+  homepage "https://sing-boxr.dustinwin.us.kg/"
+  url "https://github.com/reF1nd/sing-box/archive/refs/tags/v1.13.1-beta.2-reF1nd.tar.gz"
+  version "1.13.1-beta.2-reF1nd"
+  sha256 "43b9ccdcbb48eed721de7e84b593fa2b5ee4cfde28f29d0209ac4e067da5f616"
   license "GPL-3.0-or-later"
-  head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
+  head "https://github.com/reF1nd/sing-box.git", branch: "reF1nd-dev-next"
 
   livecheck do
     url :stable
@@ -18,12 +18,12 @@ class SingBoxRef1nd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9660684797f4c302899e3cfba5e3a818a548d5c4980dd1a41c0273408d5de58d"
   end
 
-  keg_only "it conflicts with sing-box"
+  keg_only :versioned_formula
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-X github.com/sagernet/sing-box/constant.Version=#{version} -s -w -buildid= -checklinkname=0"
+    ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} -buildid= -checklinkname=0"
     tags = %w[
       with_acme
       with_ccm
