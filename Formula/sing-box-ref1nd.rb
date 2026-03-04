@@ -23,21 +23,9 @@ class SingBoxRef1nd < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} -buildid= -checklinkname=0"
-    tags = %w[
-      with_acme
-      with_ccm
-      with_clash_api
-      with_dhcp
-      with_gvisor
-      with_ocm
-      with_quic
-      with_tailscale
-      with_utls
-      with_wireguard
-      badlinkname
-      tfogo_checklinkname0
-    ]
+    ldflags = "-X github.com/sagernet/sing-box/constant.Version=#{version} " \
+              "#{(buildpath/"release/LDFLAGS").read.strip} -s -w -buildid="
+    tags = (buildpath/"release/DEFAULT_BUILD_TAGS_OTHERS").read.strip
     system "go", "build", *std_go_args(ldflags:, output: bin/"sing-box", tags:), "./cmd/sing-box"
     generate_completions_from_executable(bin/"sing-box", shell_parameter_format: :cobra)
   end
