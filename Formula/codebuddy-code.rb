@@ -1,8 +1,8 @@
 class CodebuddyCode < Formula
   desc "AI-powered command-line workflow tool for developers"
   homepage "https://cnb.cool/codebuddy/codebuddy-code"
-  url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.52.6.tgz"
-  sha256 "85128f423d8169d8265df4af825e29923ba2e13d26eb31da0a932f4d92f385d2"
+  url "https://registry.npmjs.org/@tencent-ai/codebuddy-code/-/codebuddy-code-2.53.0.tgz"
+  sha256 "6c755fd8d4726a6e6e42710f695c4c61ba7503cff912127bc9b784663e3e2d5a"
   license "MIT"
 
   bottle do
