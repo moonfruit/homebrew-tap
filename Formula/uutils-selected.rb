@@ -1,8 +1,8 @@
 class UutilsSelected < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils (selected)"
   homepage "https://github.com/uutils/coreutils"
-  url "https://github.com/uutils/coreutils/archive/refs/tags/0.6.0.tar.gz"
-  sha256 "f751b8209ec05ae304941a727e42a668dcc45674986252f44d195ed43ccfad2f"
+  url "https://github.com/uutils/coreutils/archive/refs/tags/0.7.0.tar.gz"
+  sha256 "dc56a3c4632742357d170d60a7dcecb9693de710daeaafa3ad925750b1905522"
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
@@ -44,7 +44,7 @@ class UutilsSelected < Formula
 
     args = %W[
       PREFIX=#{prefix}
-      PROFILE=release-fast
+      PROFILE=release
       MULTICALL=y
       SPHINXBUILD=#{Formula["sphinx-doc"].opt_bin}/sphinx-build
       UTILS=#{utils.join(" ")}
