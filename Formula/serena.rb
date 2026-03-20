@@ -25,6 +25,12 @@ class Serena < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 arm64_tahoe:  "daa256eb91011c2adec47502377ac83206b64faafe58101990492fc32bf078d1"
+    sha256 x86_64_linux: "67c0303f80dc03b243b10036f357a3a0869fc12674d0e19548d0d4e66169b3cc"
+  end
+
   depends_on "uv" => :build
   depends_on "certifi"
   depends_on "cryptography"
