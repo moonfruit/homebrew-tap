@@ -6,6 +6,11 @@ class Tongsuo < Formula
   license "Apache-2.0"
   revision 2
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
     sha256 arm64_tahoe:  "5538f7ad961a7e3b336abe7a8f6fe33c8fdcb5b751946fd3223b82246c23e991"
