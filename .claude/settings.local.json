@@ -1,8 +1,11 @@
 {
-  "outputStyle": "default",
   "permissions": {
     "allow": [
-      "Bash(git checkout:*)"
+      "WebFetch(domain:pypi.org)",
+      "Bash(brew list:*)",
+      "Bash(brew style:*)",
+      "Bash(brew audit:*)"
     ]
-  }
+  },
+  "outputStyle": "default"
 }
