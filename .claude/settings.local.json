@@ -4,7 +4,8 @@
       "WebFetch(domain:pypi.org)",
       "Bash(brew list:*)",
       "Bash(brew style:*)",
-      "Bash(brew audit:*)"
+      "Bash(brew audit:*)",
+      "Bash(brew livecheck:*)"
     ]
   },
   "outputStyle": "default"
