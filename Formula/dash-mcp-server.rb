@@ -20,8 +20,8 @@ class DashMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "bab99399fec7fd38d43b6ca26c68a2b80f0d8a7bb07acb524882b018cbb616a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fb4f947b1249af980b08434158e79832390afee3fadb2f541b52186401018b2e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "ff6d5771b1af3e3be73a084a8e02efc72d1171c2a3e3a09d2393b71f002ea4b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6980cd553186bc92fe75fae0c40582f4893e86853092bdbc8f708ed920552df2"
   end
 
   depends_on "uv" => :build
