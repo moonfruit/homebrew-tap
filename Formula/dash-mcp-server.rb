@@ -4,7 +4,7 @@ class DashMcpServer < Formula
   desc "MCP server for Dash, the macOS API documentation browser"
   homepage "https://github.com/Kapeli/dash-mcp-server"
   url "https://github.com/Kapeli/dash-mcp-server/archive/758926ae996b7271e338f79bdd90caf4971e15dd.tar.gz"
-  version "1.1.0.1773707688"
+  version "1.1.0.1773736488"
   sha256 "5e073908dd3bd5a7d09a5f3ffdc7c88cbcdd0bbb94e2dc6e73fd87eb7793b3a4"
   license "MIT"
   head "https://github.com/Kapeli/dash-mcp-server.git", branch: "main"
