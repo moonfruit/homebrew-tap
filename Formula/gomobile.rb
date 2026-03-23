@@ -6,6 +6,12 @@ class Gomobile < Formula
   license "BSD-3-Clause"
   head "https://github.com/SagerNet/gomobile.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "f4f60cd567ae53ee9b7f21f96a3fa69a32b8c754bbc0214201a29365ad3f0bf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb7f2d6f5d39f804719036eee23f5546316eb7bad6eab448ee42acae81ec7fd5"
+  end
+
   depends_on "go" => :build
 
   def install
