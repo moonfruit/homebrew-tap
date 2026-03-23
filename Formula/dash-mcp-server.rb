@@ -7,6 +7,7 @@ class DashMcpServer < Formula
   version "1.1.0.1773736488"
   sha256 "5e073908dd3bd5a7d09a5f3ffdc7c88cbcdd0bbb94e2dc6e73fd87eb7793b3a4"
   license "MIT"
+  revision 1
   head "https://github.com/Kapeli/dash-mcp-server.git", branch: "main"
 
   livecheck do
