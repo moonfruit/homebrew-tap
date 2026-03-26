@@ -11,19 +11,11 @@ class Serena < Formula
 
   desc "Coding agent toolkit providing semantic code retrieval and editing via MCP"
   homepage "https://oraios.github.io/serena"
-  url "https://github.com/oraios/serena/archive/0c915bd18d51e2225508b6dccc8ae3bd9c20be1e.tar.gz"
-  version "0.1.4.1773751825"
-  sha256 "8bc8836b76721819dd7dddb21b0f37b420dcc4ec5a5d28d47c7f61318a1122f5"
+  url "https://github.com/oraios/serena/archive/8c62b0d991f280af62531fb2c62bd1bb3310f0d4.tar.gz"
+  version "0.1.4"
+  sha256 "2ef8722bd85ba6fec22e12f3e8ab1da35f24cab2379528a1e5daea1f5bbd87ae"
   license "MIT"
   head "https://github.com/oraios/serena.git", branch: "main"
-
-  livecheck do
-    url "https://api.github.com/repos/oraios/serena/branches/main"
-    strategy :json do |json|
-      date = json.dig("commit", "commit", "author", "date")
-      "0.1.4.#{DateTime.parse(date).strftime("%s")}"
-    end
-  end
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
@@ -34,6 +26,7 @@ class Serena < Formula
   depends_on "uv" => :build
   depends_on "certifi"
   depends_on "cryptography"
+  depends_on :macos
   depends_on "pydantic"
   depends_on "python-packaging"
   depends_on "python@3.14"
