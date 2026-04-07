@@ -13,8 +13,8 @@ class UutilsSelected < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any,                 arm64_tahoe:  "5d26890eb325c5c5a6828dee60377df634a5be6202fdad3219d841112a3345fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c053d4368678505478dca445521e6c2c95871724d3166edf9e59419828593e13"
+    sha256 cellar: :any,                 arm64_tahoe:  "d257ebfa3dc8a7fab22dfdc14f8bcd6e4afaa27c5e0b0bf45883c619fc7f710d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c557c8a1bd2cbb8e51d8c62f2e0dbbbb129e91669271380b0ef1564757b2ac7"
   end
 
   keg_only :versioned_formula
