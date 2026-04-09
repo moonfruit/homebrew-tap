@@ -30,11 +30,29 @@ brew install --cask moonfruit/tap/<cask>
 - **Repository**: [codebuddy/codebuddy-code](https://cnb.cool/codebuddy/codebuddy-code)
 - **Description**: AI-powered command-line workflow tool providing intelligent code assistance for developers
 
-#### 🌐 sing-box@2
+#### 🌐 dog
+
+- **Homepage**: [dog](https://github.com/natesales/q)
+- **Repository**: [natesales/q](https://github.com/natesales/q)
+- **Description**: Tiny command-line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH
+
+#### 🔌 ccstatusline
+
+- **Homepage**: [ccstatusline](https://github.com/sirmalloc/ccstatusline)
+- **Repository**: [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline)
+- **Description**: Status line formatter for Claude Code
+
+#### 🌐 sing-box@beta
 
 - **Homepage**: [sing-box](https://sing-box.sagernet.org/)
 - **Repository**: [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
-- **Description**: Universal proxy platform supporting multiple protocols for network proxying (nightly)
+- **Description**: Universal proxy platform supporting multiple protocols for network proxying (beta/alpha)
+
+#### 🌐 sing-box@ref1nd
+
+- **Homepage**: [sing-box reF1nd](https://sing-boxr.dustinwin.us.kg/)
+- **Repository**: [reF1nd/sing-box](https://github.com/reF1nd/sing-box)
+- **Description**: Universal proxy platform supporting multiple protocols for network proxying (reF1nd variant)
 
 #### 🗺️ geo
 
@@ -179,6 +197,18 @@ brew install --cask moonfruit/tap/<cask>
 - **Homepage**: [CXPatcher](https://github.com/italomandara/CXPatcher)
 - **Repository**: [italomandara/CXPatcher](https://github.com/italomandara/CXPatcher)
 - **Description**: CrossOver dependency upgrade patching tool for improved compatibility
+
+#### 🎨 meshmixer
+
+- **Homepage**: [meshmixer](https://meshmixer.org/)
+- **Repository**: N/A
+- **Description**: 3D modeling software
+
+#### 🌐 sfm@alpha
+
+- **Homepage**: [SFM alpha](https://sing-box.sagernet.org/)
+- **Repository**: [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
+- **Description**: Standalone client for sing-box, the universal proxy platform
 
 ### Fonts
 
