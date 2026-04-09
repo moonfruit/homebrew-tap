@@ -8,12 +8,10 @@
       "Bash(brew search:*)",
       "Bash(brew style:*)",
       "Bash(brew test:*)",
-      "Bash(date:*)",
       "Bash(gh api:*)",
       "WebFetch(domain:pypi.org)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "mcp__homebrew__info"
     ]
-  },
-  "outputStyle": "default"
+  }
 }
