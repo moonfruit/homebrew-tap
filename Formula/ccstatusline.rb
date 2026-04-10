@@ -15,7 +15,17 @@ class Ccstatusline < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    libexec.glob("bin/*").each do |f|
+      script_name = File.basename(f)
+      (bin/script_name).write <<~BASH
+        #!/usr/bin/env bash
+        if command -v bun &>/dev/null; then
+          exec bun run "#{libexec}/bin/#{script_name}" "$@"
+        else
+          exec "#{libexec}/bin/#{script_name}" "$@"
+        fi
+      BASH
+    end
   end
 
   test do
