@@ -13,8 +13,6 @@ cask "qiyimedia" do
     strategy :extract_plist
   end
 
-  depends_on macos: ">= :catalina"
-
   app "爱奇艺.app"
 
   zap trash: [
