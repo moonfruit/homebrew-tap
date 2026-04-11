@@ -10,6 +10,12 @@ class Seqcli < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "a79d435a4f7892fed021843ae41b0516e7bc17c2e39fb10a4daed57cd4799cf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4f96353057165c4ad3e17f0b9511a7293399ab3bb3597ae73d5e9b8ce9545235"
+  end
+
   depends_on "dotnet"
 
   def install
