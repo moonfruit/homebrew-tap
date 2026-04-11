@@ -13,4 +13,14 @@ cask "macast" do
   end
 
   app "Macast.app"
+
+  zap trash: [
+    "~/Library/Application Support/Macast",
+    "~/Library/Preferences/cn.xfangfang.Macast.plist",
+    "~/Library/Saved Application State/cn.xfangfang.Macast.savedState",
+  ]
+
+  caveats do
+    requires_rosetta
+  end
 end
