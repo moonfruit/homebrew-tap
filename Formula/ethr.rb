@@ -5,6 +5,12 @@ class Ethr < Formula
   sha256 "c4bf9d6d4e0659f491b6de6d66ddfe3735d8f6fa791debe9e8bfe0aa0e93ddd3"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "d1c0d41361b9a9c6be05d6fb024e05ea7a5d317122e56f512c4e113bee98d2a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "818ca1683165207fe3ea9a0273ea9c3f229c68b7ebe9d51ceb1054de255254ed"
+  end
+
   depends_on "go" => :build
 
   # Upstream go.mod is missing golang.org/x/net dependency
