@@ -1,9 +1,9 @@
 class SingBoxRef1nd < Formula
   desc "Universal proxy platform"
   homepage "https://sing-boxr.dustinwin.us.kg/"
-  url "https://github.com/reF1nd/sing-box/archive/refs/tags/v1.14.0-alpha.9-reF1nd.tar.gz"
-  version "1.14.0-alpha.9-reF1nd"
-  sha256 "b2165d996b49f14fc73d13a6fe0a9e5bddceb142aed206b4ee50126d7d65ee4d"
+  url "https://github.com/reF1nd/sing-box/archive/refs/tags/v1.14.0-alpha.11-reF1nd.tar.gz"
+  version "1.14.0-alpha.11-reF1nd"
+  sha256 "2b768aa46399d0669b470d5f180f82c5859bced67c792debc0c201f5e6eaf016"
   license "GPL-3.0-or-later"
   head "https://github.com/reF1nd/sing-box.git", branch: "reF1nd-dev-next"
 
