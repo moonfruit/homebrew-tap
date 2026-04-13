@@ -1,8 +1,8 @@
 class Sing2seq < Formula
   desc "Transporter used to send sing-box logs to seq"
   homepage "https://github.com/moonfruit/sing2seq"
-  url "https://github.com/moonfruit/sing2seq/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "9f5ec90f5bd5a4d0434c6053a0e7b44f014b33352bf2ad39a423afd244673049"
+  url "https://github.com/moonfruit/sing2seq/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "bf23702f67dd160347643797101974a9b650793ff9c7f8ba978ce5c0e01441a7"
   license "MIT"
 
   bottle do
