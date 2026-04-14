@@ -1,8 +1,8 @@
 class Sing2seq < Formula
   desc "Transporter used to send sing-box logs to seq"
   homepage "https://github.com/moonfruit/sing2seq"
-  url "https://github.com/moonfruit/sing2seq/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "6d06a71c55c3f417057d586de434202f8f444981683fb2f33002922799c0a3ca"
+  url "https://github.com/moonfruit/sing2seq/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "a31dda9b95a8f8e1ef06bce08db105ab8970ee391cc43a266299c7671183a29f"
   license "MIT"
 
   bottle do
@@ -15,6 +15,7 @@ class Sing2seq < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    generate_completions_from_executable(bin/"sing2seq", shell_parameter_format: :cobra)
   end
 
   test do
