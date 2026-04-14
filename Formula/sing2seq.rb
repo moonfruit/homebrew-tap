@@ -7,8 +7,8 @@ class Sing2seq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "4dc2099257925cc124a2a04cc4328ab355a214d2c6c4852e1acd8b0d45c35f05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b6497602b7315f1a702c99be5f785a41376bb8495c6996c10c58663134b4a4e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "d0b7b541dca898bc154ae45564f827a76ef9da7d64a3bc5919988fc33999530d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "900a35364f24f860051f3d1f741d610229c27ac9a312a464462ad98a7bfc5d89"
   end
 
   depends_on "go" => :build
