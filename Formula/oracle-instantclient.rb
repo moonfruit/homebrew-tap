@@ -9,8 +9,8 @@ end
 class OracleInstantclient < Formula
   desc "Instant Client for Oracle"
   homepage "https://www.oracle.com/database/technologies/instant-client.html"
-  url "https://download.oracle.com/otn_software/mac/instantclient/233023/instantclient-basic-macos.arm64-23.3.0.23.09-2.dmg"
-  sha256 "ff6fcfb8e2a231a9e0eae858691fe854451b375e654adf4a62331981a60e9569"
+  url "https://download.oracle.com/otn_software/mac/instantclient/2326100/instantclient-basic-macos.arm64-23.26.1.0.0.dmg"
+  sha256 "5dc67a7e1cccd0a01d5bf53d7cf13b56f00999e3c2c1a309d8600cd766d80b41"
   license :cannot_represent
 
   livecheck do
@@ -22,42 +22,51 @@ class OracleInstantclient < Formula
   depends_on :macos
 
   resource "sqlplus" do
-    url "https://download.oracle.com/otn_software/mac/instantclient/233023/instantclient-sqlplus-macos.arm64-23.3.0.23.09.dmg"
-    sha256 "9213a399a13101bdebcd613027fa385ef44c42bba2330f9480b16db0e1a7d676"
+    url "https://download.oracle.com/otn_software/mac/instantclient/2326100/instantclient-sqlplus-macos.arm64-23.26.1.0.0.dmg"
+    sha256 "db973a9d2a672b462333feda091c8b2e2defe7aa2a2f4b266a8f36ee356d979e"
   end
 
   resource "sdk" do
-    url "https://download.oracle.com/otn_software/mac/instantclient/233023/instantclient-sdk-macos.arm64-23.3.0.23.09.dmg"
-    sha256 "3deadfce089eb6b9c091b1fd213ed7a66685bb22643c7c74be5e050ad8cfccbb"
+    url "https://download.oracle.com/otn_software/mac/instantclient/2326100/instantclient-sdk-macos.arm64-23.26.1.0.0.dmg"
+    sha256 "6a101a8c6651a76055a3222b1860dcdabdc7c14c82759daa8ca11c5d13c8d1eb"
   end
 
   resource "precompiler" do
-    url "https://download.oracle.com/otn_software/mac/instantclient/233023/instantclient-precomp-macos.arm64-23.3.0.23.09.dmg"
-    sha256 "d5b4a91507bf792535e990df02b104560053044505f2c82f229aab7686c944d8"
+    url "https://download.oracle.com/otn_software/mac/instantclient/2326100/instantclient-precomp-macos.arm64-23.26.1.0.0.dmg"
+    sha256 "d5fc90ffa7e36e55a97154737debabf618cb3fe7f90f4f0e909e538afe3721ea"
   end
 
   def install
+    dir = "instantclient_#{version.major}_#{version.minor}"
     excluded = %w[INSTALL_IC_README.txt install_ic.sh]
 
-    pkgetc.install "network"
-    libexec.install Dir["*"] - [*excluded, "network"]
-    libexec.install_symlink pkgetc/"network"
+    cd dir do
+      pkgetc.install "network"
+      libexec.install Dir["*"] - [*excluded, "network"]
+      libexec.install_symlink pkgetc/"network"
+    end
 
     resource("sqlplus").stage do
-      libexec.install Dir["*"] - excluded
+      cd dir do
+        libexec.install Dir["*"] - excluded
+      end
     end
 
     resource("sdk").stage do
-      libexec.install Dir["*"] - excluded
+      cd dir do
+        libexec.install Dir["*"] - excluded
+      end
     end
 
     resource("precompiler").stage do
-      pkgetc.install "precomp"
-      libexec.install Dir["*"] - [*excluded, "sdk", "precomp"]
-      libexec.install_symlink pkgetc/"precomp"
-      (libexec/"sdk").install "sdk/proc"
-      (libexec/"sdk/demo").install Dir["sdk/demo/*"]
-      (libexec/"sdk/include").install Dir["sdk/include/*"]
+      cd dir do
+        pkgetc.install "precomp"
+        libexec.install Dir["*"] - [*excluded, "sdk", "precomp"]
+        libexec.install_symlink pkgetc/"precomp"
+        (libexec/"sdk").install "sdk/proc"
+        (libexec/"sdk/demo").install Dir["sdk/demo/*"]
+        (libexec/"sdk/include").install Dir["sdk/include/*"]
+      end
     end
 
     env = {
