@@ -1,8 +1,8 @@
 class Inkos < Formula
   desc "Autonomous novel writing cli ai agent"
   homepage "https://github.com/Narcooo/inkos"
-  url "https://registry.npmjs.org/@actalk/inkos/-/inkos-1.3.5.tgz"
-  sha256 "1b0ef2e0d7d97088a00ae58e85f074d530d14b80fa78283ec34be4f7af8c79f5"
+  url "https://registry.npmjs.org/@actalk/inkos/-/inkos-1.3.6.tgz"
+  sha256 "2b303871f58f43c33f8847e15e2f47109aab5526c678bd50b9aff503406d3951"
   license "AGPL-3.0-only"
 
   bottle do
