@@ -22,6 +22,12 @@ class WecomCli < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "e61408805c012abf5ad90a1a76e44cb230ded69b82125719401834195b7f8b82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5eb8364196e3e4b3cb80ca2bba3de67e512fc228da939a6d37c1400b3c89b540"
+  end
+
   depends_on "rust" => :build
 
   def install
