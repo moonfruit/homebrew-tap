@@ -16,6 +16,8 @@ jobs:
         include:
           - os: ubuntu-latest
             container: ghcr.io/homebrew/brew:main
+          - os: ubuntu-24.04-arm
+            container: ghcr.io/homebrew/brew:main
     runs-on: ${{ matrix.os }}
     container: ${{ matrix.container }}
     permissions:
