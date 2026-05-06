@@ -1,8 +1,8 @@
 class LzcCli < Formula
   desc "Client for Lazycat hardware"
   homepage "https://www.npmjs.com/package/@lazycatcloud/lzc-cli"
-  url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-2.0.3.tgz"
-  sha256 "b5fc9162518a15f6537b5ce5d4eaedc8b8cdf6a496113b4784a96bf806c2b3c3"
+  url "https://registry.npmjs.org/@lazycatcloud/lzc-cli/-/lzc-cli-2.0.5.tgz"
+  sha256 "55f85c2f1a3a31f2114a1921ece7be193ea85650814d9c67b26a5b21f1f80dde"
   license "ISC"
 
   bottle do
@@ -27,6 +27,8 @@ class LzcCli < Formula
     Dir[libexec/"**/prebuilds/*"].each do |d|
       rm_r(d) if File.directory?(d) && File.basename(d) != "#{os}-#{cpu}"
     end
+
+    rm Dir[libexec/"**/_lpk/busybox-*"] if Hardware::CPU.arm?
 
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
