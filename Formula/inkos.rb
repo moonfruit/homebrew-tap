@@ -7,8 +7,8 @@ class Inkos < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "326fe3079d9a818d50e0aa18a04158ad5d6a8046cdcce29db09b915732fd8681"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "92999c896b2e4a72d2b0bad699b64754d13c5e10ea427cde2413ea8635d689a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "f558605e99023fc3b0b0d7fbd4140c2a0e66c298544dfd7817aa3a32d67fcb28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4c249a55c4e932159cefae43004989e13ee36ea97ee6198891a154344fa43c0"
   end
 
   depends_on "node"
