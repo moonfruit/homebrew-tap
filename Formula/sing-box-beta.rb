@@ -4,26 +4,34 @@ class SingBoxBeta < Formula
   url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.0-alpha.21.tar.gz"
   sha256 "c07c9d8572cfcfc3f618604951294dc81e14e7bf0fe75ffd42597298721e37cb"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
   livecheck do
     url :stable
   end
 
-  bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "cbe2c2314260e90522be9b698cd2eff5a2b5785f89f412a5a21f592ec365665e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "21f42a751d8159b8275e38ed8566822b56c72d0964e62df7f3b9b7a484f2a00b"
-  end
-
   keg_only :versioned_formula
 
   depends_on "go" => :build
 
+  on_linux do
+    depends_on "lld" => :build
+    depends_on "llvm" => :build
+  end
+
   def install
-    ldflags = "-X github.com/sagernet/sing-box/constant.Version=#{version} " \
-              "#{(buildpath/"release/LDFLAGS").read.strip} -s -w -buildid="
-    tags = (buildpath/"release/DEFAULT_BUILD_TAGS_OTHERS").read.strip
+    tags = File.read("release/DEFAULT_BUILD_TAGS").strip.split(",")
+    ldflags_shared = File.read("release/LDFLAGS").strip
+
+    if OS.linux?
+      ENV["CC"] = Formula["llvm"].opt_bin/"clang"
+      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+      ENV["CGO_ENABLED"] = "1"
+      ENV["CGO_LDFLAGS"] = "-fuse-ld=#{Formula["lld"].opt_bin}/ld.lld"
+    end
+
+    ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} #{ldflags_shared} -buildid="
     system "go", "build", *std_go_args(ldflags:, output: bin/"sing-box", tags:), "./cmd/sing-box"
     generate_completions_from_executable(bin/"sing-box", shell_parameter_format: :cobra)
   end
@@ -49,7 +57,7 @@ class SingBoxBeta < Formula
         ]
       }
     JSON
-    server = fork { exec bin/"sing-box", "run", "-D", testpath, "-c", testpath/"shadowsocks.json" }
+    server = spawn bin/"sing-box", "run", "-D", testpath, "-c", testpath/"shadowsocks.json"
 
     sing_box_port = free_port
     (testpath/"config.json").write <<~JSON
@@ -73,15 +81,15 @@ class SingBoxBeta < Formula
       }
     JSON
     system bin/"sing-box", "check", "-D", testpath, "-c", "config.json"
-    client = fork { exec bin/"sing-box", "run", "-D", testpath, "-c", "config.json" }
+    client = spawn bin/"sing-box", "run", "-D", testpath, "-c", "config.json"
 
-    sleep 3
     begin
+      sleep 3
       system "curl", "--socks5", "127.0.0.1:#{sing_box_port}", "github.com"
     ensure
-      Process.kill 9, server
+      Process.kill "TERM", server
+      Process.kill "TERM", client
       Process.wait server
-      Process.kill 9, client
       Process.wait client
     end
   end
