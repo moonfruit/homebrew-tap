@@ -13,6 +13,13 @@ class SingBoxRef1nd < Formula
     regex(/^v(\d(?:\.\d+)+(-\w+(?:\.\d+)?)?-reF1nd(?:\.\d+)?)$/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "d0bd93472daddf69893b04852c2bdb1295e2d5b8bbe94c602e9e494c198fc978"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "682b47482270a5d83c294f95366d01d518b4ff51d77c5eab2f25def88451f37d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "86b92e3c7c71364497fe2e5cde55c99911a559d9bba8c7c0fdde6bfa6d249d61"
+  end
+
   keg_only :versioned_formula
 
   depends_on "go" => :build
