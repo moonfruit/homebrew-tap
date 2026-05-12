@@ -15,7 +15,7 @@ cask "sfm@alpha" do
     regex(/^v?(\d+(?:\.\d+)+(?:[._-](?:alpha|beta)[._-]?\d+)?)$/i)
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   pkg "SFM-#{version}-#{arch}.pkg"
 
