@@ -12,6 +12,7 @@ cask "rebased" do
   end
 
   depends_on arch: :arm64
+  depends_on :macos
 
   app "Rebased.app"
   shimscript = "#{staged_path}/rebased.wrapper.sh"
