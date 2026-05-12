@@ -1,6 +1,6 @@
 cask "font-pinyin-wenkai-light" do
-  version "1.10.1"
-  sha256 "13621eab8ac4fbc31e02ad41c7ba303aa60bbf08b3f4e4ad6337ecbd7a1329b1"
+  version "1.10.2"
+  sha256 "0b89833a9339f11dde277aa0ba25449e4d097149e01987d85763fd237ee4eb77"
 
   url "https://github.com/jaywcjlove/pinyin-font/releases/download/v#{version}/pinyin-wenkai-light.ttf"
   name "font-pinyin-wenkai-light"
