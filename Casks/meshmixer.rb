@@ -8,6 +8,8 @@ cask "meshmixer" do
   desc "3D modeling software"
   homepage "https://meshmixer.org/"
 
+  depends_on :macos
+
   pkg "Autodesk_Meshmixer_v3p5_MacOS.pkg"
 
   uninstall pkgutil: "com.meshmixer.*"
