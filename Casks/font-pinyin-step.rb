@@ -1,6 +1,6 @@
 cask "font-pinyin-step" do
-  version "1.10.1"
-  sha256 "45843adb0232eb2f6c0ab712847ec8b3c7ad893a59a110a1907589bba1f02e69"
+  version "1.10.2"
+  sha256 "9931a418597adb746c6c49b635e91f296d360075835baf39c849ee10d844eedc"
 
   url "https://github.com/jaywcjlove/pinyin-font/releases/download/v#{version}/pinyin-step.ttf"
   name "font-pinyin-step"
