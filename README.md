@@ -20,6 +20,14 @@ brew install moonfruit/tap/<formula>
 brew install --cask moonfruit/tap/<cask>
 ```
 
+### Update / Uninstall
+
+```bash
+brew update && brew upgrade
+brew uninstall moonfruit/tap/<formula>
+brew untap moonfruit/tap        # remove the tap entirely
+```
+
 ## 🍺 Formula List
 
 ### Applications & Tools
@@ -42,23 +50,53 @@ brew install --cask moonfruit/tap/<cask>
 - **Repository**: [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline)
 - **Description**: Status line formatter for Claude Code
 
-#### 🌐 sing-box@beta
+#### 🌐 sing-box-beta
 
 - **Homepage**: [sing-box](https://sing-box.sagernet.org/)
 - **Repository**: [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - **Description**: Universal proxy platform supporting multiple protocols for network proxying (beta/alpha)
 
-#### 🌐 sing-box@ref1nd
+#### 🌐 sing-box-ref1nd
 
 - **Homepage**: [sing-box reF1nd](https://sing-boxr.dustinwin.us.kg/)
 - **Repository**: [reF1nd/sing-box](https://github.com/reF1nd/sing-box)
 - **Description**: Universal proxy platform supporting multiple protocols for network proxying (reF1nd variant)
+
+#### 🪵 sing2seq
+
+- **Homepage**: [sing2seq](https://github.com/moonfruit/sing2seq)
+- **Repository**: [moonfruit/sing2seq](https://github.com/moonfruit/sing2seq)
+- **Description**: Transporter that forwards sing-box logs to a Seq server
+
+#### 🪵 seqcli
+
+- **Homepage**: [Seq](https://datalust.co/seq)
+- **Repository**: [datalust/seqcli](https://github.com/datalust/seqcli)
+- **Description**: Command-line client for Seq structured logging
 
 #### 🗺️ geo
 
 - **Homepage**: [geo](https://github.com/MetaCubeX/geo)
 - **Repository**: [MetaCubeX/geo](https://github.com/MetaCubeX/geo)
 - **Description**: Geographic resource manager for managing IP geolocation databases and routing rules
+
+#### 🌐 ethr
+
+- **Homepage**: [ethr](https://github.com/microsoft/ethr)
+- **Repository**: [microsoft/ethr](https://github.com/microsoft/ethr)
+- **Description**: Comprehensive network measurement tool supporting TCP, UDP, and ICMP protocols
+
+#### 💬 wecom-cli
+
+- **Homepage**: [wecom-cli](https://github.com/WecomTeam/wecom-cli)
+- **Repository**: [WecomTeam/wecom-cli](https://github.com/WecomTeam/wecom-cli)
+- **Description**: Command-line client for WeCom (WeChat Work)
+
+#### ✍️ inkos
+
+- **Homepage**: [inkos](https://github.com/Narcooo/inkos)
+- **Repository**: [Narcooo/inkos](https://github.com/Narcooo/inkos)
+- **Description**: Autonomous novel-writing CLI AI agent
 
 ### Programming Tools
 
@@ -79,6 +117,18 @@ brew install --cask moonfruit/tap/<cask>
 - **Homepage**: [lzc-cli](https://www.npmjs.com/package/@lazycatcloud/lzc-cli)
 - **Repository**: N/A
 - **Description**: Lazycat hardware client tool
+
+#### 🐹 gotools
+
+- **Homepage**: [gotools](https://github.com/moonfruit/gotools)
+- **Repository**: [moonfruit/gotools](https://github.com/moonfruit/gotools)
+- **Description**: Monorepo of small Go command-line utilities
+
+#### ☕ gwt@2.4 / gwt@2.5 / gwt@2.6 / gwt@2.7
+
+- **Homepage**: [GWT Project](https://www.gwtproject.org/)
+- **Repository**: [gwtproject/gwt](https://github.com/gwtproject/gwt)
+- **Description**: Google Web Toolkit (versioned, keg-only). Pick the version matching the Java/legacy project you need
 
 ### Security & Encryption
 
@@ -180,12 +230,6 @@ brew install --cask moonfruit/tap/<cask>
 - **Repository**: N/A
 - **Description**: cURL tool with TLCP support
 
-#### 🌐 ethr
-
-- **Homepage**: [ethr](https://github.com/microsoft/ethr)
-- **Repository**: [microsoft/ethr](https://github.com/microsoft/ethr)
-- **Description**: Comprehensive network measurement tool supporting TCP, UDP, and ICMP protocols
-
 #### 🖨️ canon-mf-ufr2-printer
 
 - **Homepage**: [Canon Support](https://hk.canon/en/support)
@@ -209,6 +253,12 @@ brew install --cask moonfruit/tap/<cask>
 - **Homepage**: [SFM alpha](https://sing-box.sagernet.org/)
 - **Repository**: [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - **Description**: Standalone client for sing-box, the universal proxy platform
+
+#### 🔀 rebased
+
+- **Homepage**: [rebased](https://github.com/DetachHead/rebased)
+- **Repository**: [DetachHead/rebased](https://github.com/DetachHead/rebased)
+- **Description**: JetBrains-based Git client
 
 ### Fonts
 

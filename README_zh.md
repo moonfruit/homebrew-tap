@@ -18,6 +18,14 @@ brew install moonfruit/tap/<formula>
 brew install --cask moonfruit/tap/<cask>
 ```
 
+### 更新 / 卸载
+
+```bash
+brew update && brew upgrade
+brew uninstall moonfruit/tap/<formula>
+brew untap moonfruit/tap        # 完全移除 tap
+```
+
 ## 🍺 Formula 列表
 
 ### 应用与工具
@@ -40,23 +48,53 @@ brew install --cask moonfruit/tap/<cask>
 - **仓库**：[sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline)
 - **简介**：Claude Code 状态行格式化工具
 
-#### 🌐 sing-box@beta
+#### 🌐 sing-box-beta
 
 - **主页**：[sing-box](https://sing-box.sagernet.org/)
 - **仓库**：[SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - **简介**：通用代理平台，支持多种协议的网络代理工具 (beta/alpha)
 
-#### 🌐 sing-box@ref1nd
+#### 🌐 sing-box-ref1nd
 
 - **主页**：[sing-box reF1nd](https://sing-boxr.dustinwin.us.kg/)
 - **仓库**：[reF1nd/sing-box](https://github.com/reF1nd/sing-box)
 - **简介**：通用代理平台，支持多种协议的网络代理工具 (reF1nd 变种)
+
+#### 🪵 sing2seq
+
+- **主页**：[sing2seq](https://github.com/moonfruit/sing2seq)
+- **仓库**：[moonfruit/sing2seq](https://github.com/moonfruit/sing2seq)
+- **简介**：将 sing-box 日志转发到 Seq 服务器的中转工具
+
+#### 🪵 seqcli
+
+- **主页**：[Seq](https://datalust.co/seq)
+- **仓库**：[datalust/seqcli](https://github.com/datalust/seqcli)
+- **简介**：Seq 结构化日志服务的命令行客户端
 
 #### 🗺️ geo
 
 - **主页**： [geo](https://github.com/MetaCubeX/geo)
 - **仓库**：[MetaCubeX/geo](https://github.com/MetaCubeX/geo)
 - **简介**：地理位置资源管理器，用于管理 IP 地理数据库和路由规则
+
+#### 🌐 ethr
+
+- **主页**：[ethr](https://github.com/microsoft/ethr)
+- **仓库**：[microsoft/ethr](https://github.com/microsoft/ethr)
+- **简介**：综合网络测量工具，支持 TCP、UDP 和 ICMP 协议
+
+#### 💬 wecom-cli
+
+- **主页**：[wecom-cli](https://github.com/WecomTeam/wecom-cli)
+- **仓库**：[WecomTeam/wecom-cli](https://github.com/WecomTeam/wecom-cli)
+- **简介**：企业微信 (WeCom) 命令行客户端
+
+#### ✍️ inkos
+
+- **主页**：[inkos](https://github.com/Narcooo/inkos)
+- **仓库**：[Narcooo/inkos](https://github.com/Narcooo/inkos)
+- **简介**：自主写小说的 CLI AI Agent
 
 ### 编程工具
 
@@ -77,6 +115,18 @@ brew install --cask moonfruit/tap/<cask>
 - **主页**：[lzc-cli](https://www.npmjs.com/package/@lazycatcloud/lzc-cli)
 - **仓库**：N/A
 - **简介**：Lazycat 硬件客户端工具
+
+#### 🐹 gotools
+
+- **主页**：[gotools](https://github.com/moonfruit/gotools)
+- **仓库**：[moonfruit/gotools](https://github.com/moonfruit/gotools)
+- **简介**：一组小型 Go 命令行工具的 monorepo
+
+#### ☕ gwt@2.4 / gwt@2.5 / gwt@2.6 / gwt@2.7
+
+- **主页**：[GWT Project](https://www.gwtproject.org/)
+- **仓库**：[gwtproject/gwt](https://github.com/gwtproject/gwt)
+- **简介**：Google Web Toolkit（多版本并存，keg-only），按所需的旧 Java 项目挑选对应版本
 
 ### 安全与加密
 
@@ -178,15 +228,9 @@ brew install --cask moonfruit/tap/<cask>
 - **仓库**：N/A
 - **简介**：支持 TLCP 的 cURL 工具
 
-#### 🌐 ethr
-
-- **主页**：[ethr](https://github.com/microsoft/ethr)
-- **仓库**：[microsoft/ethr](https://github.com/microsoft/ethr)
-- **简介**：综合网络测量工具，支持 TCP、UDP 和 ICMP 协议
-
 #### 🖨️ canon-mf-ufr2-printer
 
-- **主页**：[Cannon Support](https://hk.canon/en/support)
+- **主页**：[Canon Support](https://hk.canon/en/support)
 - **仓库**：N/A
 - **简介**：Canon imageCLASS MF 系列打印机的 UFRII/UFRII LT 驱动程序和实用工具
 
@@ -207,6 +251,12 @@ brew install --cask moonfruit/tap/<cask>
 - **主页**：[SFM alpha](https://sing-box.sagernet.org/)
 - **仓库**：[SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - **简介**：sing-box 通用代理平台的独立客户端
+
+#### 🔀 rebased
+
+- **主页**：[rebased](https://github.com/DetachHead/rebased)
+- **仓库**：[DetachHead/rebased](https://github.com/DetachHead/rebased)
+- **简介**：基于 JetBrains IDE 的 Git 客户端
 
 ### 字体
 
