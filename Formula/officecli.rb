@@ -5,6 +5,13 @@ class Officecli < Formula
   sha256 "900d264455339660b0de9b809a664373cfd1961ea9ca87fa93aed71fa210dbe8"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any,                 arm64_tahoe:  "57a233da863a41a4410ba2f09a1752be8093df3ee4004eba6b80c271b90a8f46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "95c82ba741ad1a189a8b61709ea55c54bf7202b432084db985c917f3eff46fe1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1737f56c798050178d4c59e96b3aae1d05a48274ee42863de73bdb8dfc9bd188"
+  end
+
   depends_on "dotnet" => :build
   depends_on "brotli"
 
