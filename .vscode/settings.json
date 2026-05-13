@@ -1,4 +1,0 @@
-{
-    "rubyLsp.customRubyCommand": "/opt/homebrew/bin/brew ruby",
-    "rubyLsp.formatter": "rubocop_internal",
-}
