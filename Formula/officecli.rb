@@ -1,8 +1,8 @@
 class Officecli < Formula
   desc "AI-friendly CLI for Office documents (.docx, .xlsx, .pptx)"
   homepage "https://officecli.ai"
-  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.91.tar.gz"
-  sha256 "7c7e0e1706ebd4a5b29bcd813788e482132abad13b202f8f5cfc0746ff08173a"
+  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.92.tar.gz"
+  sha256 "4266a47823a4a09fb24b1be8ef568de319386747122866fb99debfc053199b05"
   license "Apache-2.0"
 
   bottle do
