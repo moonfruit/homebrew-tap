@@ -6,7 +6,11 @@ class Ethr < Formula
   license "MIT"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "9561789c7286f6bca21bd95b4e1bd724e8a90f67b4eb3360353045fbb71f0a09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "815f9a182a8c1533f8c1a8b22b2e63d574f0d8822393ce84f423243697c07bb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "98aabebfd23c4e2f2053fc42887276fd3af2cdeb13572d88c44f217740cf768d"
   end
 
   depends_on "go" => :build
