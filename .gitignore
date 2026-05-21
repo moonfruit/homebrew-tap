@@ -1,2 +1,4 @@
 .*
 !.git*
+!/.claude
+/.claude/settings.local.json
