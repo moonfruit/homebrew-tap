@@ -15,12 +15,13 @@ description: >-
 A Homebrew *rebuild* produces a fresh bottle of the **same** formula version.
 The online `pr-pull` CI rebuilds the bottle and writes back the `sha256` lines,
 so the only change this skill makes to the formula is replacing the entire
-`bottle do` block body with a single `rebuild N` line. Example end state:
+`bottle do` block body with a single `rebuild N` line. Example end state
+(shown dedented; in a real formula the block is indented two spaces):
 
 ```ruby
-  bottle do
-    rebuild 1
-  end
+bottle do
+  rebuild 1
+end
 ```
 
 The argument to this skill is the formula name (e.g. `xxx` for

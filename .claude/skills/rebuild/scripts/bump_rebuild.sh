@@ -19,77 +19,87 @@
 #
 # Exit codes:
 #   0  ok
-#   1  usage error / formula file not found
+#   1  usage error / formula file not found / malformed bottle block
 #   3  formula has no `bottle do ... end` block (nothing to rebuild)
 set -euo pipefail
 
 check_only=0
-if [[ "${1:-}" == "--check" ]]; then
+if [[ "${1:-}" == "--check" ]]
+then
   check_only=1
   shift
 fi
 
 raw="${1:-}"
-if [[ -z "$raw" ]]; then
+if [[ -z "${raw}" ]]
+then
   echo "usage: bump_rebuild.sh [--check] <formula-name>" >&2
   exit 1
 fi
 
-name="${raw##*/}"   # drop any leading path / tap prefix
-name="${name%.rb}"  # drop trailing .rb
+name="${raw##*/}"  # drop any leading path / tap prefix
+name="${name%.rb}" # drop trailing .rb
 file="Formula/${name}.rb"
 
-if [[ ! -f "$file" ]]; then
-  echo "error: $file not found (run from the tap repository root)" >&2
+if [[ ! -f "${file}" ]]
+then
+  echo "error: ${file} not found (run from the tap repository root)" >&2
   exit 1
 fi
 
-tmp="$(mktemp)"
-trap 'rm -f "$tmp"' EXIT
+# Walk the file once. Lines outside the `bottle do ... end` block are kept
+# verbatim; lines inside it are dropped, while the current `rebuild` value is
+# remembered. A single `rebuild N` line is emitted before the closing `end`.
+found=0
+inblock=0
+cur=0
+output=()
 
-# Walk the file once: copy every line outside the bottle block verbatim, drop
-# every line inside it, and emit a single `rebuild N` line just before the
-# block's closing `end`. awk exits 3 if no `bottle do` block was found.
-set +e
-next="$(
-  awk -v tmp="$tmp" '
-    BEGIN { inblock = 0; found = 0; cur = 0 }
-    !found && /^  bottle do[ \t]*$/ {
-      found = 1; inblock = 1
-      print > tmp
-      next
-    }
-    inblock && /^  end[ \t]*$/ {
-      inblock = 0
-      n = cur + 1
-      print "    rebuild " n > tmp
-      print > tmp
-      next
-    }
-    inblock {
-      if ($1 == "rebuild") { cur = $2 + 0 }
-      next
-    }
-    { print > tmp }
-    END {
-      if (!found) { exit 3 }
-      print cur + 1
-    }
-  ' "$file"
-)"
-status=$?
-set -e
+while IFS= read -r line || [[ -n "${line}" ]]
+do
+  if [[ "${found}" -eq 0 && "${line}" == "  bottle do" ]]
+  then
+    found=1
+    inblock=1
+    output+=("${line}")
+    continue
+  fi
 
-if [[ $status -eq 3 ]]; then
-  echo "error: $file has no \`bottle do\` block; nothing to rebuild" >&2
+  if [[ "${inblock}" -eq 1 && "${line}" == "  end" ]]
+  then
+    inblock=0
+    output+=("    rebuild $((cur + 1))")
+    output+=("${line}")
+    continue
+  fi
+
+  if [[ "${inblock}" -eq 1 ]]
+  then
+    if [[ "${line}" =~ ^[[:space:]]*rebuild[[:space:]]+([0-9]+) ]]
+    then
+      cur="${BASH_REMATCH[1]}"
+    fi
+    continue
+  fi
+
+  output+=("${line}")
+done <"${file}"
+
+if [[ "${found}" -eq 0 ]]
+then
+  echo "error: ${file} has no \`bottle do\` block; nothing to rebuild" >&2
   exit 3
 fi
-if [[ $status -ne 0 ]]; then
-  exit "$status"
+
+if [[ "${inblock}" -eq 1 ]]
+then
+  echo "error: ${file} has an unterminated \`bottle do\` block" >&2
+  exit 1
 fi
 
-if [[ $check_only -eq 0 ]]; then
-  cat "$tmp" > "$file"
+if [[ "${check_only}" -eq 0 ]]
+then
+  printf '%s\n' "${output[@]}" >"${file}"
 fi
 
-echo "$next"
+echo "$((cur + 1))"
