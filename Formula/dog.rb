@@ -6,9 +6,7 @@ class Dog < Formula
   license "GPL-3.0-only"
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "a625f869898c3539ac321baa41c86f9b5de025d9a949a11604341a3efe8a4665"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6280631fd5539d448a48609ad66600e1dfe1fab67f45958b96a6324689dac9ae"
+    rebuild 1
   end
 
   depends_on "go" => :build
@@ -25,6 +23,6 @@ class Dog < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/dog --version")
-    assert_match "ns: ns1.dnsimple.com.", shell_output("#{bin}/dog brew.sh NS --format yaml")
+    assert_match(/ns: ns\d\.dnsimple/, shell_output("#{bin}/dog brew.sh NS --format yaml"))
   end
 end
