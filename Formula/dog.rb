@@ -6,7 +6,11 @@ class Dog < Formula
   license "GPL-3.0-only"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "b830111b93f9448832432c5574a7ae7bc10fa398ccb197eefeb6bca7453c78ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "dadc15e5a3c9e5339b68075b1a2b08f2933b0ac667134911f483c0d68463f09f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4034707d9205988763e99ba6d15958ec14fefcdb4628f05d69150458d09a39d9"
   end
 
   depends_on "go" => :build
