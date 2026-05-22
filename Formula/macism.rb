@@ -1,8 +1,8 @@
 class Macism < Formula
   desc "Reliable CLI macOS input source manager"
   homepage "https://github.com/laishulu/macism"
-  url "https://github.com/laishulu/macism/archive/refs/tags/v3.0.10.tar.gz"
-  sha256 "e333c5f158452494e159a9b8d848b14c72876ae891cdf83981f57f4fcf045e1f"
+  url "https://github.com/laishulu/macism/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "ca8ddeccc8e5ee4e3b497c1aa5c715c63bae2775b44511c0ec5ef9b4438f2863"
   license "MIT"
 
   bottle do
