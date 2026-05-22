@@ -7,8 +7,7 @@ class Macism < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "525ab0198ee0c2bd42bb72809112a964912c14d8658fd4ce65ff4baf0b3db019"
-    sha256 cellar: :any_skip_relocation, sequoia:     "adb06c9247842604b0d297f5576c49bcd7f7edc8191bf252c69ef7c3d5409f6d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "7a71334d50dd589dc1ddb9edc208f66d62591a7a7384764da6e6aac85b37c9ee"
   end
 
   depends_on :macos
