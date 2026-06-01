@@ -10,6 +10,8 @@ on:
 
 jobs:
   test-bot:
+    env:
+      HOMEBREW_NO_REQUIRE_TAP_TRUST: "1"
     strategy:
       matrix:
         os: [macos-26]
