@@ -5,6 +5,11 @@ class Imsg < Formula
   sha256 "60a4a75d8708769d0099a6bfa7626446dff575e0f21f4c973c9defc4b245572b"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 arm64_tahoe: "66529bc1ec654944cbf57d7f3860b71407f435ab3bb8a884a65986589e1b4525"
+  end
+
   depends_on xcode: ["16.0", :build]
   depends_on :macos
 
