@@ -5,6 +5,11 @@ class Remindctl < Formula
   sha256 "360242b73cfca1cde5e5ab6cb8ceef1f91b61b7eae603c287ba56b3d70a24eda"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "ab1c55d7dd31c8217dfbafaa0471cb0e7edafcfefad384f99e8007aded789ea3"
+  end
+
   depends_on xcode: ["16.0", :build]
   depends_on :macos
 
