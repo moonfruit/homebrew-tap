@@ -96,6 +96,24 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[Narcooo/inkos](https://github.com/Narcooo/inkos)
 - **简介**：自主写小说的 CLI AI Agent
 
+#### 💬 imsg
+
+- **主页**：[imsg](https://github.com/openclaw/imsg)
+- **仓库**：[openclaw/imsg](https://github.com/openclaw/imsg)
+- **简介**：在终端收发 iMessage / 短信
+
+#### ✅ remindctl
+
+- **主页**：[remindctl](https://github.com/openclaw/remindctl)
+- **仓库**：[openclaw/remindctl](https://github.com/openclaw/remindctl)
+- **简介**：操作 Apple 提醒事项的高速命令行工具
+
+#### 📄 officecli
+
+- **主页**：[OfficeCLI](https://officecli.ai)
+- **仓库**：[iOfficeAI/OfficeCLI](https://github.com/iOfficeAI/OfficeCLI)
+- **简介**：面向 AI 的 Office 文档（.docx、.xlsx、.pptx）命令行工具
+
 ### 编程工具
 
 #### 💻 impl
@@ -103,6 +121,18 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **主页**：[impl](https://github.com/josharian/impl)
 - **仓库**：[josharian/impl](https://github.com/josharian/impl)
 - **简介**：Go 语言方法存根生成器，自动生成接口实现代码
+
+#### 🕸️ codegraph
+
+- **主页**：[codegraph](https://github.com/colbymchenry/codegraph)
+- **仓库**：[colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)
+- **简介**：通过 MCP 为 AI Agent 提供本地优先的代码智能
+
+#### 🪟 zenity-go
+
+- **主页**：[zenity](https://pkg.go.dev/github.com/ncruces/zenity)
+- **仓库**：[ncruces/zenity](https://github.com/ncruces/zenity)
+- **简介**：在 Windows、macOS 和 Linux 上为 Go 提供 Zenity 对话框
 
 #### ⌨️ ngrrram
 
@@ -187,6 +217,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **主页**：[macism](https://github.com/laishulu/macism)
 - **仓库**：[laishulu/macism](https://github.com/laishulu/macism)
 - **简介**：可靠的命令行 macOS 输入源管理器
+
+#### 🔒 tunblkctl
+
+- **主页**：[tunblkctl](https://github.com/azhuchkov/tunblkctl)
+- **仓库**：[azhuchkov/tunblkctl](https://github.com/azhuchkov/tunblkctl)
+- **简介**：Tunnelblick（OpenVPN）的命令行前端
 
 #### 🎨 colorsvn
 

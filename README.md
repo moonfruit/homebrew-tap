@@ -98,6 +98,24 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [Narcooo/inkos](https://github.com/Narcooo/inkos)
 - **Description**: Autonomous novel-writing CLI AI agent
 
+#### 💬 imsg
+
+- **Homepage**: [imsg](https://github.com/openclaw/imsg)
+- **Repository**: [openclaw/imsg](https://github.com/openclaw/imsg)
+- **Description**: Send and read iMessage / SMS from the terminal
+
+#### ✅ remindctl
+
+- **Homepage**: [remindctl](https://github.com/openclaw/remindctl)
+- **Repository**: [openclaw/remindctl](https://github.com/openclaw/remindctl)
+- **Description**: Fast CLI for Apple Reminders
+
+#### 📄 officecli
+
+- **Homepage**: [OfficeCLI](https://officecli.ai)
+- **Repository**: [iOfficeAI/OfficeCLI](https://github.com/iOfficeAI/OfficeCLI)
+- **Description**: AI-friendly CLI for Office documents (.docx, .xlsx, .pptx)
+
 ### Programming Tools
 
 #### 💻 impl
@@ -105,6 +123,18 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Homepage**: [impl](https://github.com/josharian/impl)
 - **Repository**: [josharian/impl](https://github.com/josharian/impl)
 - **Description**: Go method stub generator for automatically generating interface implementation code
+
+#### 🕸️ codegraph
+
+- **Homepage**: [codegraph](https://github.com/colbymchenry/codegraph)
+- **Repository**: [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)
+- **Description**: Local-first code intelligence for AI agents via MCP
+
+#### 🪟 zenity-go
+
+- **Homepage**: [zenity](https://pkg.go.dev/github.com/ncruces/zenity)
+- **Repository**: [ncruces/zenity](https://github.com/ncruces/zenity)
+- **Description**: Zenity dialogs for Go on Windows, macOS and Linux
 
 #### ⌨️ ngrrram
 
@@ -189,6 +219,12 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Homepage**: [macism](https://github.com/laishulu/macism)
 - **Repository**: [laishulu/macism](https://github.com/laishulu/macism)
 - **Description**: Reliable CLI macOS input source manager
+
+#### 🔒 tunblkctl
+
+- **Homepage**: [tunblkctl](https://github.com/azhuchkov/tunblkctl)
+- **Repository**: [azhuchkov/tunblkctl](https://github.com/azhuchkov/tunblkctl)
+- **Description**: Command-line frontend for Tunnelblick (OpenVPN)
 
 #### 🎨 colorsvn
 
