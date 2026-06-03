@@ -1,8 +1,8 @@
 class Codegraph < Formula
   desc "Local-first code intelligence for AI agents via MCP"
   homepage "https://github.com/colbymchenry/codegraph"
-  url "https://registry.npmjs.org/@colbymchenry/codegraph/-/codegraph-0.9.7.tgz"
-  sha256 "d18e26127253211beee8fe97e93bacee58ea9b296263d4932409032703c9133d"
+  url "https://registry.npmjs.org/@colbymchenry/codegraph/-/codegraph-0.9.9.tgz"
+  sha256 "6ee4d4b24f9fb6add9b89567b8b41e44c05c7563dfe48513f3f41229ab3b2fb4"
   license "MIT"
 
   bottle do
