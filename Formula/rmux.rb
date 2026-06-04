@@ -8,9 +8,9 @@ class Rmux < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "38fd2ae47d24aa18b84b5d466e041c1e026118bdb64b9d56d9a9aeb7bdb36b8d"
-    sha256 cellar: :any,                 arm64_linux:  "cf33cb3c200026a8bd60610c99062858f3e0aa0799a4b235f3d1b323698b8aee"
-    sha256 cellar: :any,                 x86_64_linux: "878206b0726e70f48c177cf97884070c1b473207bcf1659a63ead302036eb072"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "fc997a0af3e5b9d2fa70f10e1ad5c31a884e98193149693c8a2af95cff2256fe"
+    sha256 cellar: :any,                 arm64_linux:  "f34de625a533ff7d728f52f67e76df472b834b3832b6b6552fe44292487545cc"
+    sha256 cellar: :any,                 x86_64_linux: "c3466cdb109a6aa4902cde4d018e7bf9b08b49e3708ea4241a25d3a2aecff279"
   end
 
   depends_on "rust" => :build
