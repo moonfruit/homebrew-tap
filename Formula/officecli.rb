@@ -7,9 +7,9 @@ class Officecli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any,                 arm64_tahoe:  "0fbffdd2c8ae4fc66cdaded9266947d00a4865de50352ddc59d378c9cca19fc4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "b7c58f84e1f2636becc3b754da317e6b17e91c28cfaa597054d4a3e7ccff5976"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "aefc8d0ea629f9c71c143e0d85c8525cdaeeb6761965f666b5e0e810e4b05c48"
+    sha256 cellar: :any,                 arm64_tahoe:  "076e04bc3bff5b4fa23cf4847dfb5193f343792cc57599b16ef1ad4d6d410277"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "cc2ce3618be405c8922fe7086ad73839eeda46bda429024fb49929b1e299004e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4da969dc7264e136ef739e411a86b682e2ac288f3447db1eb428c12b2b40f831"
   end
 
   depends_on "dotnet" => :build
