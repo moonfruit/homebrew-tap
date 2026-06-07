@@ -1,8 +1,8 @@
 class Officecli < Formula
   desc "AI-friendly CLI for Office documents (.docx, .xlsx, .pptx)"
   homepage "https://officecli.ai"
-  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.103.tar.gz"
-  sha256 "1bc84199f89c27b5ebea0395f5c3cd679ac90253ad205f571bcae01767476894"
+  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.105.tar.gz"
+  sha256 "b24c29a219999f41dacfecaaf662dedb486f03ce7fc3d618a2408f0812c119e6"
   license "Apache-2.0"
 
   bottle do
@@ -17,7 +17,9 @@ class Officecli < Formula
 
   on_linux do
     depends_on "icu4c@78"
+    depends_on "libunwind"
     depends_on "openssl@3"
+    depends_on "zlib-ng-compat"
   end
 
   def install
