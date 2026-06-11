@@ -130,6 +130,12 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)
 - **Description**: Local-first code intelligence for AI agents via MCP
 
+#### 📝 marksman-bundled
+
+- **Homepage**: [Marksman](https://github.com/artempyanykh/marksman)
+- **Repository**: [artempyanykh/marksman](https://github.com/artempyanykh/marksman)
+- **Description**: Language Server Protocol for Markdown
+
 #### 🪟 zenity-go
 
 - **Homepage**: [zenity](https://pkg.go.dev/github.com/ncruces/zenity)
@@ -226,6 +232,18 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [azhuchkov/tunblkctl](https://github.com/azhuchkov/tunblkctl)
 - **Description**: Command-line frontend for Tunnelblick (OpenVPN)
 
+#### 🖥️ rmux
+
+- **Homepage**: [rmux](https://rmux.io)
+- **Repository**: [Helvesec/rmux](https://github.com/Helvesec/rmux)
+- **Description**: Terminal multiplexer with a tmux-style CLI and typed Rust SDK
+
+#### 📂 lsof-wchar
+
+- **Homepage**: [lsof](https://github.com/lsof-org/lsof)
+- **Repository**: [lsof-org/lsof](https://github.com/lsof-org/lsof)
+- **Description**: Utility to list open files with CJK/UTF-8 wide-char fix
+
 #### 🎨 colorsvn
 
 - **Homepage**: [ColorSVN](https://web.archive.org/web/20170725092001/colorsvn.tigris.org/)
@@ -295,6 +313,12 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Homepage**: [rebased](https://github.com/DetachHead/rebased)
 - **Repository**: [DetachHead/rebased](https://github.com/DetachHead/rebased)
 - **Description**: JetBrains-based Git client
+
+#### 🖼️ float
+
+- **Homepage**: [Float](https://www.float.codes/)
+- **Repository**: N/A
+- **Description**: Lightweight picture-in-picture browser
 
 ### Fonts
 

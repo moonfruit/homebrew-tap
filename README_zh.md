@@ -128,6 +128,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)
 - **简介**：通过 MCP 为 AI Agent 提供本地优先的代码智能
 
+#### 📝 marksman-bundled
+
+- **主页**：[Marksman](https://github.com/artempyanykh/marksman)
+- **仓库**：[artempyanykh/marksman](https://github.com/artempyanykh/marksman)
+- **简介**：Markdown 的 Language Server（LSP）
+
 #### 🪟 zenity-go
 
 - **主页**：[zenity](https://pkg.go.dev/github.com/ncruces/zenity)
@@ -224,6 +230,18 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[azhuchkov/tunblkctl](https://github.com/azhuchkov/tunblkctl)
 - **简介**：Tunnelblick（OpenVPN）的命令行前端
 
+#### 🖥️ rmux
+
+- **主页**：[rmux](https://rmux.io)
+- **仓库**：[Helvesec/rmux](https://github.com/Helvesec/rmux)
+- **简介**：终端复用器，提供 tmux 风格的 CLI 和类型化 Rust SDK
+
+#### 📂 lsof-wchar
+
+- **主页**：[lsof](https://github.com/lsof-org/lsof)
+- **仓库**：[lsof-org/lsof](https://github.com/lsof-org/lsof)
+- **简介**：列出打开文件的工具，修复了 CJK/UTF-8 宽字符显示问题
+
 #### 🎨 colorsvn
 
 - **主页**：[ColorSVN](https://web.archive.org/web/20170725092001/colorsvn.tigris.org/)
@@ -293,6 +311,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **主页**：[rebased](https://github.com/DetachHead/rebased)
 - **仓库**：[DetachHead/rebased](https://github.com/DetachHead/rebased)
 - **简介**：基于 JetBrains IDE 的 Git 客户端
+
+#### 🖼️ float
+
+- **主页**：[Float](https://www.float.codes/)
+- **仓库**：N/A
+- **简介**：轻量级画中画浏览器
 
 ### 字体
 
