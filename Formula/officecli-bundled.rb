@@ -5,6 +5,13 @@ class OfficecliBundled < Formula
   sha256 "6b372d9dbc264d355014448d4e25ccba1ea06a72c0e1d4c131f351f9f60e82fb"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any, arm64_tahoe:  "ccc34ca7ce8e1aa12f209d0943af855c784690cb4dc13252e0e0ac9f0c996423"
+    sha256 cellar: :any, arm64_linux:  "e5599c69a78077bc3814ee66003c375e5f0e83de35f13008deabdf2e14d7fc9c"
+    sha256               x86_64_linux: "95c611d62eba865359b07067e73ebf669c3990b7d41a3ab31045ca6e9e057650"
+  end
+
   depends_on "dotnet" => :build
   depends_on "brotli"
 
