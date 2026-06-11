@@ -108,7 +108,7 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[openclaw/remindctl](https://github.com/openclaw/remindctl)
 - **简介**：操作 Apple 提醒事项的高速命令行工具
 
-#### 📄 officecli
+#### 📄 officecli-bundled
 
 - **主页**：[OfficeCLI](https://officecli.ai)
 - **仓库**：[iOfficeAI/OfficeCLI](https://github.com/iOfficeAI/OfficeCLI)

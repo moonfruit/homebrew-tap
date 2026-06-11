@@ -110,7 +110,7 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [openclaw/remindctl](https://github.com/openclaw/remindctl)
 - **Description**: Fast CLI for Apple Reminders
 
-#### 📄 officecli
+#### 📄 officecli-bundled
 
 - **Homepage**: [OfficeCLI](https://officecli.ai)
 - **Repository**: [iOfficeAI/OfficeCLI](https://github.com/iOfficeAI/OfficeCLI)

@@ -1,16 +1,9 @@
-class Officecli < Formula
+class OfficecliBundled < Formula
   desc "AI-friendly CLI for Office documents (.docx, .xlsx, .pptx)"
   homepage "https://officecli.ai"
-  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.109.tar.gz"
-  sha256 "6a5ea420c8f7cf710c032e2ae43e59579650d422e3cba69742ea88e4b6d5c904"
+  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.110.tar.gz"
+  sha256 "6b372d9dbc264d355014448d4e25ccba1ea06a72c0e1d4c131f351f9f60e82fb"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any, arm64_tahoe:  "2787d19fbf8b75a975a61bbc63b32ffcf2c8b5a52ede4ba3eccaa6ba956073cb"
-    sha256 cellar: :any, arm64_linux:  "e96a832b7c46ba1dacb130fa92ed0e74b95f41f7089e3bb6db349c8b8a7b90b6"
-    sha256               x86_64_linux: "5ab8de8a7de0473f24528256284aef4b3fda8a218928bab63f086395c4f3aa89"
-  end
 
   depends_on "dotnet" => :build
   depends_on "brotli"
@@ -22,16 +15,24 @@ class Officecli < Formula
     depends_on "zlib-ng-compat"
   end
 
+  conflicts_with "officecli", because: "both install an `officecli` binary"
+
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
 
+    dotnet = Formula["dotnet"]
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     os = OS.mac? ? "osx" : "linux"
 
-    system "dotnet", "publish", "src/officecli/officecli.csproj",
-           "--configuration", "Release",
-           "--runtime", "#{os}-#{arch}",
-           "--output", buildpath/"dist"
+    args = %W[
+      --configuration Release
+      --framework net#{dotnet.version.major_minor}
+      --runtime #{os}-#{arch}
+      --self-contained
+      --output #{buildpath}/dist
+      -p:Version=#{version}
+    ]
+    system "dotnet", "publish", "src/officecli/officecli.csproj", *args
 
     if OS.mac?
       bin.install buildpath/"dist/officecli"
@@ -49,5 +50,10 @@ class Officecli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/officecli --version")
+    system bin/"officecli", "create", "test.docx"
+    assert_path_exists testpath/"test.docx"
+    system bin/"officecli", "add", "test.docx", "/body", "--type", "paragraph", "--prop", "text=Hello from Homebrew"
+    output = shell_output("#{bin}/officecli view test.docx text --json")
+    assert_match "Hello from Homebrew", output
   end
 end
