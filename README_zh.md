@@ -36,12 +36,6 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[codebuddy/codebuddy-code](https://cnb.cool/codebuddy/codebuddy-code)
 - **简介**：AI 驱动的命令行工作流工具，为开发者提供智能化的代码辅助功能
 
-#### 🌐 dog
-
-- **主页**：[dog](https://github.com/natesales/q)
-- **仓库**：[natesales/q](https://github.com/natesales/q)
-- **简介**：轻量级命令行 DNS 客户端，支持 UDP、TCP、DoT、DoH、DoQ 和 ODoH
-
 #### 🔌 ccstatusline
 
 - **主页**：[ccstatusline](https://github.com/sirmalloc/ccstatusline)

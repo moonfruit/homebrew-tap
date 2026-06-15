@@ -38,12 +38,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [codebuddy/codebuddy-code](https://cnb.cool/codebuddy/codebuddy-code)
 - **Description**: AI-powered command-line workflow tool providing intelligent code assistance for developers
 
-#### 🌐 dog
-
-- **Homepage**: [dog](https://github.com/natesales/q)
-- **Repository**: [natesales/q](https://github.com/natesales/q)
-- **Description**: Tiny command-line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH
-
 #### 🔌 ccstatusline
 
 - **Homepage**: [ccstatusline](https://github.com/sirmalloc/ccstatusline)
