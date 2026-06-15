@@ -1,8 +1,8 @@
 class OfficecliBundled < Formula
   desc "AI-friendly CLI for Office documents (.docx, .xlsx, .pptx)"
   homepage "https://officecli.ai"
-  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.110.tar.gz"
-  sha256 "6b372d9dbc264d355014448d4e25ccba1ea06a72c0e1d4c131f351f9f60e82fb"
+  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.112.tar.gz"
+  sha256 "5fd5c8cbbb7facb5eeac7978ed78412f53833959bd21e44804a9f88d7b307e4f"
   license "Apache-2.0"
 
   bottle do
