@@ -7,9 +7,9 @@ class Ccstatusline < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "ffc41e8ece65f39e93a141599cf3090c1bc85378b2c01591f822ab98f61692b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "23c8705a904c1459ccc2d14ca819a17c7dbb5b9d73312c06bfe19ca0c5d97245"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f99acb8fdaa6c55f0a53774ef55f200b4565e141ab3b0a593cbaf06c9d028a7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "4f16dccd6b8ec6a2c864e4b3a762ad383c40c401e4fbfbb14f250aa59bdff1cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "b629ebc287924b863f0d5cb4e6c9b53be6bf2c2157b63e2a68f923a9d3ae77ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8069d538ff19d9887b824245ddcc48ebcce6f0f6d294f46ef385f0bf69a9902a"
   end
 
   depends_on "node"
