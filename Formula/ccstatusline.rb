@@ -1,8 +1,8 @@
 class Ccstatusline < Formula
   desc "Status line formatter for Claude Code"
   homepage "https://github.com/sirmalloc/ccstatusline"
-  url "https://registry.npmjs.org/ccstatusline/-/ccstatusline-2.2.21.tgz"
-  sha256 "9691033d205c387bccad3a487b0089c97c8c04f825885c51d565d5bec44b69d3"
+  url "https://registry.npmjs.org/ccstatusline/-/ccstatusline-2.2.22.tgz"
+  sha256 "14a0c17a87088e23f8c57c4dc9c4c024596beecf88f339be80dbfd21c85cb100"
   license "MIT"
 
   bottle do
