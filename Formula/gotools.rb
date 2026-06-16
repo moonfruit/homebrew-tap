@@ -1,8 +1,8 @@
 class Gotools < Formula
   desc "Monorepo of small Go command-line utilities"
   homepage "https://github.com/moonfruit/gotools"
-  url "https://github.com/moonfruit/gotools/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "02229236df64c7a95875a8a770af3f09cd98b58ca7b1e77255461c3136ac206d"
+  url "https://github.com/moonfruit/gotools/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "6c4a27c089b61ea4cf10661887f1d5d9aa7c282bd63809a8d1d574e0d6c607a6"
   license "MIT"
 
   bottle do
