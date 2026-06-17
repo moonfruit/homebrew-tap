@@ -1,8 +1,8 @@
 class WlpWebprofile8 < Formula
   desc "Jakarta EE and MicroProfile application server (Jakarta EE Web Profile 8)"
   homepage "https://www.ibm.com/cloud/websphere-liberty"
-  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/26.0.0.5/wlp-webProfile8-26.0.0.5.zip"
-  sha256 "6f4331d55973555f954a4a6acb76865fc358fc873739e925c4bf7be46e1e8b93"
+  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/26.0.0.6/wlp-webProfile8-26.0.0.6.zip"
+  sha256 "0bcdf072133e42e128dc18870102cfe555703f695274d2efa37f37a0e8b83afe"
 
   livecheck do
     url "https://www.ibm.com/support/pages/websphere-liberty-developers"
@@ -35,15 +35,27 @@ class WlpWebprofile8 < Formula
 
   test do
     ENV["WLP_USER_DIR"] = testpath
+    pid_file = testpath/"servers/.pid/defaultServer.pid"
+    messages_log = testpath/"servers/defaultServer/logs/messages.log"
 
     begin
       system bin/"wlp-webprofile8", "start"
-      assert_path_exists testpath/"servers/.pid/defaultServer.pid"
+      assert_path_exists pid_file
+
+      # `start` returns before the JVM is ready, so wait for the server-ready
+      # message to confirm the server actually came up.
+      60.times do
+        break if messages_log.file? && messages_log.read.include?("CWWKF0011I")
+
+        sleep 1
+      end
+      assert_match "CWWKF0011I", messages_log.read
     ensure
-      system bin/"wlp-webprofile8", "stop"
+      # Best-effort shutdown only; `stop` can time out on slow CI machines
+      # (CWWKE0968W) and must not fail the test.
+      quiet_system bin/"wlp-webprofile8", "stop"
     end
 
-    refute_path_exists testpath/"servers/.pid/defaultServer.pid"
     assert_match "<feature>webProfile-8.0</feature>", (testpath/"servers/defaultServer/server.xml").read
   end
 end
