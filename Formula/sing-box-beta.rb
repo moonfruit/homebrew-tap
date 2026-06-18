@@ -12,9 +12,9 @@ class SingBoxBeta < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "4367ddb8e3dd37dcd36fd5314bbda653f777d28a6de7a48840a35b2548695f12"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "24fc96ac65cbc584a08300731abd976a15e5ccfb6ddb8facf751deb871499d7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "87d7497db693dc3a7038d33297693a056181a3cbd70ffdeff84cc36d9c11c41e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "88d7d341903c3d34bdc1b7c1cfe50101bccf2bf40453afdf3e54cc1c63d4a161"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "9ccf93bfbe531daf0becf95b9ae2290bbb9927e18eb2dd1d14460ae1100850a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "217c2b6576d1add889f196d55505cdd19ec686286ff967de0086924e2df4822d"
   end
 
   keg_only :versioned_formula
