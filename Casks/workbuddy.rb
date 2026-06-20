@@ -1,9 +1,9 @@
 cask "workbuddy" do
   arch arm: "arm64", intel: "x64"
 
-  version "5.1.2.30975940,b9604175"
-  sha256 arm:   "8be399166e82f3c043a37d16c965c0f20963e8f95b1bfd0bab66e2d4be1ef986",
-         intel: "c0c89917db657b4727766d4cb22a0db2669fe5e514e76a03f24bdb435dde1431"
+  version "5.1.4.31089177,d0637046"
+  sha256 arm:   "e6f92e460da3e711121669128616f8b295caa4ea75232ced49fe0fd15c07d276",
+         intel: "dc413199530136923af223d23f8cb1828dfb6610cf4a16d36eb9f913a6f14c77"
 
   url "https://download.codebuddy.cn/workbuddy/saas/darwin-#{arch}/WorkBuddy-darwin-#{arch}-#{version.csv.first}-#{version.csv.second}.dmg"
   name "WorkBuddy"
