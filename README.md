@@ -226,12 +226,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [azhuchkov/tunblkctl](https://github.com/azhuchkov/tunblkctl)
 - **Description**: Command-line frontend for Tunnelblick (OpenVPN)
 
-#### 🖥️ rmux
-
-- **Homepage**: [rmux](https://rmux.io)
-- **Repository**: [Helvesec/rmux](https://github.com/Helvesec/rmux)
-- **Description**: Terminal multiplexer with a tmux-style CLI and typed Rust SDK
-
 #### 📂 lsof-wchar
 
 - **Homepage**: [lsof](https://github.com/lsof-org/lsof)

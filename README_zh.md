@@ -224,12 +224,6 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[azhuchkov/tunblkctl](https://github.com/azhuchkov/tunblkctl)
 - **简介**：Tunnelblick（OpenVPN）的命令行前端
 
-#### 🖥️ rmux
-
-- **主页**：[rmux](https://rmux.io)
-- **仓库**：[Helvesec/rmux](https://github.com/Helvesec/rmux)
-- **简介**：终端复用器，提供 tmux 风格的 CLI 和类型化 Rust SDK
-
 #### 📂 lsof-wchar
 
 - **主页**：[lsof](https://github.com/lsof-org/lsof)
