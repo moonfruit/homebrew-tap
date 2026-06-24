@@ -18,7 +18,7 @@ class Impl < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: libexec/"impl")
-    (bin/"impl").write_env_script libexec/"impl", GOROOT: "${GOROOT:-#{Formula["go"].opt_libexec}}"
+    (bin/"impl").write_env_script libexec/"impl", GOROOT: "${GOROOT:-#{formula_opt_libexec("go")}}"
   end
 
   test do
