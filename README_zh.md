@@ -198,11 +198,11 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：N/A
 - **简介**：Jakarta EE 和 MicroProfile 应用服务器（Jakarta EE Web Profile 8）
 
-#### 🏢 wlp-webprofile10
+#### 🏢 wlp-webprofile11
 
 - **主页**：[WebSphere Liberty](https://www.ibm.com/cloud/websphere-liberty)
 - **仓库**：N/A
-- **简介**：Jakarta EE 和 MicroProfile 应用服务器（Jakarta EE Web Profile 10）
+- **简介**：Jakarta EE 和 MicroProfile 应用服务器（Jakarta EE Web Profile 11）
 
 ### 实用工具
 

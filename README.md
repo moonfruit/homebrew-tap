@@ -200,11 +200,11 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: N/A
 - **Description**: Jakarta EE and MicroProfile application server (Jakarta EE Web Profile 8)
 
-#### 🏢 wlp-webprofile10
+#### 🏢 wlp-webprofile11
 
 - **Homepage**: [WebSphere Liberty](https://www.ibm.com/cloud/websphere-liberty)
 - **Repository**: N/A
-- **Description**: Jakarta EE and MicroProfile application server (Jakarta EE Web Profile 10)
+- **Description**: Jakarta EE and MicroProfile application server (Jakarta EE Web Profile 11)
 
 ### Utilities
 

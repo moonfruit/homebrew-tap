@@ -98,7 +98,7 @@ brew test moonfruit/tap/<name>           # formula 才有
 
 - **一个 PR 默认只动一个 formula 或 cask**；只在有强相关性时才允许多个，例如：
   - 依赖链一起升：`tongsuo` 与依赖它的 `tscurl`
-  - 同一软件的多个版本/配置：`gwt@2.4`/`gwt@2.5`/`gwt@2.6`/`gwt@2.7`、`wlp-webprofile8` 与 `wlp-webprofile10`
+  - 同一软件的多个版本/配置：`gwt@2.4`/`gwt@2.5`/`gwt@2.6`/`gwt@2.7`、`wlp-webprofile8` 与 `wlp-webprofile11`
 - **每个 formula / cask 在 PR 内保持单一提交**：一个 PR 里如果同时改了 N 个 formula/cask，就有且只有 N 个提交，每个提交只动一个文件（外加可能的 `audit_exceptions/` 同步修改）
 - 多次返工用 `git commit --amend`（单提交时）或 `git rebase -i`（多提交时挑对应提交 squash），再 `git push --force-with-lease`
 - 提交消息：单升级写 `<name> <version>`；其它修改写 `<name>: <change>`
