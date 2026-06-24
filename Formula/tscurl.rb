@@ -39,7 +39,7 @@ class Tscurl < Formula
     args = %W[
       --program-prefix=ts
       --disable-silent-rules
-      --with-ssl=#{Formula["tongsuo"].opt_prefix}
+      --with-ssl=#{formula_opt_prefix("tongsuo")}
       --without-ca-bundle
       --without-ca-path
       --with-ca-fallback
