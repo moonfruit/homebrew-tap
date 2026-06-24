@@ -1,9 +1,9 @@
 cask "sfm@alpha" do
   arch arm: "Apple", intel: "Intel"
 
-  version "1.14.0-alpha.33"
-  sha256 arm:   "3aaa9b9fe908c74c7b5ba57d4679cd7ccaa958aaeec27a879b376f93ed13304f",
-         intel: "8a6787568a88c781a5254aeb9d44281dc7fe3b55a68a8b6349230da3616b8282"
+  version "1.14.0-alpha.34"
+  sha256 arm:   "baef7fd33e86500c99b9ade0a20afe8e93f677af1eba93476841f9daa80813fe",
+         intel: "a4518069943c1ae4e5d30fa22ac5fce857ca842b03bf0e93ce3b06ebfca4b3b6"
 
   url "https://github.com/SagerNet/sing-box/releases/download/v#{version}/SFM-#{version}-#{arch}.pkg",
       verified: "github.com/SagerNet/sing-box/"
