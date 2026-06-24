@@ -47,7 +47,7 @@ class UutilsSelected < Formula
       PREFIX=#{prefix}
       PROFILE=release
       MULTICALL=y
-      SPHINXBUILD=#{Formula["sphinx-doc"].opt_bin}/sphinx-build
+      SPHINXBUILD=#{formula_opt_bin("sphinx-doc")}/sphinx-build
       UTILS=#{utils.join(" ")}
     ]
 
