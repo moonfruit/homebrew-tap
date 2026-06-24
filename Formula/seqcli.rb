@@ -43,9 +43,9 @@ class Seqcli < Formula
       bin.install_symlink libexec/"seqcli"
     else
       brew_libs = [
-        Formula["brotli"].opt_lib,
-        Formula["icu4c@78"].opt_lib,
-        Formula["openssl@3"].opt_lib,
+        formula_opt_lib("brotli"),
+        formula_opt_lib("icu4c@78"),
+        formula_opt_lib("openssl@3"),
       ].join(":")
       (bin/"seqcli").write_env_script libexec/"seqcli",
                                       LD_LIBRARY_PATH: "#{brew_libs}${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
