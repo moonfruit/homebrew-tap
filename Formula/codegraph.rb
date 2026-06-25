@@ -7,9 +7,9 @@ class Codegraph < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "e21d3622eb339c68a27e0b721b041e5b9dc9a27f505880a0c815649178267003"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "7db2f246a71a159e661906b9c8f642c68dd3f9e500c00eab44dec08096de1fc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "44b9ea032171dcb77c66473d570d3a1ca615f5da3b4cb59f993bbd682df98df7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "324875eb1006a410be36cd8d42edbc9ca13ab29fbd578dce5fec7ba315c80658"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "858f18f4bbc90b7c948037e50d5ca82efd7e940a5bcddb28c8e333399381bc73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "741accb2dc9c5b038979341e1f077dc1e9928f2c59188d4c9749460a27eecb8e"
   end
 
   depends_on "node"
