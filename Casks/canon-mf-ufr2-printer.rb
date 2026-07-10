@@ -1,6 +1,6 @@
 cask "canon-mf-ufr2-printer" do
-  version "10.19.24,07,6,0100012886,01"
-  sha256 "8aa424a903067c153a3e3871ecd3bebce288576ff19c98c8f9d1284f8a4af758"
+  version "10.19.25,16,6,0100012886,03"
+  sha256 "85513605998f053e42ff3bf66b31b96164ab207e1da7342ec01009dd319f18f1"
 
   url "https://gdlp01.c-wss.com/gds/#{version.csv.third}/#{version.csv.fourth}/#{version.csv.fifth}/mac-UFRII-LIPSLX-v#{version.csv.first.no_dots}-#{version.csv.second}.dmg",
       verified: "gdlp01.c-wss.com/gds/"
