@@ -1,8 +1,8 @@
 class Imsg < Formula
   desc "Send and read iMessage / SMS from the terminal"
   homepage "https://github.com/openclaw/imsg"
-  url "https://github.com/openclaw/imsg/archive/refs/tags/v0.12.3.tar.gz"
-  sha256 "907427637ee7db1548d4069cef4666465622bf1ff315b5e08514922ecc724ed2"
+  url "https://github.com/openclaw/imsg/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "d4bc183aeb483ace642c0c9e5f531c7d455f633212936d844f1313574d51447c"
   license "MIT"
 
   bottle do
@@ -26,6 +26,7 @@ class Imsg < Formula
       system ENV.cc, "-dynamiclib", "-arch", "arm64e", "-fobjc-arc",
              "-Wno-arc-performSelector-leaks",
              "-framework", "Foundation", "-framework", "AppKit",
+             "-framework", "ImageIO", "-framework", "LinkPresentation",
              "-o", "imsg-bridge-helper.dylib",
              "Sources/IMsgHelper/IMsgInjected.m"
       libexec.install "imsg-bridge-helper.dylib"
