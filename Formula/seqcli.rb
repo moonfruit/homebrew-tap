@@ -1,10 +1,9 @@
 class Seqcli < Formula
   desc "Seq command-line client"
   homepage "https://datalust.co/seq"
-  url "https://github.com/datalust/seqcli/archive/refs/tags/v2025.2.02473.tar.gz"
-  sha256 "0e52768d85fb6495c59a30dd308522a2a3c3f38b30985ed21fc3b1c9037ea326"
+  url "https://github.com/datalust/seqcli/archive/refs/tags/v2026.1.02553.tar.gz"
+  sha256 "29f41e539edf3b97652019f72a1c21f9233993272e4f16ba22cee34de1022f09"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -23,7 +22,9 @@ class Seqcli < Formula
 
   on_linux do
     depends_on "icu4c@78"
+    depends_on "libunwind"
     depends_on "openssl@3"
+    depends_on "zlib-ng-compat"
   end
 
   def install
