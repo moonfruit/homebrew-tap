@@ -1,8 +1,8 @@
 class Seqcli < Formula
   desc "Seq command-line client"
   homepage "https://datalust.co/seq"
-  url "https://github.com/datalust/seqcli/archive/refs/tags/v2026.1.02563.tar.gz"
-  sha256 "be0ba1041b8bcf4c98b101ee5ccf048d2f7dd83d5ce3c14681d0523e1a35bdc1"
+  url "https://github.com/datalust/seqcli/archive/refs/tags/v2026.1.02594.tar.gz"
+  sha256 "3b44bd2d9ef5e46aa4bf675490971767839d1967c380e5d2169fde4d8d6da45d"
   license "Apache-2.0"
 
   livecheck do
