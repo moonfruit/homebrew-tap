@@ -1,9 +1,9 @@
 class SingBoxRef1nd < Formula
   desc "Universal proxy platform"
   homepage "https://github.com/reF1nd/sing-box"
-  url "https://github.com/reF1nd/sing-box/archive/refs/tags/v1.14.0-beta.4-reF1nd.tar.gz"
-  version "1.14.0-beta.4-reF1nd"
-  sha256 "ab623b8919c4df9737fa8463e94b8cdd0653013048bd74dc223c315e4869a933"
+  url "https://github.com/reF1nd/sing-box/archive/refs/tags/v1.14.0-beta.5-reF1nd.tar.gz"
+  version "1.14.0-beta.5-reF1nd"
+  sha256 "3f69567eedc3430319c1524f9009ab4896e16a8ea4410f9fbd953362b29c5106"
   license "GPL-3.0-or-later"
   head "https://github.com/reF1nd/sing-box.git", branch: "reF1nd-dev-next"
 
@@ -42,6 +42,9 @@ class SingBoxRef1nd < Formula
     ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} #{ldflags_shared} -buildid="
     system "go", "build", *std_go_args(ldflags:, output: bin/"sing-box", tags:), "./cmd/sing-box"
     generate_completions_from_executable(bin/"sing-box", shell_parameter_format: :cobra)
+
+    system bin/"sing-box", "schema", "-o", buildpath/"schema.json"
+    pkgshare.install "schema.json"
   end
 
   service do
