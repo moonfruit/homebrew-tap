@@ -7,9 +7,9 @@ class ZenityGo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "1235386780c23bf5f361e446cd9344d85032c682889cab58d375a06f63c81ccf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "d5e093f3a53fc0823276830a1e07701fbe7397307ac7230be61e6594bbf3cf59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0b8b2e23cbf0f5cff4b004469865529d230a8f5cf75573287923128dc02d2a0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "fd39b7108566d2afc87e22f1a4e6642b8ced365c72b2f4f3b94d8ab79c131390"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "d4027fdb783b8a4fdc16d81716f92bc7fce049baa33441d5c3e1839310cd3641"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "03927ab11ef0cc4ae50345322a682bd10e6be30743d605c68c8fbafc64c8dcdf"
   end
 
   depends_on "go" => :build
