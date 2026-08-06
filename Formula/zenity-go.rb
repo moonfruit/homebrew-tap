@@ -1,8 +1,8 @@
 class ZenityGo < Formula
   desc "Zenity dialogs for Golang, Windows, macOS"
   homepage "https://pkg.go.dev/github.com/ncruces/zenity"
-  url "https://github.com/ncruces/zenity/archive/refs/tags/v0.10.14.tar.gz"
-  sha256 "10ccfaa5e454048ee6383883f64e510ba98dd440c00e3951e5458a07052ee539"
+  url "https://github.com/ncruces/zenity/archive/refs/tags/v0.10.15.tar.gz"
+  sha256 "ed900c7f0a16976fa57c06000f4a9e06e65dce669a475f54d52ddc2b77027e24"
   license "MIT"
 
   bottle do
