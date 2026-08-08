@@ -13,6 +13,7 @@ This is a personal Homebrew third-party tap (`moonfruit/tap`) containing Formula
 - `audit_exceptions/` — JSON files suppressing specific `brew audit` warnings
   - `github_prerelease_allowlist.json` — JSON array of formula/cask names allowed to track prereleases
   - `flat_namespace_allowlist.json` — JSON object `{ "<name>": "any" | ["dylib", ...] }` for casks with non-relocatable Mach-O
+- `cask_renames.json` — JSON object `{ "<old-token>": "<new-token>" }` mapping renamed casks so the old token still resolves (formulae use `formula_renames.json`)
 
 ## Reference Implementations
 
@@ -77,7 +78,7 @@ Bottles are hosted on GitHub Container Registry under `ghcr.io/v2/moonfruit/bott
 
 - 双架构以 `arch arm: "...", intel: "..."` + `sha256 arm:, intel:` 表达；URL 中用 `#{arch}`
 - 字体 Cask 命名为 `font-*`，参考 `Casks/font-source-han-*`、`Casks/font-pinyin-*`
-- `.pkg` 安装必须配 `uninstall pkgutil:`；带后台进程再加 `quit:`，登录项加 `login_item:`（见 `sfm@alpha.rb`）
+- `.pkg` 安装必须配 `uninstall pkgutil:`；带后台进程再加 `quit:`，登录项加 `login_item:`（见 `sfm@beta.rb`）
 - `zap trash: [...]` 列出 `~/Library/...` 残留路径
 - `verified:` 用于非 GitHub releases 域或自定义 URL；`url "..." , verified: "github.com/<org>/<repo>/"` 是常见写法
 

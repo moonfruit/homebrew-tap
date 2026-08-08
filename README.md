@@ -290,9 +290,9 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: N/A
 - **Description**: 3D modeling software
 
-#### 🌐 sfm@alpha
+#### 🌐 sfm@beta
 
-- **Homepage**: [SFM alpha](https://sing-box.sagernet.org/)
+- **Homepage**: [SFM beta](https://sing-box.sagernet.org/)
 - **Repository**: [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - **Description**: Standalone client for sing-box, the universal proxy platform
 

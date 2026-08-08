@@ -288,9 +288,9 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：N/A
 - **简介**：3D 建模软件
 
-#### 🌐 sfm@alpha
+#### 🌐 sfm@beta
 
-- **主页**：[SFM alpha](https://sing-box.sagernet.org/)
+- **主页**：[SFM beta](https://sing-box.sagernet.org/)
 - **仓库**：[SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - **简介**：sing-box 通用代理平台的独立客户端
 
