@@ -7,7 +7,7 @@ class Remindctl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "0f84104cd5774fc38a2ce31534e5da5c3a8f9528102853a77f92d5d5123271eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "ed3a6e3e563ae705a7c21fedd17784e0f2167ac82cb7eb1e2fc0558d796adeec"
   end
 
   depends_on xcode: ["16.0", :build]
