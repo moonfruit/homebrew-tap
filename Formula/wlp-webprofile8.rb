@@ -11,9 +11,9 @@ class WlpWebprofile8 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "3d6deb11a57bc9d82581ecc766d3c189c1020ef33b24976c2414e9df6c9ac40b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "3afd38f39e82b7ddc5824146add56e3d4c2b1d26db6216830703cda81300e936"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "30be020ed6a358daef0818f27127d80afe6a41a2e4c670f570d3a594f9bea6b1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "d9f1422788b515ddd960f55fcc2055bd83ae9049df18e27f68ed38620fdf4dde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "6cba7299e9026ea9a64267efbf2588b2c8b7c2d5633a8ad3ad980e6504b97173"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1366c2dd9db3ca32da3f6aedde444692e152c67216ff2b98129d22d450af637f"
   end
 
   depends_on "openjdk"
