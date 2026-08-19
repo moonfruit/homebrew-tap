@@ -1,9 +1,9 @@
 class SingBoxRef1nd < Formula
   desc "Universal proxy platform"
   homepage "https://github.com/moonfruit/sing-box"
-  url "https://github.com/moonfruit/sing-box/archive/refs/tags/v1.14.0-beta.15-reF1nd-moonfruit.tar.gz"
-  version "1.14.0-beta.15-reF1nd-moonfruit"
-  sha256 "1a89ddefa5c68fa72aca399ac7ae40875cc3371f59266a9c58253701395ac4de"
+  url "https://github.com/moonfruit/sing-box/archive/refs/tags/v1.14.0-beta.17-reF1nd-moonfruit.tar.gz"
+  version "1.14.0-beta.17-reF1nd-moonfruit"
+  sha256 "6aa6ed17a41dc91b9901049d27b92db31a4efae72191ec9664e62e3feb86e46c"
   license "GPL-3.0-or-later"
   head "https://github.com/moonfruit/sing-box.git", branch: "moonfruit"
 
