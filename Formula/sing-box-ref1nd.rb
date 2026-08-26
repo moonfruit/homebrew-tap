@@ -21,7 +21,7 @@ class SingBoxRef1nd < Formula
 
   keg_only :versioned_formula
 
-  depends_on "go" => :build
+  depends_on "go@1.26" => :build
 
   on_linux do
     depends_on "lld" => :build
