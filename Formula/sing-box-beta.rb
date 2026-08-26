@@ -1,8 +1,8 @@
 class SingBoxBeta < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org/"
-  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.0-beta.17.tar.gz"
-  sha256 "061cb9769a9d117d8b100081cf721236f5b26f17d5ab6b28db8de9c76fa3a7d4"
+  url "https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.0-rc.1.tar.gz"
+  sha256 "cb2ac9e2d9f4cdfde51fc634b7dc579675fc023053e2f57e5f13e0e9d19f3a47"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
 
@@ -19,7 +19,7 @@ class SingBoxBeta < Formula
 
   keg_only :versioned_formula
 
-  depends_on "go" => :build
+  depends_on "go@1.26" => :build
 
   on_linux do
     depends_on "lld" => :build
