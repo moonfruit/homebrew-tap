@@ -20,8 +20,9 @@ class WecomCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "e61408805c012abf5ad90a1a76e44cb230ded69b82125719401834195b7f8b82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5eb8364196e3e4b3cb80ca2bba3de67e512fc228da939a6d37c1400b3c89b540"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "63dbd3ca441f46be67819372397bc937dce603e85956da88d472533c09ec8ba2"
+    sha256 cellar: :any,                 arm64_linux:  "91a62abd52eb69554a073f2fd50725b628ad27d907fd91ae0746bb357669c0f4"
+    sha256 cellar: :any,                 x86_64_linux: "7c5b2e30d5f8996d4b56d7eab83da1d8613405d25c2505d34221d7bf684fde3a"
   end
 
   depends_on "rust" => :build
