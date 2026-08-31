@@ -1,8 +1,8 @@
 class UutilsSelected < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils (selected)"
   homepage "https://github.com/uutils/coreutils"
-  url "https://github.com/uutils/coreutils/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "f8e68cd0e3629378f047544ead272161a83211c43f4985a9f52944e5db8f1a44"
+  url "https://github.com/uutils/coreutils/archive/refs/tags/0.11.0.tar.gz"
+  sha256 "a47966117783bef18650cc724f1b1d061b717ac91a0feaabdd34910703cf70a4"
   license "MIT"
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
