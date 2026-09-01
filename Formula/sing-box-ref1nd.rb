@@ -13,7 +13,7 @@ class SingBoxRef1nd < Formula
   end
 
   bottle do
-    rebuild 1
+    rebuild 2
   end
 
   keg_only :versioned_formula
