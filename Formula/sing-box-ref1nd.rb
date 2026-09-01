@@ -13,10 +13,7 @@ class SingBoxRef1nd < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "53833cd47eeb8d37c2b2c9937d3b4c22b2777c5a42654ab1fda082672e69564a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "ed6fbdc5ae01e7369d508c71c21a3d72b18c8e54e0932d20919d4e6b8c28c36c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e0ef7df778d36fc6a5a38599189e6517395410d58bc2dd2c614ee3d478e08760"
+    rebuild 1
   end
 
   keg_only :versioned_formula
@@ -36,15 +33,12 @@ class SingBoxRef1nd < Formula
       ENV["CC"] = formula_opt_bin("llvm")/"clang"
       ENV["CXX"] = formula_opt_bin("llvm")/"clang++"
       ENV["CGO_ENABLED"] = "1"
-      ENV["CGO_LDFLAGS"] = "-fuse-ld=#{formula_opt_bin("lld")}/ld.lld"
+      ENV.append "CGO_LDFLAGS", "-fuse-ld=#{formula_opt_bin("lld")}/ld.lld"
     end
 
     ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} #{ldflags_shared} -buildid="
     system "go", "build", *std_go_args(ldflags:, output: bin/"sing-box", tags:), "./cmd/sing-box"
     generate_completions_from_executable(bin/"sing-box", shell_parameter_format: :cobra)
-
-    system bin/"sing-box", "schema", "-o", buildpath/"schema.json"
-    pkgshare.install "schema.json"
   end
 
   service do
