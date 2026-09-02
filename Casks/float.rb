@@ -1,6 +1,6 @@
 cask "float" do
-  version "1.0.10"
-  sha256 "e48d92161290dfad5b14248c039563a396a20f465f63e65f302ebb8ccaa4a938"
+  version "1.0.12"
+  sha256 "a2e5794909d073a0f103c978a98ebc05217b646bd80f7cf64d14c1d12907752c"
 
   url "https://www.float.codes/releases/Float-#{version}.dmg"
   name "Float"
