@@ -32,12 +32,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 
 ### Applications & Tools
 
-#### 📊 codebuddy-code
-
-- **Homepage**: [CodeBuddy Code](https://cnb.cool/codebuddy/codebuddy-code)
-- **Repository**: [codebuddy/codebuddy-code](https://cnb.cool/codebuddy/codebuddy-code)
-- **Description**: AI-powered command-line workflow tool providing intelligent code assistance for developers
-
 #### 🔌 ccstatusline
 
 - **Homepage**: [ccstatusline](https://github.com/sirmalloc/ccstatusline)
