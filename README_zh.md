@@ -306,6 +306,42 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：N/A
 - **简介**：轻量级画中画浏览器
 
+### 从 homebrew/cask 接管
+
+以下 Cask 于 2026-09-01 被 homebrew/cask 以 `because: :fails_gatekeeper_check` 标记为 disabled。被 disable 的 Cask 完全无法安装或升级——`brew upgrade` 在判断 `--greedy` 之前就会跳过它，`brew install` 则直接报错，且没有任何参数或环境变量可以绕过。本仓库从 homebrew/cask 原样接管，仅删除了 `disable!` 一行。
+
+上游至今仍未对它们签名或公证，因此 **Gatekeeper 依然会拦截**。首次启动时请到「**系统设置 → 隐私与安全性**」中放行；若你愿意承担跳过校验的风险，也可以安装时加 `--no-quarantine`。
+
+在 homebrew/cask 尚未删除同名 Cask 之前，其定义具有更高优先级，因此请使用全名安装：
+
+```bash
+brew install --cask moonfruit/tap/geogebra
+```
+
+#### 📐 geogebra
+
+- **主页**：[GeoGebra](https://www.geogebra.org/)
+- **仓库**：N/A
+- **简介**：数学软件，可求解、保存和分享数学问题，绘制函数图像等
+
+#### 🧲 qbittorrent
+
+- **主页**：[qBittorrent](https://www.qbittorrent.org/)
+- **仓库**：[qbittorrent/qBittorrent](https://github.com/qbittorrent/qBittorrent)
+- **简介**：点对点 BitTorrent 下载客户端
+
+#### 🗜️ rar
+
+- **主页**：[RARLAB](https://www.rarlab.com/)
+- **仓库**：N/A
+- **简介**：数据压缩与备份工具，提供 `rar` 和 `unrar` 命令
+
+#### 🛡️ zap
+
+- **主页**：[ZAP](https://www.zaproxy.org/)
+- **仓库**：[zaproxy/zaproxy](https://github.com/zaproxy/zaproxy)
+- **简介**：免费开源的 Web 应用安全扫描器
+
 ### 字体
 
 #### 🔤 JetBrains Mono 系列

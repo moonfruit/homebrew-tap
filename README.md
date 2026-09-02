@@ -308,6 +308,42 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: N/A
 - **Description**: Lightweight picture-in-picture browser
 
+### Adopted from homebrew/cask
+
+homebrew/cask disabled the casks below on 2026-09-01 with `because: :fails_gatekeeper_check`. A disabled cask cannot be installed or upgraded at all — `brew upgrade` skips it before `--greedy` is even considered, and `brew install` raises outright, with no flag or environment variable to override. They are adopted here verbatim from homebrew/cask, with only the `disable!` stanza removed.
+
+Upstream still ships these unsigned or un-notarized, so **Gatekeeper will block them**. Approve the app on first launch under **System Settings → Privacy & Security**, or install with `--no-quarantine` if you accept the risk of skipping that check.
+
+While homebrew/cask still carries the same tokens, its definitions take priority, so install these by full name:
+
+```bash
+brew install --cask moonfruit/tap/geogebra
+```
+
+#### 📐 geogebra
+
+- **Homepage**: [GeoGebra](https://www.geogebra.org/)
+- **Repository**: N/A
+- **Description**: Solve, save and share math problems, graph functions, etc
+
+#### 🧲 qbittorrent
+
+- **Homepage**: [qBittorrent](https://www.qbittorrent.org/)
+- **Repository**: [qbittorrent/qBittorrent](https://github.com/qbittorrent/qBittorrent)
+- **Description**: Peer to peer Bitorrent client
+
+#### 🗜️ rar
+
+- **Homepage**: [RARLAB](https://www.rarlab.com/)
+- **Repository**: N/A
+- **Description**: Archive manager for data compression and backups, providing the `rar` and `unrar` commands
+
+#### 🛡️ zap
+
+- **Homepage**: [ZAP](https://www.zaproxy.org/)
+- **Repository**: [zaproxy/zaproxy](https://github.com/zaproxy/zaproxy)
+- **Description**: Free and open source web app scanner
+
 ### Fonts
 
 #### 🔤 JetBrains Mono Series
