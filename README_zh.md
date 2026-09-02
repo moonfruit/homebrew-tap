@@ -306,6 +306,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：N/A
 - **简介**：轻量级画中画浏览器
 
+#### 🤖 workbuddy
+
+- **主页**：[WorkBuddy](https://www.codebuddy.cn/work/)
+- **仓库**：N/A
+- **简介**：面向办公场景的 AI 智能体工作空间
+
 ### 从 homebrew/cask 接管
 
 以下 Cask 于 2026-09-01 被 homebrew/cask 以 `because: :fails_gatekeeper_check` 标记为 disabled。被 disable 的 Cask 完全无法安装或升级——`brew upgrade` 在判断 `--greedy` 之前就会跳过它，`brew install` 则直接报错，且没有任何参数或环境变量可以绕过。本仓库从 homebrew/cask 原样接管，仅删除了 `disable!` 一行。
