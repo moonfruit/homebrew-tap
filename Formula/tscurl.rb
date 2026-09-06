@@ -4,7 +4,7 @@ class Tscurl < Formula
   url "https://github.com/Tongsuo-Project/curl/archive/refs/tags/v2025.3.9-SM.tar.gz"
   sha256 "5948965f5b9c2975fe5ced0d152fcf1cce66ecf138afde6cfe24a8b615013240"
   license "curl"
-  revision 1
+  revision 2
   head "https://github.com/Tongsuo-Project/curl.git", branch: "master"
 
   livecheck do
@@ -30,7 +30,9 @@ class Tscurl < Formula
   depends_on "tongsuo"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "git", "apply", "tongsuo.patch"
@@ -52,6 +54,6 @@ class Tscurl < Formula
   end
 
   test do
-    system bin/"tscurl", "--tlcp", "-fk", "https://test1.gmssl.cn/"
+    system bin/"tscurl", "--tlcp", "-fk", "https://tlcp.gmssl.cn/"
   end
 end
