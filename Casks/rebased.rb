@@ -15,15 +15,10 @@ cask "rebased" do
   depends_on :macos
 
   app "Rebased.app"
-  shimscript = "#{staged_path}/rebased.wrapper.sh"
-  binary shimscript, target: "rebased"
-
-  preflight do
-    File.write shimscript, <<~EOS
-      #!/bin/sh
-      open -na "Rebased.app" --args "$@"
-    EOS
-  end
+  command_wrapper "rebased", content: <<~EOS
+    #!/bin/sh
+    open -na "Rebased.app" --args "$@"
+  EOS
 
   zap trash: [
     "~/Library/Preferences/io.github.detachhead.rebased.plist",
