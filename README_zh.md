@@ -72,12 +72,6 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[microsoft/ethr](https://github.com/microsoft/ethr)
 - **简介**：综合网络测量工具，支持 TCP、UDP 和 ICMP 协议
 
-#### 💬 wecom-cli
-
-- **主页**：[wecom-cli](https://github.com/WecomTeam/wecom-cli)
-- **仓库**：[WecomTeam/wecom-cli](https://github.com/WecomTeam/wecom-cli)
-- **简介**：企业微信 (WeCom) 命令行客户端
-
 #### ✍️ inkos
 
 - **主页**：[inkos](https://github.com/Narcooo/inkos)

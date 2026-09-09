@@ -74,12 +74,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [microsoft/ethr](https://github.com/microsoft/ethr)
 - **Description**: Comprehensive network measurement tool supporting TCP, UDP, and ICMP protocols
 
-#### 💬 wecom-cli
-
-- **Homepage**: [wecom-cli](https://github.com/WecomTeam/wecom-cli)
-- **Repository**: [WecomTeam/wecom-cli](https://github.com/WecomTeam/wecom-cli)
-- **Description**: Command-line client for WeCom (WeChat Work)
-
 #### ✍️ inkos
 
 - **Homepage**: [inkos](https://github.com/Narcooo/inkos)
