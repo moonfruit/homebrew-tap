@@ -11,8 +11,8 @@ cask "cxpatcher" do
     strategy :github_latest
   end
 
-  depends_on macos: :ventura
   depends_on cask: "gstreamer-runtime"
+  depends_on macos: :ventura
 
   app "CXPatcher.app"
 
