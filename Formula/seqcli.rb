@@ -11,10 +11,7 @@ class Seqcli < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any, arm64_tahoe:  "2baa15f723b12d735a5bee8280d1deb711c502261eeb6dac49b47ce4019c2430"
-    sha256 cellar: :any, arm64_linux:  "6a94415227510d4435ac694e1ae0db1bb506d491ce3e8e0c9f136d64dee61135"
-    sha256               x86_64_linux: "b3b486d01006fc44d95fdd0c545739cfe75d9c3f83865a8b3cdd4d8bf6b4f3e6"
+    rebuild 1
   end
 
   depends_on "dotnet" => :build
@@ -30,13 +27,23 @@ class Seqcli < Formula
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
 
+    args = []
+    # Remove once Homebrew/homebrew-core#305049 is merged: the x86_64 Linux `dotnet` bottle ships an
+    # unstripped `singlefilehost`, which would add ~166 MiB of DWARF to the single-file binary.
+    if OS.linux? && Hardware::CPU.intel?
+      host_pack = formula_opt_libexec("dotnet").glob("packs/Microsoft.NETCore.App.Host.linux-x64/*").first
+      cp host_pack/"runtimes/linux-x64/native/singlefilehost", buildpath
+      system "strip", "--strip-debug", buildpath/"singlefilehost"
+      args << "-p:SingleFileHostSourcePath=#{buildpath}/singlefilehost"
+    end
+
     system "dotnet", "publish", "src/SeqCli/SeqCli.csproj",
            "--configuration", "Release",
            "--use-current-runtime",
            "--self-contained",
            "--output", buildpath/"dist",
            "-p:PublishSingleFile=true",
-           "-p:Version=#{version}"
+           "-p:Version=#{version}", *args
 
     libexec.install Dir[buildpath/"dist/*"]
 
