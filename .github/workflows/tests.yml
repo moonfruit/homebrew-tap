@@ -56,6 +56,21 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
+      # The macOS build sandbox denies Unix-domain socket connections, which
+      # breaks MSBuild's out-of-process task host and so every `dotnet publish`
+      # with `PublishTrimmed=true`, such as `officecli-bundled`. Must run after
+      # the cleanup step so it is not reverted by its `git clean`.
+      - name: Allow Unix sockets in the macOS build sandbox
+        if: runner.os == 'macOS'
+        run: |
+          sandbox_rb="$(brew --repository)/Library/Homebrew/extend/os/mac/sandbox.rb"
+          if grep -q "deny network-outbound (to unix-socket)" "${sandbox_rb}"; then
+            grep -v "deny network-outbound (to unix-socket)" "${sandbox_rb}" >"${sandbox_rb}.new"
+            mv "${sandbox_rb}.new" "${sandbox_rb}"
+          else
+            echo "::notice::brew no longer denies Unix sockets in the sandbox; drop this step"
+          fi
+
       - name: Base64-encode GITHUB_TOKEN for HOMEBREW_DOCKER_REGISTRY_TOKEN
         id: base64-encode
         if: github.event_name == 'pull_request'
