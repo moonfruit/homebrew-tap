@@ -56,10 +56,11 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
-      # The macOS build sandbox denies Unix-domain socket connections, which
-      # breaks MSBuild's out-of-process task host and so every `dotnet publish`
-      # with `PublishTrimmed=true`, such as `officecli-bundled`. Must run after
-      # the cleanup step so it is not reverted by its `git clean`.
+      # Workaround for Homebrew/brew#23934: the macOS build sandbox denies
+      # Unix-domain socket connections, which breaks MSBuild's out-of-process
+      # task host and so every `dotnet publish` with `PublishTrimmed=true`,
+      # such as `officecli-bundled`. Must run after the cleanup step so it is
+      # not reverted by its `git clean`.
       - name: Allow Unix sockets in the macOS build sandbox
         if: runner.os == 'macOS'
         run: |
