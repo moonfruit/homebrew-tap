@@ -6,10 +6,7 @@ class OfficecliBundled < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any, arm64_tahoe:  "09f5ea94f6e463fd97ee46c619563b6c38c1d065aefca0772e64af8278b963ff"
-    sha256 cellar: :any, arm64_linux:  "d0261bbe73d7f93462845b7e2e0037ca47bc8f0e39dc2177ba7cfa4999f0505b"
-    sha256               x86_64_linux: "04ce534888caf892776f3de049550758f43cad8d5d8d8c6a45853de43b84a362"
+    rebuild 1
   end
 
   depends_on "dotnet" => :build
@@ -39,6 +36,16 @@ class OfficecliBundled < Formula
       --output #{buildpath}/dist
       -p:Version=#{version}
     ]
+
+    # Remove once Homebrew/homebrew-core#305049 is merged: the x86_64 Linux `dotnet` bottle ships an
+    # unstripped `singlefilehost`, which would add ~166 MiB of DWARF to the single-file binary.
+    if OS.linux? && Hardware::CPU.intel?
+      host_pack = dotnet.opt_libexec.glob("packs/Microsoft.NETCore.App.Host.linux-x64/*").first
+      cp host_pack/"runtimes/linux-x64/native/singlefilehost", buildpath
+      system "strip", "--strip-debug", buildpath/"singlefilehost"
+      args << "-p:SingleFileHostSourcePath=#{buildpath}/singlefilehost"
+    end
+
     system "dotnet", "publish", "src/officecli/officecli.csproj", *args
 
     if OS.mac?
