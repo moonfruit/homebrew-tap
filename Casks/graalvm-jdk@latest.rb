@@ -1,15 +1,15 @@
 cask "graalvm-jdk@latest" do
-  version "25.3.4.1,25i3,25i3-25.0.4.1"
+  version "25.3.4.1,25.0.4.1"
   sha256 "8411c28344f47726c433a2fbf0fa399c199531802d458a917d4a05b106043141"
 
-  url "https://gds.oracle.com/download/graal/#{version.csv.second}/archive/graalvm-jdk-#{version.csv.third}_macos-aarch64_bin.tar.gz"
+  url "https://gds.oracle.com/download/graal/#{version.major}i#{version.minor}/archive/graalvm-jdk-#{version.major}i#{version.minor}-#{version.csv.second}_macos-aarch64_bin.tar.gz"
   name "GraalVM Java Development Kit"
   desc "GraalVM from Oracle"
   homepage "https://www.graalvm.org/"
 
   livecheck do
     url "https://www.oracle.com/a/tech/docs/graalvm-downloads.json"
-    regex(%r{/graal/([^/]+)/archive/graalvm-jdk-(.+?)_macos-aarch64_bin}i)
+    regex(/graalvm-jdk-(?:\d+i\d+-)?(\d+(?:\.\d+)+)_macos-aarch64_bin/i)
     strategy :json do |json, regex|
       # Check all current Oracle GraalVM releases, including Innovation
       latest, release = json.values
@@ -24,7 +24,7 @@ cask "graalvm-jdk@latest" do
       match = release_page[:content]&.match(regex)
       next if match.blank?
 
-      "#{latest},#{match[1]},#{match[2]}"
+      "#{latest},#{match[1]}"
     end
   end
 
