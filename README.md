@@ -226,7 +226,7 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: N/A
 - **Description**: Subversion output colorization tool making SVN command output more readable
 
-#### 🗜️ p7zip-all
+#### 🗜️ p7zip-full
 
 - **Homepage**: [p7zip](https://github.com/p7zip-project/p7zip)
 - **Repository**: [p7zip-project/p7zip](https://github.com/p7zip-project/p7zip)

@@ -224,7 +224,7 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：N/A
 - **简介**：Subversion 输出着色工具，让 SVN 命令输出更易读
 
-#### 🗜️ p7zip-all
+#### 🗜️ p7zip-full
 
 - **主页**：[p7zip](https://github.com/p7zip-project/p7zip)
 - **仓库**：[p7zip-project/p7zip](https://github.com/p7zip-project/p7zip)
