@@ -11,7 +11,9 @@ class OracleInstantclient < Formula
   end
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "caed36056fdccd8565ab8c9b47e7bde218d78dd6767771214129f268989f13ee"
   end
 
   depends_on "sevenzip" => :build
