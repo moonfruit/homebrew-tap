@@ -6,7 +6,9 @@ class Ccstatusline < Formula
   license "MIT"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "ddaf52bbf3ba1a3d326d0375341dc1f1556af298e15c5a75045d9e14d0becf02"
   end
 
   depends_on "node"
