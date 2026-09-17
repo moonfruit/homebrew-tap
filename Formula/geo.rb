@@ -8,9 +8,7 @@ class Geo < Formula
   head "https://github.com/MetaCubeX/geo.git", branch: "master"
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "299989d969be58bdaec56ff4c6dcd8fdda56d95cd233623835cf8ffae1daf296"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b65ffa85d5cdb5520720b2371954d75475cb94e4b8aaf7c248cf251e2b40f11f"
+    rebuild 1
   end
 
   depends_on "go" => :build
