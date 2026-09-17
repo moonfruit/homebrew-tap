@@ -1,6 +1,6 @@
 class Tongsuo < Formula
   desc "Modern Cryptographic Primitives and Protocols Library"
-  homepage "https://www.tongsuo.net/"
+  homepage "https://github.com/Tongsuo-Project/Tongsuo"
   url "https://github.com/Tongsuo-Project/Tongsuo/archive/refs/tags/8.4.0.tar.gz"
   sha256 "57c2741750a699bfbdaa1bbe44a5733e9c8fc65d086c210151cfbc2bbd6fc975"
   license "Apache-2.0"
@@ -12,10 +12,7 @@ class Tongsuo < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 arm64_tahoe:  "5538f7ad961a7e3b336abe7a8f6fe33c8fdcb5b751946fd3223b82246c23e991"
-    sha256 ventura:      "70b4c60fa5aced7098d163d775c0ad04bfe92f84b2cf3bcba608aab67d5ce10c"
-    sha256 x86_64_linux: "664fd9aed07586671c8c7201f58e4272e64aec8b0f2337f6329e143ccc85f157"
+    rebuild 1
   end
 
   keg_only "conflicts with openssl"
