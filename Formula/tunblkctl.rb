@@ -7,7 +7,9 @@ class Tunblkctl < Formula
   head "https://github.com/azhuchkov/tunblkctl.git", branch: "main"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "4feef71be5f9f06da05a773569a4eafb1e650c5a899394ce2c383c2b8461e775"
   end
 
   def install
