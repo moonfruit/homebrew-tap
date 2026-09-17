@@ -6,7 +6,12 @@ class Sing2seq < Formula
   license "MIT"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5325001d51a2e0ae11f81f54368edce7fa4804b91542ac59f6908dd3c591e8f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cf26d6e85e21c6788b41ec976d4955d974aff6312a71b2e1133d7a630c30e394"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f159554bb375eac2b3450cf86e6a66c440c52debfbf9d43d7581da2ec5374252"
+    sha256 cellar: :any,                 x86_64_linux:      "06e1c736c72b971de3a6aaa549ff2e5710828358db26ecc0c53af8cea64c6d7a"
   end
 
   depends_on "go" => :build
