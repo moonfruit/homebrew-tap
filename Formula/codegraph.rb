@@ -6,10 +6,7 @@ class Codegraph < Formula
   license "MIT"
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any,                 arm64_tahoe:  "797b4bc094fd079c416ca09ed477fb41adc11d3323c8f4ce961e8c9cfaab61b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "1025ab27c13798ee3bb31d45001c6582684d5eb0e2272fd63fdca85154ff16a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3ccbc1ab11b2534d329c0fa8bf7c708a29dc040918ec0ac37c3c949df906ac8e"
+    rebuild 1
   end
 
   depends_on "node"
