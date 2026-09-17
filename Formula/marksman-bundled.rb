@@ -7,7 +7,11 @@ class MarksmanBundled < Formula
   head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any, arm64_tahoe:  "dde304864db7e598e6e2223b03f68564fa07ed5576e6ad30b4766e0e899fd8af"
+    sha256 cellar: :any, arm64_linux:  "10b3b475516d2d248ae3e38a714ff3bdb0ebfa52721df5a70ed849054d7902b2"
+    sha256 cellar: :any, x86_64_linux: "b8b6f57f1b6a3fd6970352a78d845e74e9a3427fac3dac431aeab9f41d5937d7"
   end
 
   depends_on "dotnet@9" => :build # https://github.com/artempyanykh/marksman/pull/446
