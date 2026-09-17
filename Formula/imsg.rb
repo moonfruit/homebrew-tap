@@ -6,8 +6,7 @@ class Imsg < Formula
   license "MIT"
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 arm64_tahoe: "d2f98e565c4790fcaca37b07c558377b4e49fd354ea57cb1733597ff96c2a3e2"
+    rebuild 1
   end
 
   depends_on xcode: ["16.0", :build]
