@@ -6,10 +6,7 @@ class Inkos < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "2f30bd227ea6fce6ea538b787816d0fa73747625cab09656734b6834f10cde60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "882e9c998a7dec340e840d5b9304e43016ec436ae08c2ede06b4d0ff15ee0baf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b5617c268f1ae183ea6dee8a0cf94953858e89e940c357015eef7ad464d5ca8c"
+    rebuild 1
   end
 
   depends_on "node"
