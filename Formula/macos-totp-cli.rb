@@ -6,7 +6,10 @@ class MacosTotpCli < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e54e9591025c487b41cc93a72e0e69c9dd11b5973dfbee933cd66cb604197767"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "91577b3ca57003721279246c17af284d4455b8ebf9a601daeb79b2899d91d589"
   end
 
   depends_on "go" => :build
