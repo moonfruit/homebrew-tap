@@ -6,7 +6,12 @@ class LzcCli < Formula
   license "ISC"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "9157f5ab9a35091a6673f725063129e407f40e07549ad3e50cc3f9a5f25a0797"
+    sha256 cellar: :any, arm64_tahoe:       "3f80d051c121c8cd0a93fd4a4bfcc8c44fe1995fbf5971bf800352895d62428b"
+    sha256 cellar: :any, arm64_linux:       "0458e6b5ae4c47e3d16a7af46d11f24ce53cd22a9cffe992b06eb648f49c8cda"
+    sha256 cellar: :any, x86_64_linux:      "8a7439d32bf655f6690867108d79849fd6a7ae7956a7487d3373c468c36f2172"
   end
 
   depends_on "node"
