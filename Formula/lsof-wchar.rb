@@ -8,9 +8,10 @@ class LsofWchar < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fefc2e50541894f0c9e04e91c99128c3800403e92c0a081fc9064cd89d329367"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "61e15e203625f2112bf0685e23e2f535b7dd8df6242ae8ecf4193f6502f69803"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8608f0b9a3cd53449946e274e5f8b7b1ad028e26216cb75cea355018eb561701"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f11f9f4d260cc864334d85f899c09e20df2db745fa4f2b394dab1dcc1a92710b"
+    sha256 cellar: :any,                 arm64_linux:       "578b95729afffd60fe77abfa43e95323802118343c27332943e6dbbf1163e729"
+    sha256 cellar: :any,                 x86_64_linux:      "1923cb2944eb5beff366cd560620054a7a49498d85ae7a9efe3689e35bdff4d1"
   end
 
   on_linux do
