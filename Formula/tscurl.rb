@@ -13,7 +13,12 @@ class Tscurl < Formula
   end
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "3407a5d256135759fe6e8fe83c59b5f697edfd4d73f736d9614443af4dea25b6"
+    sha256 cellar: :any, arm64_tahoe:       "ad1c4beaf16fedf645a824ec3e93bbb0926b6b46c03a274a5743d18321497342"
+    sha256 cellar: :any, arm64_linux:       "0ca031838109ab57c95e3ad5c87641228bdb6c61f03743b5460515177ac21f54"
+    sha256 cellar: :any, x86_64_linux:      "35235e45529fb92eb58b85ec91938111944a9fbe79d31203d3aec62d07beff82"
   end
 
   keg_only "conflicts with curl"
