@@ -89,7 +89,7 @@ jobs:
           echo "::add-mask::${base64_token}"
           echo "token=${base64_token}" >> "${GITHUB_OUTPUT}"
 
-      - run: brew test-bot --only-formulae --root-url=https://ghcr.io/v2/moonfruit/bottle
+      - run: brew test-bot --only-formulae --only-json-tab --root-url=https://ghcr.io/v2/moonfruit/bottle
         if: github.event_name == 'pull_request'
         env:
           HOMEBREW_DOCKER_REGISTRY_TOKEN: ${{ steps.base64-encode.outputs.token }}
