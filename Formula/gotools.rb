@@ -6,7 +6,12 @@ class Gotools < Formula
   license "MIT"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f1d851fa44df46af99bfef184bed7475a5f2a91fc875354428e7819e54c435d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b96a994f21e76d492788f4dd1d866ece92e5abd1dcd6703798f2d5e189ac8009"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f5eb03dbc01cb795bb9a2123134c4c672c7a9ba64959b904ec03b0d4903409d8"
+    sha256 cellar: :any,                 x86_64_linux:      "4d1917b561de431f0d9b61b291c505379df5996eb3956d5152d5b1b3e77a8910"
   end
 
   depends_on "go" => :build
