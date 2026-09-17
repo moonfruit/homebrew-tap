@@ -6,10 +6,7 @@ class ZenityGo < Formula
   license "MIT"
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "fd39b7108566d2afc87e22f1a4e6642b8ced365c72b2f4f3b94d8ab79c131390"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "d4027fdb783b8a4fdc16d81716f92bc7fce049baa33441d5c3e1839310cd3641"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "03927ab11ef0cc4ae50345322a682bd10e6be30743d605c68c8fbafc64c8dcdf"
+    rebuild 1
   end
 
   depends_on "go" => :build
