@@ -1,7 +1,7 @@
 class OracleInstantclient < Formula
   desc "Instant Client for Oracle"
   homepage "https://www.oracle.com/database/technologies/instant-client.html"
-  url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-basic-macos.arm64-23.26.2.0.0.dmg"
+  url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-basic-macos.arm64-23.26.2.0.0.dmg", using: :nounzip
   sha256 "c3c4fce37a557192322717c1a8422fe098fc829a41f382f57a288b24ad6ba11e"
   license :cannot_represent
 
@@ -11,10 +11,10 @@ class OracleInstantclient < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "2d0f85fba9722cc1221a048037dd406246d7bf193f9f24dfac0d4b2f85cc3ec5"
+    rebuild 1
   end
 
+  depends_on "sevenzip" => :build
   depends_on arch: :arm64
   depends_on :macos
 
@@ -25,36 +25,41 @@ class OracleInstantclient < Formula
   preserve_rpath
 
   resource "sqlplus" do
-    url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-sqlplus-macos.arm64-23.26.2.0.0.dmg"
+    url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-sqlplus-macos.arm64-23.26.2.0.0.dmg", using: :nounzip
     sha256 "c3b10537194a5267a3ed18d09fddae1f864191e0de25ad78042940bb82496294"
   end
 
   resource "sdk" do
-    url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-sdk-macos.arm64-23.26.2.0.0.dmg"
+    url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-sdk-macos.arm64-23.26.2.0.0.dmg", using: :nounzip
     sha256 "5ee0dffe7ff0ac55eea198ef69681cc729fc7fdf17cc9089f8bfd5d93c51413e"
   end
 
   resource "precompiler" do
-    url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-precomp-macos.arm64-23.26.2.0.0.dmg"
+    url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-precomp-macos.arm64-23.26.2.0.0.dmg", using: :nounzip
     sha256 "aa32fe5ce1d4f1041bdfa73f00996c045d752718ea88be9428d54030cf52d349"
   end
 
   def install
     excluded = %w[INSTALL_IC_README.txt install_ic.sh]
 
+    extract_dmg
+
     pkgetc.install "network"
     libexec.install Dir["*"] - [*excluded, "network"]
     libexec.install_symlink pkgetc/"network"
 
     resource("sqlplus").stage do
+      extract_dmg
       libexec.install Dir["*"] - excluded
     end
 
     resource("sdk").stage do
+      extract_dmg
       libexec.install Dir["*"] - excluded
     end
 
     resource("precompiler").stage do
+      extract_dmg
       pkgetc.install "precomp"
       libexec.install Dir["*"] - [*excluded, "sdk", "precomp"]
       libexec.install_symlink pkgetc/"precomp"
@@ -69,6 +74,18 @@ class OracleInstantclient < Formula
     }
     (bin/"sqlplus").write_env_script opt_libexec/"sqlplus", env
     (bin/"proc").write_env_script opt_libexec/"sdk/proc", env
+  end
+
+  def extract_dmg
+    # `hdiutil` cannot attach disk images inside the macOS build sandbox, which
+    # denies the Mach services it needs, so extract them with 7-Zip instead.
+    Dir["*.dmg"].each do |dmg|
+      system formula_opt_bin("sevenzip")/"7zz", "x", dmg
+      rm dmg
+    end
+    # Match Homebrew's DMG unpacking, which makes the read-only image contents
+    # writable so later installs can overwrite files such as those in `etc`.
+    chmod "u+w", Pathname.glob("**/*", File::FNM_DOTMATCH).reject(&:symlink?)
   end
 
   test do
