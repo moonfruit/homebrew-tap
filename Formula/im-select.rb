@@ -6,7 +6,10 @@ class ImSelect < Formula
   license "MIT"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "721883e9323677dc3f57f05ca4dd9eb6b0c101752a7d6978070c657aa7d7ca08"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa1c0c64199c27973630f2a7a792e6414a6ff2c91870fcb9f11b88a32bc1006c"
   end
 
   depends_on :macos
