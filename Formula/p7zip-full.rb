@@ -10,10 +10,7 @@ class P7zipFull < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "7623547155a27374b8dbc1a990b54471b9d816805efcc3c9ef84c32e077f354b"
-    sha256 cellar: :any,                 arm64_linux:  "00a172614cfafdf4af1603ef61fd64535e8071c205ea47bd9918aaa2bc1d1090"
-    sha256 cellar: :any,                 x86_64_linux: "729a479921353bc1e20a148c4f877d32c3a541bd091078c0e03300ed991e78ff"
+    rebuild 1
   end
 
   keg_only :versioned_formula
