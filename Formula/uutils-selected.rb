@@ -4,6 +4,7 @@ class UutilsSelected < Formula
   url "https://github.com/uutils/coreutils/archive/refs/tags/0.12.0.tar.gz"
   sha256 "4fb327655cb4ffcbf2f16550cf9234079ffe839692f7aa1a6eda104af684e122"
   license "MIT"
+  revision 1
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   livecheck do
@@ -19,11 +20,14 @@ class UutilsSelected < Formula
     sha256 cellar: :any, x86_64_linux:      "d1b983831a9c960c614b6c6715000313dfcd8206fed35a08dfc96caa7bdba024"
   end
 
-  keg_only :versioned_formula
-
-  depends_on "make" => :build
   depends_on "rust" => :build
   depends_on "sphinx-doc" => :build
+
+  on_linux do
+    conflicts_with "coreutils", because: "both install the same binaries"
+  end
+
+  conflicts_with "b2sum", because: "both install `b2sum` binaries"
 
   def install
     man1.mkpath
@@ -44,16 +48,15 @@ class UutilsSelected < Formula
       timeout
     ]
 
-    args = %W[
-      PREFIX=#{prefix}
-      PROFILE=release
-      MULTICALL=y
-      SPHINXBUILD=#{formula_opt_bin("sphinx-doc")}/sphinx-build
-      UTILS=#{utils.join(" ")}
+    args = [
+      "PREFIX=#{prefix}",
+      "PROFILE=release",
+      "MULTICALL=y",
+      "SPHINXBUILD=#{formula_opt_bin("sphinx-doc")}/sphinx-build",
+      "UTILS=#{utils.join(" ")}",
+      "LN=ln -sf",
     ]
-
-    # Call `make` as `gmake` to use Homebrew `make`.
-    system "gmake", "install", *args
+    system "make", "install", *args
   end
 
   test do
