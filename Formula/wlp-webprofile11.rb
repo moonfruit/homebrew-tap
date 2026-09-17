@@ -10,7 +10,9 @@ class WlpWebprofile11 < Formula
   end
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "891168a39721a0ee033a64a1e29db2b4a3155e4677d1125fa5b80fa8c69e08c4"
   end
 
   depends_on "openjdk"
