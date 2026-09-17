@@ -6,7 +6,10 @@ class LsofWchar < Formula
   license "lsof"
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fefc2e50541894f0c9e04e91c99128c3800403e92c0a081fc9064cd89d329367"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "61e15e203625f2112bf0685e23e2f535b7dd8df6242ae8ecf4193f6502f69803"
   end
 
   keg_only :versioned_formula
