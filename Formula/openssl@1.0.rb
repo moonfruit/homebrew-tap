@@ -11,7 +11,12 @@ class OpensslAT10 < Formula
   end
 
   bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
     rebuild 1
+    sha256 arm64_golden_gate: "538e1782c0e0123c8d4f63902ce634640989b87e1a9c570c082bf015f0bb9270"
+    sha256 arm64_tahoe:       "cc8cdb44acb7928d825a7b65357c4b5762ff2d732f070fc36fcfeded1b62b13f"
+    sha256 arm64_linux:       "537025f8c47ba504f668ef77ec9ffea9a015ac4ab9ef576b39115c628591d22d"
+    sha256 x86_64_linux:      "7f52c6581cf8b1c6a153ac7cd3bb10b9569d89e6b829ffcc96ebc7f8a376b7e9"
   end
 
   keg_only :versioned_formula
