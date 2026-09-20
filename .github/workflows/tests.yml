@@ -56,29 +56,6 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
-      # Workaround for Homebrew/brew#23934: the macOS build sandbox only allows
-      # Unix-domain sockets under its private `TMPDIR`, but MSBuild hard-codes
-      # its task host pipes to `/tmp/MSBuild<pid>`, which breaks every
-      # `dotnet publish` with `PublishTrimmed=true`, such as `officecli-bundled`.
-      # Allow sockets under `/private/tmp` after all other rules so a formula's
-      # `(deny network*)` does not override it. Must run after the cleanup step
-      # so it is not reverted by its `git clean`.
-      - name: Allow Unix sockets under /tmp in the macOS build sandbox
-        if: runner.os == 'macOS'
-        run: |
-          sandbox_rb="$(brew --repository)/Library/Homebrew/extend/os/mac/sandbox.rb"
-          if ! grep -q "deny network-outbound (to unix-socket)" "${sandbox_rb}"; then
-            echo "::notice::brew no longer denies Unix sockets in the sandbox; drop this step"
-            exit 0
-          fi
-          awk '{ print } /<%= rules.join/ { match($0, /^ */); print substr($0, 1, RLENGTH) "(allow network* network-outbound (subpath \"/private/tmp\"))" }' \
-            "${sandbox_rb}" >"${sandbox_rb}.new"
-          if ! grep -q 'subpath "/private/tmp"))' "${sandbox_rb}.new"; then
-            echo "::error::Could not find where to add the /tmp socket rule in ${sandbox_rb}"
-            exit 1
-          fi
-          mv "${sandbox_rb}.new" "${sandbox_rb}"
-
       - name: Base64-encode GITHUB_TOKEN for HOMEBREW_DOCKER_REGISTRY_TOKEN
         id: base64-encode
         if: github.event_name == 'pull_request'
