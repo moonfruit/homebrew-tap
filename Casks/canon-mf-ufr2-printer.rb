@@ -10,7 +10,7 @@ cask "canon-mf-ufr2-printer" do
   livecheck do
     url "https://hk.canon/hong-kong/en/support/imageRUNNER%202206__%202206N/get-search-result-content", post_form: {
       q:  "Printer Driver",
-      os: "macOS 26",
+      os: "macOS 12",
     }
     regex(/href="([^"]*)"/i)
     strategy :page_match do |page, regex|
