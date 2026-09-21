@@ -246,12 +246,6 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[xfangfang/Macast](https://github.com/xfangfang/Macast)
 - **简介**：DLNA 媒体渲染器，将 Mac 变成 DLNA 投屏接收端
 
-#### 🎬 qiyimedia
-
-- **主页**：[爱奇艺视频](https://app.iqiyi.com/mac/player/index.html)
-- **仓库**：N/A
-- **简介**：爱奇艺视频播放器(iQIYI)
-
 #### 🔐 gmcurl
 
 - **主页**：[gmcurl](https://curl.gmssl.cn/)

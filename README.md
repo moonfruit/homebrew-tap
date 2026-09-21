@@ -248,12 +248,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [xfangfang/Macast](https://github.com/xfangfang/Macast)
 - **Description**: DLNA media renderer, turning your Mac into a DLNA screen casting receiver
 
-#### 🎬 qiyimedia
-
-- **Homepage**: [iQIYI Video](https://app.iqiyi.com/mac/player/index.html)
-- **Repository**: N/A
-- **Description**: iQIYI video player
-
 #### 🔐 gmcurl
 
 - **Homepage**: [gmcurl](https://curl.gmssl.cn/)
