@@ -230,6 +230,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[p7zip-project/p7zip](https://github.com/p7zip-project/p7zip)
 - **简介**：7-Zip 的命令行版本，高压缩率文件归档工具
 
+#### 🗜️ sevenzip-full
+
+- **主页**：[7-Zip](https://7-zip.org)
+- **仓库**：[ip7z/7zip](https://github.com/ip7z/7zip)
+- **简介**：支持 RAR 的 7-Zip 文件归档工具（安装 `7zz`，与 `sevenzip` 冲突）
+
 #### 🔧 uutils-selected
 
 - **主页**：[uutils-selected](https://github.com/uutils/coreutils)
@@ -287,6 +293,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **主页**：[Float](https://www.float.codes/)
 - **仓库**：N/A
 - **简介**：轻量级画中画浏览器
+
+#### ☕ graalvm-jdk@latest
+
+- **主页**：[GraalVM](https://www.graalvm.org/)
+- **仓库**：N/A
+- **简介**：最新版 Oracle GraalVM JDK，包含 Innovation 版本（仅支持 Apple Silicon）
 
 ### 从 homebrew/cask 接管
 

@@ -232,6 +232,12 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [p7zip-project/p7zip](https://github.com/p7zip-project/p7zip)
 - **Description**: Command-line version of 7-Zip, high compression ratio file archival tool
 
+#### 🗜️ sevenzip-full
+
+- **Homepage**: [7-Zip](https://7-zip.org)
+- **Repository**: [ip7z/7zip](https://github.com/ip7z/7zip)
+- **Description**: 7-Zip file archiver with RAR support (installs `7zz`, conflicts with `sevenzip`)
+
 #### 🔧 uutils-selected
 
 - **Homepage**: [uutils-selected](https://github.com/uutils/coreutils)
@@ -289,6 +295,12 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Homepage**: [Float](https://www.float.codes/)
 - **Repository**: N/A
 - **Description**: Lightweight picture-in-picture browser
+
+#### ☕ graalvm-jdk@latest
+
+- **Homepage**: [GraalVM](https://www.graalvm.org/)
+- **Repository**: N/A
+- **Description**: Latest Oracle GraalVM JDK, including Innovation releases (Apple Silicon only)
 
 ### Adopted from homebrew/cask
 
