@@ -248,12 +248,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 
 ### Applications
 
-#### 📺 macast
-
-- **Homepage**: [Macast](https://github.com/xfangfang/Macast)
-- **Repository**: [xfangfang/Macast](https://github.com/xfangfang/Macast)
-- **Description**: DLNA media renderer, turning your Mac into a DLNA screen casting receiver
-
 #### 🔐 gmcurl
 
 - **Homepage**: [gmcurl](https://curl.gmssl.cn/)
@@ -319,6 +313,12 @@ brew install --cask moonfruit/tap/geogebra
 - **Homepage**: [GeoGebra](https://www.geogebra.org/)
 - **Repository**: N/A
 - **Description**: Solve, save and share math problems, graph functions, etc
+
+#### 📺 macast
+
+- **Homepage**: [Macast](https://github.com/xfangfang/Macast)
+- **Repository**: [xfangfang/Macast](https://github.com/xfangfang/Macast)
+- **Description**: DLNA media renderer, turning your Mac into a DLNA screen casting receiver
 
 #### 🧲 qbittorrent
 

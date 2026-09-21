@@ -246,12 +246,6 @@ brew untap moonfruit/tap        # 完全移除 tap
 
 ### 应用程序
 
-#### 📺 macast
-
-- **主页**：[Macast](https://github.com/xfangfang/Macast)
-- **仓库**：[xfangfang/Macast](https://github.com/xfangfang/Macast)
-- **简介**：DLNA 媒体渲染器，将 Mac 变成 DLNA 投屏接收端
-
 #### 🔐 gmcurl
 
 - **主页**：[gmcurl](https://curl.gmssl.cn/)
@@ -317,6 +311,12 @@ brew install --cask moonfruit/tap/geogebra
 - **主页**：[GeoGebra](https://www.geogebra.org/)
 - **仓库**：N/A
 - **简介**：数学软件，可求解、保存和分享数学问题，绘制函数图像等
+
+#### 📺 macast
+
+- **主页**：[Macast](https://github.com/xfangfang/Macast)
+- **仓库**：[xfangfang/Macast](https://github.com/xfangfang/Macast)
+- **简介**：DLNA 媒体渲染器，将 Mac 变成 DLNA 投屏接收端
 
 #### 🧲 qbittorrent
 
