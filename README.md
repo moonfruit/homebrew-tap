@@ -266,12 +266,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [italomandara/CXPatcher](https://github.com/italomandara/CXPatcher)
 - **Description**: CrossOver dependency upgrade patching tool for improved compatibility
 
-#### 🎨 meshmixer
-
-- **Homepage**: [meshmixer](https://meshmixer.org/)
-- **Repository**: N/A
-- **Description**: 3D modeling software
-
 #### 🌐 sfm@beta
 
 - **Homepage**: [SFM beta](https://sing-box.sagernet.org/)

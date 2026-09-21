@@ -264,12 +264,6 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[italomandara/CXPatcher](https://github.com/italomandara/CXPatcher)
 - **简介**：CrossOver 依赖升级补丁工具，提升兼容性
 
-#### 🎨 meshmixer
-
-- **主页**：[meshmixer](https://meshmixer.org/)
-- **仓库**：N/A
-- **简介**：3D 建模软件
-
 #### 🌐 sfm@beta
 
 - **主页**：[SFM beta](https://sing-box.sagernet.org/)
