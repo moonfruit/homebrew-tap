@@ -314,11 +314,11 @@ brew install --cask moonfruit/tap/geogebra
 - **Repository**: [xfangfang/Macast](https://github.com/xfangfang/Macast)
 - **Description**: DLNA media renderer, turning your Mac into a DLNA screen casting receiver
 
-#### 🧲 qbittorrent
+#### 🧲 qbittorrent / qbittorrent@lt20
 
 - **Homepage**: [qBittorrent](https://www.qbittorrent.org/)
 - **Repository**: [qbittorrent/qBittorrent](https://github.com/qbittorrent/qBittorrent)
-- **Description**: Peer to peer Bitorrent client
+- **Description**: Peer to peer BitTorrent client. `qbittorrent` uses libtorrent 1.2.x (upstream's default); `qbittorrent@lt20` uses libtorrent 2.0.x for full BitTorrent v2 support. They conflict, so install only one
 
 #### 🗜️ rar
 
