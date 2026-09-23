@@ -24,4 +24,12 @@ cask "zap" do
     "~/Library/Application Support/ZAP",
     "~/Library/Preferences/org.zaproxy.zap.plist",
   ]
+
+  caveats <<~EOS
+    #{token} is not signed by an identified developer, so macOS Gatekeeper
+    blocks its first launch after every install or upgrade. Either allow it in:
+      System Settings → Privacy & Security → Open Anyway
+    or remove the quarantine attribute:
+      xattr -dr com.apple.quarantine "#{appdir}/ZAP.app"
+  EOS
 end
