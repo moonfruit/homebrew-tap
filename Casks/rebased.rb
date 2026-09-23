@@ -24,4 +24,10 @@ cask "rebased" do
     "~/Library/Preferences/io.github.detachhead.rebased.plist",
     "~/Library/Saved Application State/io.github.detachhead.rebased.savedState",
   ]
+
+  caveats <<~EOS
+    #{token} has an invalid code signature, so macOS Gatekeeper reports it as
+    damaged after every install or upgrade. Remove the quarantine attribute:
+      xattr -dr com.apple.quarantine "#{appdir}/Rebased.app"
+  EOS
 end
