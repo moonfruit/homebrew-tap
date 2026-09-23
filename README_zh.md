@@ -312,11 +312,11 @@ brew install --cask moonfruit/tap/geogebra
 - **仓库**：[xfangfang/Macast](https://github.com/xfangfang/Macast)
 - **简介**：DLNA 媒体渲染器，将 Mac 变成 DLNA 投屏接收端
 
-#### 🧲 qbittorrent
+#### 🧲 qbittorrent / qbittorrent@lt20
 
 - **主页**：[qBittorrent](https://www.qbittorrent.org/)
 - **仓库**：[qbittorrent/qBittorrent](https://github.com/qbittorrent/qBittorrent)
-- **简介**：点对点 BitTorrent 下载客户端
+- **简介**：点对点 BitTorrent 下载客户端。`qbittorrent` 基于 libtorrent 1.2.x（官方默认推荐），`qbittorrent@lt20` 基于 libtorrent 2.0.x，完整支持 BitTorrent v2；两者互相冲突，只能装其一
 
 #### 🗜️ rar
 
