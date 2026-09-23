@@ -23,4 +23,12 @@ cask "rar" do
   artifact "rar/rarfiles.lst", target: "#{HOMEBREW_PREFIX}/etc/rarfiles.lst"
 
   # No zap stanza required
+
+  caveats <<~EOS
+    #{token} is not signed by an identified developer, so macOS Gatekeeper
+    blocks its first run after every install or upgrade. Either allow it in:
+      System Settings → Privacy & Security → Allow Anyway
+    or remove the quarantine attribute:
+      xattr -dr com.apple.quarantine "#{staged_path}/rar"
+  EOS
 end
