@@ -1,8 +1,8 @@
 class Remindctl < Formula
   desc "Fast CLI for Apple Reminders"
   homepage "https://github.com/openclaw/remindctl"
-  url "https://github.com/openclaw/remindctl/archive/refs/tags/v0.3.7.tar.gz"
-  sha256 "989a353f4d9d5f822cee00fc1e030d71387a38ce02c5697e209ffde38d4533e5"
+  url "https://github.com/openclaw/remindctl/archive/refs/tags/v0.3.8.tar.gz"
+  sha256 "25a18712ae80580e854afe4fc5b6deedea3346000edf837b65d41f1f5abc1dee"
   license "MIT"
 
   bottle do
