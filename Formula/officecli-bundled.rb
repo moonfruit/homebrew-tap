@@ -41,15 +41,6 @@ class OfficecliBundled < Formula
       -p:Version=#{version}
     ]
 
-    # Remove once Homebrew/homebrew-core#305049 is merged: the x86_64 Linux `dotnet` bottle ships an
-    # unstripped `singlefilehost`, which would add ~166 MiB of DWARF to the single-file binary.
-    if OS.linux? && Hardware::CPU.intel?
-      host_pack = dotnet.opt_libexec.glob("packs/Microsoft.NETCore.App.Host.linux-x64/*").first
-      cp host_pack/"runtimes/linux-x64/native/singlefilehost", buildpath
-      system "strip", "--strip-debug", buildpath/"singlefilehost"
-      args << "-p:SingleFileHostSourcePath=#{buildpath}/singlefilehost"
-    end
-
     system "dotnet", "publish", "src/officecli/officecli.csproj", *args
 
     if OS.mac?
