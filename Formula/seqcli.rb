@@ -31,23 +31,13 @@ class Seqcli < Formula
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
 
-    args = []
-    # Remove once Homebrew/homebrew-core#305049 is merged: the x86_64 Linux `dotnet` bottle ships an
-    # unstripped `singlefilehost`, which would add ~166 MiB of DWARF to the single-file binary.
-    if OS.linux? && Hardware::CPU.intel?
-      host_pack = formula_opt_libexec("dotnet").glob("packs/Microsoft.NETCore.App.Host.linux-x64/*").first
-      cp host_pack/"runtimes/linux-x64/native/singlefilehost", buildpath
-      system "strip", "--strip-debug", buildpath/"singlefilehost"
-      args << "-p:SingleFileHostSourcePath=#{buildpath}/singlefilehost"
-    end
-
     system "dotnet", "publish", "src/SeqCli/SeqCli.csproj",
            "--configuration", "Release",
            "--use-current-runtime",
            "--self-contained",
            "--output", buildpath/"dist",
            "-p:PublishSingleFile=true",
-           "-p:Version=#{version}", *args
+           "-p:Version=#{version}"
 
     libexec.install Dir[buildpath/"dist/*"]
 
