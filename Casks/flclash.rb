@@ -10,6 +10,11 @@ cask "flclash" do
   desc "Multi-platform proxy client based on ClashMeta"
   homepage "https://github.com/chen08209/FlClash"
 
+  livecheck do
+    url :url
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on macos: :monterey
 
   app "FlClash.app"
