@@ -8,11 +8,10 @@ class Codegraph < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_golden_gate: "3340923cc991fbcdab4d26c0695d80abe905a046f308ca449337212be339e94b"
-    sha256 cellar: :any,                 arm64_tahoe:       "3340923cc991fbcdab4d26c0695d80abe905a046f308ca449337212be339e94b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "62d9d3211a7d7fbc460594ba39b30c1117f55fe1551cafff000512c906da2495"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7c3c2774e25065ac35d2935cbc3c19a91eec13ae268458fe0a17fcdc8442a34d"
+    sha256 cellar: :any,                 arm64_golden_gate: "f31105e8ed7272a3ef62ca62fd10e035de87708750f8762f44ef262748391295"
+    sha256 cellar: :any,                 arm64_tahoe:       "f31105e8ed7272a3ef62ca62fd10e035de87708750f8762f44ef262748391295"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "69705965da32ccf0a6dd44c57abff8ff73827134f54346f4ab3a3b56b73b1a42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9d8eb0a991de6792240f19f5a4a99c456e82a1b76808730f71225460ee1c577f"
   end
 
   depends_on "node" => :test
