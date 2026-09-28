@@ -1,0 +1,46 @@
+name: merge guard
+
+on:
+  pull_request_target:
+    types:
+      - closed
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
+
+jobs:
+  formula-merged-without-pr-pull:
+    if: >-
+      github.event.pull_request.merged &&
+      !contains(github.event.pull_request.labels.*.name, 'pr-pull')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Warn about formula changes merged without pr-pull
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PULL_REQUEST: ${{ github.event.pull_request.number }}
+        run: |
+          formulae="$(gh pr view "$PULL_REQUEST" --json files \
+            --jq '.files[].path | select(test("^Formula/.+\\.rb$"))')"
+          [[ -z "$formulae" ]] && exit 0
+
+          body="$(
+            echo "This PR changed formulae but was merged without the \`pr-pull\` label,"
+            echo "so no bottles were uploaded and the \`bottle do\` blocks are stale:"
+            echo
+            while read -r formula; do
+              echo "- \`${formula}\`"
+            done <<<"$formulae"
+            echo
+            echo "Fix each one with \`/rebuild <name>\` (a new PR labelled \`pr-pull\`)."
+          )"
+          gh pr comment "$PULL_REQUEST" --body "$body"
+          echo "::error::Formula PR #${PULL_REQUEST} was merged without pr-pull."
+          exit 1
