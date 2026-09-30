@@ -1,10 +1,9 @@
 class Tongsuo < Formula
   desc "Modern Cryptographic Primitives and Protocols Library"
   homepage "https://github.com/Tongsuo-Project/Tongsuo"
-  url "https://github.com/Tongsuo-Project/Tongsuo/archive/refs/tags/8.4.0.tar.gz"
-  sha256 "57c2741750a699bfbdaa1bbe44a5733e9c8fc65d086c210151cfbc2bbd6fc975"
+  url "https://github.com/Tongsuo-Project/Tongsuo/archive/refs/tags/8.5.0.tar.gz"
+  sha256 "505085d457214e5662ea7109c3919fb75f695edf74c91ec6f690da0e58c07dea"
   license "Apache-2.0"
-  revision 2
 
   livecheck do
     url :stable
@@ -24,13 +23,17 @@ class Tongsuo < Formula
 
   depends_on "ca-certificates"
 
+  # Tests require network access
+  allow_network_access! :build
+
   def install
     openssldir.mkpath
     system "./config", "--prefix=#{prefix}", "--openssldir=#{openssldir}", "--libdir=lib", "--release", "enable-ntls"
     system "perl", "configdata.pm", "--dump"
     system "make"
     system "make", "install"
-    system "make", "test"
+    # `test_app` runs `openssl` without arguments, which waits on stdin in Tongsuo
+    system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test", "TESTS=-test_app"
   end
 
   def openssldir
