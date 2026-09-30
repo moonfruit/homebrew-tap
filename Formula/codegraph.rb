@@ -1,10 +1,9 @@
 class Codegraph < Formula
   desc "Local-first code intelligence for AI agents via MCP"
   homepage "https://github.com/colbymchenry/codegraph"
-  url "https://registry.npmjs.org/@colbymchenry/codegraph/-/codegraph-1.6.0.tgz"
-  sha256 "832d2f608d2366ab48411a8123f91889c4a44407b8b87f3595276e29fd4e0129"
+  url "https://registry.npmjs.org/@colbymchenry/codegraph/-/codegraph-1.6.1.tgz"
+  sha256 "0cfcdbffbb49aa098713587bdb8a486d5e5354b04f4b22acee56ccf450d429ed"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
