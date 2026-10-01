@@ -1,8 +1,8 @@
 class Imsg < Formula
   desc "Send and read iMessage / SMS from the terminal"
   homepage "https://github.com/openclaw/imsg"
-  url "https://github.com/openclaw/imsg/archive/refs/tags/v0.15.9.tar.gz"
-  sha256 "05df5c4042eba490cdc33493e06e4eed1f691eafc2e76dde77f5eb1add1fb707"
+  url "https://github.com/openclaw/imsg/archive/refs/tags/v0.15.10.tar.gz"
+  sha256 "c2081c9ee39a00a16be29debca18099728b907dd9d44049005ce89376efb72d9"
   license "MIT"
 
   bottle do
