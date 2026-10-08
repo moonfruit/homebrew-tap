@@ -12,10 +12,10 @@ class SevenzipFull < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any, arm64_golden_gate: "378774494a08a8dfde069d97f0b86d56728c9bb1e2e9bc7e103c0dd01a90fe83"
-    sha256 cellar: :any, arm64_tahoe:       "1520e875c0f78bd57bcf9b065363692c07bcd657c925c289ab8ab9f59d564441"
-    sha256 cellar: :any, arm64_linux:       "b568f4b1698a9696b6e6889a9dcb0959f703cc947cc02eec821d977e59b11b46"
-    sha256 cellar: :any, x86_64_linux:      "0fd149641d6242c8c62025e39c3da3e181d66e10aad00201374c0ccdde685042"
+    sha256 cellar: :any, arm64_golden_gate: "6afd001939be760dc52253079ee4063129ec02576a2a14e37319109e120b91dc"
+    sha256 cellar: :any, arm64_tahoe:       "e55e189255247961c2687f14355a77e8c160dff7c6b12169f1fd5ff1475160a6"
+    sha256 cellar: :any, arm64_linux:       "1683fff58db61021258c15019f072a7e78c73a431afdeb2e1bdc39777988e9d7"
+    sha256 cellar: :any, x86_64_linux:      "2f48e1a14a327a599f9a23a0d7cd52adff2297aae935465ae04cdc7cf3bb73cf"
   end
 
   conflicts_with "sevenzip", because: "both install `7zz` binaries"
