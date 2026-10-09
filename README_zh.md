@@ -36,6 +36,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline)
 - **简介**：Claude Code 状态行格式化工具
 
+#### 🧠 claude-mem
+
+- **主页**：[claude-mem](https://github.com/thedotmack/claude-mem)
+- **仓库**：[thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+- **简介**：Claude Code 的持久化记忆压缩系统（需执行 `claude-mem install` 注册插件）
+
 #### 🌐 sing-box-beta
 
 - **主页**：[sing-box](https://sing-box.sagernet.org/)
@@ -109,6 +115,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **主页**：[codegraph](https://github.com/colbymchenry/codegraph)
 - **仓库**：[colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)
 - **简介**：通过 MCP 为 AI Agent 提供本地优先的代码智能
+
+#### 🔬 rea-agents
+
+- **主页**：[rea](https://github.com/morluto/rea)
+- **仓库**：[morluto/rea](https://github.com/morluto/rea)
+- **简介**：通过 CLI 和 MCP 在终端或 agent 中进行逆向工程（安装 `rea` 命令）
 
 #### 📝 marksman-bundled
 
@@ -287,6 +299,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **主页**：[GraalVM](https://www.graalvm.org/)
 - **仓库**：N/A
 - **简介**：最新版 Oracle GraalVM JDK，包含 Innovation 版本（仅支持 Apple Silicon）
+
+#### 🧩 monocode
+
+- **主页**：[MonoCode](https://usemono.dev/)
+- **仓库**：[hardbeat920/monocode](https://github.com/hardbeat920/monocode)
+- **简介**：面向编程 agent 的图形界面
 
 ### 从 homebrew/cask 接管
 

@@ -38,6 +38,12 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [sirmalloc/ccstatusline](https://github.com/sirmalloc/ccstatusline)
 - **Description**: Status line formatter for Claude Code
 
+#### 🧠 claude-mem
+
+- **Homepage**: [claude-mem](https://github.com/thedotmack/claude-mem)
+- **Repository**: [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+- **Description**: Persistent memory compression system for Claude Code (run `claude-mem install` to register the plugin)
+
 #### 🌐 sing-box-beta
 
 - **Homepage**: [sing-box](https://sing-box.sagernet.org/)
@@ -111,6 +117,12 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Homepage**: [codegraph](https://github.com/colbymchenry/codegraph)
 - **Repository**: [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)
 - **Description**: Local-first code intelligence for AI agents via MCP
+
+#### 🔬 rea-agents
+
+- **Homepage**: [rea](https://github.com/morluto/rea)
+- **Repository**: [morluto/rea](https://github.com/morluto/rea)
+- **Description**: Reverse engineer anything from your terminal or agent via CLI and MCP (installs `rea`)
 
 #### 📝 marksman-bundled
 
@@ -289,6 +301,12 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Homepage**: [GraalVM](https://www.graalvm.org/)
 - **Repository**: N/A
 - **Description**: Latest Oracle GraalVM JDK, including Innovation releases (Apple Silicon only)
+
+#### 🧩 monocode
+
+- **Homepage**: [MonoCode](https://usemono.dev/)
+- **Repository**: [hardbeat920/monocode](https://github.com/hardbeat920/monocode)
+- **Description**: GUI for coding agents
 
 ### Adopted from homebrew/cask
 
