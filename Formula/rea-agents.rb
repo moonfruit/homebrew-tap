@@ -21,6 +21,8 @@ class ReaAgents < Formula
 
     # Remove prebuilt binaries for unsupported platforms
     rm_r libexec/"lib/node_modules/rea-agents/native/windows"
+
+    generate_completions_from_executable(bin/"rea", "completions")
   end
 
   test do
