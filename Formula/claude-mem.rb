@@ -7,10 +7,10 @@ class ClaudeMem < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256                               arm64_golden_gate: "a53395ccfd87b3b734114c9709f19a8bbfbe4cbf077b8554117ede316f183118"
-    sha256                               arm64_tahoe:       "a53395ccfd87b3b734114c9709f19a8bbfbe4cbf077b8554117ede316f183118"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "30cefc90ea336a3bd235c788ae0ffbf66bd17673dfa07ff8d39d2c32559f0034"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "30cefc90ea336a3bd235c788ae0ffbf66bd17673dfa07ff8d39d2c32559f0034"
+    sha256                               arm64_golden_gate: "e27f8bb96edd554c23f3af8500ca7314bb312ddc054945f31a9e24787fe7f98c"
+    sha256                               arm64_tahoe:       "e27f8bb96edd554c23f3af8500ca7314bb312ddc054945f31a9e24787fe7f98c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f8d8d076003c080ccb168d7843967f9b55c5918d57bc607fec47bd53fa71d981"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f8d8d076003c080ccb168d7843967f9b55c5918d57bc607fec47bd53fa71d981"
   end
 
   depends_on "node"
