@@ -56,6 +56,26 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
+      # sing-tun registers a notifyd watcher for DNS configuration changes when
+      # `sing-box run` starts and aborts with `status 9` when the macOS sandbox
+      # denies its mach-lookup, which breaks the `sing-box-beta` test. Must run
+      # after the cleanup step so it is not reverted by its `git clean`.
+      - name: Allow notifyd in the macOS sandbox
+        if: runner.os == 'macOS'
+        run: |
+          sandbox_rb="$(brew --repository)/Library/Homebrew/extend/os/mac/sandbox.rb"
+          if grep -q '"com.apple.system.notification_center"' "${sandbox_rb}"; then
+            echo "::notice::brew already allows notifyd in the sandbox; drop this step"
+            exit 0
+          fi
+          awk '{ print } /\(allow mach-lookup$/ { match($0, /^ */); print substr($0, 1, RLENGTH) "    (global-name \"com.apple.system.notification_center\")" }' \
+            "${sandbox_rb}" >"${sandbox_rb}.new"
+          if ! grep -q '"com.apple.system.notification_center"' "${sandbox_rb}.new"; then
+            echo "::error::Could not find where to add the notifyd rule in ${sandbox_rb}"
+            exit 1
+          fi
+          mv "${sandbox_rb}.new" "${sandbox_rb}"
+
       - name: Base64-encode GITHUB_TOKEN for HOMEBREW_DOCKER_REGISTRY_TOKEN
         id: base64-encode
         if: github.event_name == 'pull_request'
