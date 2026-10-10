@@ -302,12 +302,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: N/A
 - **Description**: Latest Oracle GraalVM JDK, including Innovation releases (Apple Silicon only)
 
-#### 🧩 monocode
-
-- **Homepage**: [MonoCode](https://usemono.dev/)
-- **Repository**: [hardbeat920/monocode](https://github.com/hardbeat920/monocode)
-- **Description**: GUI for coding agents
-
 ### Adopted from homebrew/cask
 
 homebrew/cask disabled the casks below on 2026-09-01 with `because: :fails_gatekeeper_check`. A disabled cask cannot be installed or upgraded at all — `brew upgrade` skips it before `--greedy` is even considered, and `brew install` raises outright, with no flag or environment variable to override. They are adopted here verbatim from homebrew/cask, with only the `disable!` stanza removed.
