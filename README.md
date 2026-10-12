@@ -272,12 +272,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: N/A
 - **Description**: UFRII/UFRII LT driver and utilities for Canon imageCLASS MF series printers
 
-#### 🍷 cxpatcher
-
-- **Homepage**: [CXPatcher](https://github.com/italomandara/CXPatcher)
-- **Repository**: [italomandara/CXPatcher](https://github.com/italomandara/CXPatcher)
-- **Description**: CrossOver dependency upgrade patching tool for improved compatibility
-
 #### 🌐 sfm@beta
 
 - **Homepage**: [SFM beta](https://sing-box.sagernet.org/)
