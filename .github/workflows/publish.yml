@@ -34,8 +34,64 @@ jobs:
         id: git_setup
         uses: Homebrew/actions/git-user-config@e99025eb970cfa124b8284a35463d87426917478 # 2026.09.28.1
 
+      - name: Classify changes
+        id: classify
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PULL_REQUEST: ${{ github.event.pull_request.number }}
+        run: |
+          files="$(gh pr view "$PULL_REQUEST" --json files --jq '.files[].path')"
+          formulae=false
+          casks=false
+          while read -r file; do
+            case "$file" in
+              Formula/*.rb) formulae=true ;;
+              Casks/*.rb) casks=true ;;
+              audit_exceptions/*.json | formula_renames.json | cask_renames.json | README.md | README_zh.md) ;;
+              *)
+                echo "::error::Cannot pr-pull #${PULL_REQUEST}: unsupported change to \`${file}\`."
+                exit 1
+                ;;
+            esac
+          done <<<"$files"
+
+          if [[ "$formulae" == true ]]; then
+            echo "kind=formula" >>"$GITHUB_OUTPUT"
+          elif [[ "$casks" == true ]]; then
+            echo "kind=cask" >>"$GITHUB_OUTPUT"
+          else
+            echo "::error::Cannot pr-pull #${PULL_REQUEST}: no formula or cask changes."
+            exit 1
+          fi
+
+      - name: Merge cask pull request
+        if: steps.classify.outputs.kind == 'cask'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PULL_REQUEST: ${{ github.event.pull_request.number }}
+        run: |
+          conclusion="$(gh run list --workflow=tests.yml --event=pull_request --commit="$HEAD_SHA" \
+            --limit=1 --json=conclusion --jq '.[0].conclusion // ""')"
+          if [[ "$conclusion" != success ]]; then
+            echo "::error::CI for ${HEAD_SHA} is \`${conclusion:-missing}\`, not \`success\`."
+            exit 1
+          fi
+
+          # Squash a single commit to keep the PR number; rebase to keep one commit per cask.
+          commits="$(gh pr view "$PULL_REQUEST" --json commits --jq '.commits | length')"
+          if [[ "$commits" == 1 ]]; then
+            method=--squash
+          else
+            method=--rebase
+          fi
+          gh pr merge "$PULL_REQUEST" "$method" --match-head-commit="$HEAD_SHA"
+
       - name: Pull bottles
         id: pull_bottles
+        if: steps.classify.outputs.kind == 'formula'
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HOMEBREW_GIT_COMMITTER_NAME: ${{ steps.git_setup.outputs.name }}
@@ -49,11 +105,13 @@ jobs:
             --head-sha="$HEAD_SHA" "$PULL_REQUEST"
 
       - name: Generate build provenance
+        if: steps.classify.outputs.kind == 'formula'
         uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
         with:
           subject-path: "${{ steps.pull_bottles.outputs.bottle_path }}/*.tar.gz"
 
       - name: Push commits
+        if: steps.classify.outputs.kind == 'formula'
         uses: Homebrew/actions/git-try-push@e99025eb970cfa124b8284a35463d87426917478 # 2026.09.28.1
         with:
           branch: main
