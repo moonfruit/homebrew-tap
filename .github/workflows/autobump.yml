@@ -27,14 +27,27 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@e99025eb970cfa124b8284a35463d87426917478 # 2026.09.28.1
 
+      # Bump PRs opened with `GITHUB_TOKEN` wait for manual CI approval; an
+      # app token runs CI at once and shows the PRs as authored by the bot.
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ secrets.AUTOBUMP_APP_CLIENT_ID }}
+          private-key: ${{ secrets.AUTOBUMP_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
       - name: Set up git
         id: git_setup
         uses: Homebrew/actions/git-user-config@e99025eb970cfa124b8284a35463d87426917478 # 2026.09.28.1
+        with:
+          username: ${{ steps.app-token.outputs.app-slug }}[bot]
 
       - name: Bump formulae and casks
         env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.AUTOBUMP_TOKEN }}
-          HOMEBREW_GIT_COMMITTER_NAME: ${{ steps.git_setup.outputs.name }}
-          HOMEBREW_GIT_COMMITTER_EMAIL: ${{ steps.git_setup.outputs.email }}
+          HOMEBREW_GITHUB_API_TOKEN: ${{ steps.app-token.outputs.token }}
+          HOMEBREW_GIT_NAME: ${{ steps.git_setup.outputs.name }}
+          HOMEBREW_GIT_EMAIL: ${{ steps.git_setup.outputs.email }}
           TAP_NAME: ${{ steps.set-up-homebrew.outputs.tap-name }}
         run: brew bump --no-fork --open-pr --bump-synced --tap="$TAP_NAME"

@@ -1,0 +1,27 @@
+name: label autobump
+
+on:
+  pull_request_target:
+    types:
+      - opened
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
+
+jobs:
+  label:
+    if: github.event.pull_request.user.login == 'moonfruit-tap[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      # `GITHUB_TOKEN` label events do not trigger `publish.yml`.
+      - name: Label autobump PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PULL_REQUEST: ${{ github.event.pull_request.number }}
+        run: gh api "repos/$GH_REPO/issues/$PULL_REQUEST/labels" -f "labels[]=autobump"
