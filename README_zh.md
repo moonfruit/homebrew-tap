@@ -270,12 +270,6 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：N/A
 - **简介**：Canon imageCLASS MF 系列打印机的 UFRII/UFRII LT 驱动程序和实用工具
 
-#### 🍷 cxpatcher
-
-- **主页**：[CXPatcher](https://github.com/italomandara/CXPatcher)
-- **仓库**：[italomandara/CXPatcher](https://github.com/italomandara/CXPatcher)
-- **简介**：CrossOver 依赖升级补丁工具，提升兼容性
-
 #### 🌐 sfm@beta
 
 - **主页**：[SFM beta](https://sing-box.sagernet.org/)
