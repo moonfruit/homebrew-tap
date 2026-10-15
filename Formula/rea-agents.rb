@@ -1,8 +1,8 @@
 class ReaAgents < Formula
   desc "Reverse engineer anything from your terminal or agent via CLI and MCP"
   homepage "https://github.com/morluto/rea"
-  url "https://registry.npmjs.org/rea-agents/-/rea-agents-6.4.0.tgz"
-  sha256 "59eb1604b8db75f522d4a975c36ce6b4a2ad465e43bad165f9a8f728391db9b8"
+  url "https://registry.npmjs.org/rea-agents/-/rea-agents-6.5.0.tgz"
+  sha256 "531717a06e92ca651aab52691190f916fac044272c01f875e22c5e293218e699"
   license "MIT"
 
   bottle do
@@ -21,6 +21,9 @@ class ReaAgents < Formula
 
     # Remove prebuilt binaries for unsupported platforms
     rm_r libexec/"lib/node_modules/rea-agents/native/windows"
+
+    # frida's mocha test fixtures ship non-native unixvictim binaries
+    rm_r libexec/"lib/node_modules/rea-agents/node_modules/frida/test"
 
     generate_completions_from_executable(bin/"rea", "completions")
   end
