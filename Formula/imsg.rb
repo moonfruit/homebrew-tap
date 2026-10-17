@@ -7,8 +7,8 @@ class Imsg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 arm64_golden_gate: "2d28e71e43394a360d0789f51ff4783e87c2777de69ba77a93c377bb5112998d"
-    sha256 arm64_tahoe:       "200e77a05dd0aeee810900ce6a32f2efbaa42128772ea6191cf1a5c933828e5a"
+    sha256 arm64_golden_gate: "9916a3059cb14321a456b681132037e055945e49213c5815181a62bd81151ef1"
+    sha256 arm64_tahoe:       "7566b7cce485348fa89146ae785084dc636581635b6178d336ae09f0d106a65a"
   end
 
   depends_on xcode: ["16.0", :build]
