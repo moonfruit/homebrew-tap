@@ -1,11 +1,8 @@
 cask "rebased" do
-  arch arm: "-aarch64"
+  version "1.1.21"
+  sha256 "4d62f28a5abd3e7614b3b75c96e2c2f35d6f735ab3d7547680a3f64b16dd63b6"
 
-  version "1.1.20"
-  sha256 arm:   "98b12c7f67511f3ec2214f31da713fb9fbb1923bbf94ce812deff5395afcf31b",
-         intel: "09bad5d10e90f3da853b7968fda18c15fd44d4fbbafbb50ce27bca656eb9b9c8"
-
-  url "https://github.com/DetachHead/rebased/releases/download/#{version}/rebased#{arch}.dmg"
+  url "https://github.com/DetachHead/rebased/releases/download/#{version}/rebased-aarch64.dmg"
   name "rebased"
   desc "Git client of jetbrains"
   homepage "https://github.com/DetachHead/rebased"
@@ -15,6 +12,7 @@ cask "rebased" do
     strategy :github_latest
   end
 
+  depends_on arch: :arm64
   depends_on :macos
 
   app "Rebased.app"
