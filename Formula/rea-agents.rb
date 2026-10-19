@@ -1,8 +1,8 @@
 class ReaAgents < Formula
   desc "Reverse engineer anything from your terminal or agent via CLI and MCP"
   homepage "https://github.com/morluto/rea"
-  url "https://registry.npmjs.org/rea-agents/-/rea-agents-6.5.0.tgz"
-  sha256 "531717a06e92ca651aab52691190f916fac044272c01f875e22c5e293218e699"
+  url "https://registry.npmjs.org/rea-agents/-/rea-agents-6.7.0.tgz"
+  sha256 "20958a66dba1a011e50a486beb9463a343128ed368c984f94065362c13f51f90"
   license "MIT"
 
   bottle do
