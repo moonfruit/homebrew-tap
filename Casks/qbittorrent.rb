@@ -42,8 +42,8 @@ cask "qbittorrent" do
     EOS
   end
   on_linux do
-    version "5.2.4"
-    sha256 "9ab0e97a3245a1d596271878a75aa208049cc62be8b682aa3f3109511c5f17b7"
+    version "5.3.0"
+    sha256 "1c64f2e95740be41f2822f909f56e4dd0da2637f312098a06da113d7add7418b"
 
     livecheck do
       url "https://sourceforge.net/projects/qbittorrent/rss?path=/qbittorrent-#{os}"
