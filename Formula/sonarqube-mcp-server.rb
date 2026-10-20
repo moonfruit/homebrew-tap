@@ -10,6 +10,14 @@ class SonarqubeMcpServer < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d6357758c74bbf7f66d1823024dfc5352d35dfe03bb648e4637206878b870378"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d6357758c74bbf7f66d1823024dfc5352d35dfe03bb648e4637206878b870378"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "588b0be722ef91d9512aecddf6f0c77da1d133b97876d6402fd32bfac7e99c58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "588b0be722ef91d9512aecddf6f0c77da1d133b97876d6402fd32bfac7e99c58"
+  end
+
   depends_on "gradle" => :build
   depends_on "openjdk"
 
