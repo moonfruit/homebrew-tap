@@ -260,6 +260,12 @@ brew untap moonfruit/tap        # remove the tap entirely
 
 ### Applications
 
+#### 📱 macapk
+
+- **Homepage**: [Mac.apk](https://github.com/kksimp/Mac.apk)
+- **Repository**: [kksimp/Mac.apk](https://github.com/kksimp/Mac.apk)
+- **Description**: Run Android apps natively on Apple Silicon Macs (requires macOS 26.4 or later)
+
 #### 🔐 gmcurl
 
 - **Homepage**: [gmcurl](https://curl.gmssl.cn/)

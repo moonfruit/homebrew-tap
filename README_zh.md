@@ -258,6 +258,12 @@ brew untap moonfruit/tap        # 完全移除 tap
 
 ### 应用程序
 
+#### 📱 macapk
+
+- **主页**：[Mac.apk](https://github.com/kksimp/Mac.apk)
+- **仓库**：[kksimp/Mac.apk](https://github.com/kksimp/Mac.apk)
+- **描述**：在 Apple Silicon Mac 上原生运行 Android 应用（需要 macOS 26.4 或更新版本）
+
 #### 🔐 gmcurl
 
 - **主页**：[gmcurl](https://curl.gmssl.cn/)
