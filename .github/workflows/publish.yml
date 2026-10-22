@@ -110,6 +110,15 @@ jobs:
         with:
           subject-path: "${{ steps.pull_bottles.outputs.bottle_path }}/*.tar.gz"
 
+      # GitHub marks the pull request as merged once its head is reachable from main.
+      - name: Update pull request branch
+        if: >-
+          steps.classify.outputs.kind == 'formula' &&
+          github.event.pull_request.head.repo.fork == false
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: git push --force origin "HEAD:refs/heads/${BRANCH}"
+
       - name: Push commits
         if: steps.classify.outputs.kind == 'formula'
         uses: Homebrew/actions/git-try-push@eb02c69dbabdb66ff183c614f4ce7ab3c077592c # 2026.10.12.1
@@ -119,5 +128,18 @@ jobs:
       - name: Delete branch
         if: github.event.pull_request.head.repo.fork == false
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
           BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: git push --delete origin "$BRANCH"
+          PULL_REQUEST: ${{ github.event.pull_request.number }}
+        run: |
+          # Deleting the branch before GitHub detects the merge leaves the pull request closed.
+          for _ in {1..12}; do
+            state="$(gh pr view "$PULL_REQUEST" --json state --jq .state)"
+            [[ "$state" != OPEN ]] && break
+            sleep 5
+          done
+          if [[ "$state" != MERGED ]]; then
+            echo "::warning::#${PULL_REQUEST} is \`${state}\`, not \`MERGED\`."
+          fi
+          git push --delete origin "$BRANCH"
