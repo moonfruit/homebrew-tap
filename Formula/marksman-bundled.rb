@@ -8,10 +8,11 @@ class MarksmanBundled < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:  "dde304864db7e598e6e2223b03f68564fa07ed5576e6ad30b4766e0e899fd8af"
-    sha256 cellar: :any, arm64_linux:  "10b3b475516d2d248ae3e38a714ff3bdb0ebfa52721df5a70ed849054d7902b2"
-    sha256 cellar: :any, x86_64_linux: "b8b6f57f1b6a3fd6970352a78d845e74e9a3427fac3dac431aeab9f41d5937d7"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "e223693d51b50d318118903f27891de8b0bd266b4f045fa005cc64b026bb9b38"
+    sha256 cellar: :any, arm64_tahoe:       "7f80eb5225fc68b28b1acdc15fd2a3c6139733169847198cb77373c671cb9fa6"
+    sha256 cellar: :any, arm64_linux:       "a61665302072349256f86327d28fa8db276792b1ab34106ced419bdecde06c72"
+    sha256 cellar: :any, x86_64_linux:      "92baa22f919d57823288f8b47eb4c5311ef00a710222f6ce71e419a509c0169d"
   end
 
   depends_on "dotnet@9" => :build # https://github.com/artempyanykh/marksman/pull/446
