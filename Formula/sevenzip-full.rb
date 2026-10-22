@@ -1,8 +1,8 @@
 class SevenzipFull < Formula
   desc "7-Zip file archiver with RAR support"
   homepage "https://7-zip.org"
-  url "https://github.com/ip7z/7zip/releases/download/26.04/7z2604-src.tar.xz"
-  sha256 "9691944c0fe0d01bb49373a704fb983fd33bc98b1738695179dfbf99ac1734f6"
+  url "https://github.com/ip7z/7zip/releases/download/26.05/7z2605-src.tar.xz"
+  sha256 "0b6080b8c3e7a579161d2d495224c0e51c467576cb4c7048b0ab485ef44cc22e"
   license all_of: ["LGPL-2.1-or-later", "BSD-3-Clause", :cannot_represent]
   head "https://github.com/ip7z/7zip.git", branch: "main"
 
