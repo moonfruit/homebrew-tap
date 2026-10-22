@@ -1,8 +1,8 @@
 class Seqcli < Formula
   desc "Seq command-line client"
   homepage "https://datalust.co/seq"
-  url "https://github.com/datalust/seqcli/archive/refs/tags/v2026.1.02650.tar.gz"
-  sha256 "7ef164a8414ddd716ba0765bea0ce005d57bfd14b29902585c6e4f76ed73ac53"
+  url "https://github.com/datalust/seqcli/archive/refs/tags/v2026.1.02654.tar.gz"
+  sha256 "2b749c4c6da78ab605cf67ef6db59c120a1d0f40a52f6a8045180b96b8abe94b"
   license "Apache-2.0"
 
   livecheck do
@@ -31,6 +31,8 @@ class Seqcli < Formula
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
+    # .NET's user-scoped named mutexes need a writable runtime directory on Linux.
+    ENV["XDG_RUNTIME_DIR"] = buildpath
 
     system "dotnet", "publish", "src/SeqCli/SeqCli.csproj",
            "--configuration", "Release",
