@@ -28,6 +28,8 @@ class MarksmanBundled < Formula
 
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "true"
+    # .NET's user-scoped named mutexes need a writable runtime directory on Linux.
+    ENV["XDG_RUNTIME_DIR"] = buildpath
 
     dotnet = Formula["dotnet@9"]
     args = %W[
