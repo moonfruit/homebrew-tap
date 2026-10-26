@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@eb02c69dbabdb66ff183c614f4ce7ab3c077592c # 2026.10.12.1
+        uses: Homebrew/actions/setup-homebrew@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
 
       # Bump PRs opened with `GITHUB_TOKEN` wait for manual CI approval; an
       # app token runs CI at once and shows the PRs as authored by the bot.
@@ -40,7 +40,7 @@ jobs:
 
       - name: Set up git
         id: git_setup
-        uses: Homebrew/actions/git-user-config@eb02c69dbabdb66ff183c614f4ce7ab3c077592c # 2026.10.12.1
+        uses: Homebrew/actions/git-user-config@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
         with:
           username: ${{ steps.app-token.outputs.app-slug }}[bot]
 
