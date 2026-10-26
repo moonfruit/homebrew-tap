@@ -110,20 +110,24 @@ jobs:
         with:
           subject-path: "${{ steps.pull_bottles.outputs.bottle_path }}/*.tar.gz"
 
-      # GitHub marks the pull request as merged once its head is reachable from main.
-      - name: Update pull request branch
-        if: >-
-          steps.classify.outputs.kind == 'formula' &&
-          github.event.pull_request.head.repo.fork == false
-        env:
-          BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: git push --force origin "HEAD:refs/heads/${BRANCH}"
-
+      # GitHub marks the pull request as merged once its head is reachable from main,
+      # so rebase onto concurrent pr-pull pushes before updating the branch.
       - name: Push commits
         if: steps.classify.outputs.kind == 'formula'
-        uses: Homebrew/actions/git-try-push@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
-        with:
-          branch: main
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          FORK: ${{ github.event.pull_request.head.repo.fork }}
+        run: |
+          for try in {0..9}; do
+            git pull --rebase origin main
+            if [[ "$FORK" == false ]]; then
+              git push --force origin "HEAD:refs/heads/${BRANCH}"
+            fi
+            git push origin HEAD:main && exit 0
+            sleep "$((2 ** try))"
+          done
+          echo "::error::Failed to push to main."
+          exit 1
 
       - name: Delete branch
         if: github.event.pull_request.head.repo.fork == false
