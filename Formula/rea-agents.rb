@@ -7,10 +7,10 @@ class ReaAgents < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2f11e5c093939cef3ef8f04d85c34e8b5db0b3cc73fc14872d3b1b4362317e58"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2f11e5c093939cef3ef8f04d85c34e8b5db0b3cc73fc14872d3b1b4362317e58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5752ed1d46fcec4b231e8c583bc11860a4158fe3e3c52a8eea784e58ec2ec998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "278d230c36bd63cfef71b9c06a3c06e00855c2c0fa8a2bd38dcffefd06ac4816"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f0904c04c8d2ac1ec53da5fd4cbae03af619ba355201b9329b21cd4a05ceb1a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f0904c04c8d2ac1ec53da5fd4cbae03af619ba355201b9329b21cd4a05ceb1a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "05eaf13fcc1ecad220ab1d1d4d267c8358eaff313c3754860c5950a36c42b533"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b5624aa1ca8e0b70375486f76bbeb515d8b6c1b86fc102c35e0c13803cdd7988"
   end
 
   depends_on "node"
