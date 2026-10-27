@@ -8,7 +8,8 @@ cask "geogebra" do
   homepage "https://www.geogebra.org/"
 
   livecheck do
-    url "https://download.geogebra.org/package/mac-port"
+    url "https://download.geogebra.org/package/mac-port",
+        user_agent: :browser
     regex(%r{[^/]+?v?(\d+(?:[.-]\d+)+)[^/]+?$}i)
     strategy :header_match do |headers, regex|
       match = headers["location"]&.match(regex)
