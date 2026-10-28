@@ -37,7 +37,7 @@ cask "graalvm-jdk@latest" do
 
   artifact "graalvm-jdk", target: "/Library/Java/JavaVirtualMachines/graalvm-latest.jdk"
 
-  # No zap stanza required
+  zap :not_required
 
   caveats do
     license "https://www.oracle.com/downloads/licenses/graal-free-license.html"
