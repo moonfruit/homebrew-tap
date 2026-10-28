@@ -304,7 +304,7 @@ brew untap moonfruit/tap        # remove the tap entirely
 
 ### Adopted from homebrew/cask
 
-homebrew/cask disabled the casks below on 2026-09-01 with `because: :fails_gatekeeper_check`. A disabled cask cannot be installed or upgraded at all — `brew upgrade` skips it before `--greedy` is even considered, and `brew install` raises outright, with no flag or environment variable to override. They are adopted here verbatim from homebrew/cask, with only the `disable!` stanza removed.
+homebrew/cask disabled the casks below on 2026-09-01 with `because: :fails_gatekeeper_check`. A disabled cask cannot be installed or upgraded at all — `brew upgrade` skips it before `--greedy` is even considered, and `brew install` raises outright, with no flag or environment variable to override. They are adopted here with the `disable!` stanza removed; some are also updated beyond the homebrew/cask version.
 
 Upstream still ships these unsigned or un-notarized, so **Gatekeeper will block them**. Approve the app on first launch under **System Settings → Privacy & Security**, or install with `--no-quarantine` if you accept the risk of skipping that check.
 
@@ -319,6 +319,12 @@ brew install --cask moonfruit/tap/geogebra
 - **Homepage**: [GeoGebra](https://www.geogebra.org/)
 - **Repository**: N/A
 - **Description**: Solve, save and share math problems, graph functions, etc
+
+#### ⚫ katrain
+
+- **Homepage**: [KaTrain](https://github.com/sanderland/katrain)
+- **Repository**: [sanderland/katrain](https://github.com/sanderland/katrain)
+- **Description**: Analyze and play Go games with AI feedback from KataGo
 
 #### 📺 macast
 
