@@ -5,6 +5,11 @@ class ZaiMcpServer < Formula
   sha256 "7da4109110e39f5b521f2e5ab08f23b53a22f2019f070313fa011f096e9ed415"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, all: "23c52681380c16eec15ed79acd9dda9e1dc98facefa77e580de565d2511ed3e1"
+  end
+
   depends_on "node"
 
   def install
