@@ -302,7 +302,7 @@ brew untap moonfruit/tap        # 完全移除 tap
 
 ### 从 homebrew/cask 接管
 
-以下 Cask 于 2026-09-01 被 homebrew/cask 以 `because: :fails_gatekeeper_check` 标记为 disabled。被 disable 的 Cask 完全无法安装或升级——`brew upgrade` 在判断 `--greedy` 之前就会跳过它，`brew install` 则直接报错，且没有任何参数或环境变量可以绕过。本仓库从 homebrew/cask 原样接管，仅删除了 `disable!` 一行。
+以下 Cask 于 2026-09-01 被 homebrew/cask 以 `because: :fails_gatekeeper_check` 标记为 disabled。被 disable 的 Cask 完全无法安装或升级——`brew upgrade` 在判断 `--greedy` 之前就会跳过它，`brew install` 则直接报错，且没有任何参数或环境变量可以绕过。本仓库接管这些 Cask 并移除了 `disable!`，其中部分版本也已更新。
 
 上游至今仍未对它们签名或公证，因此 **Gatekeeper 依然会拦截**。首次启动时请到「**系统设置 → 隐私与安全性**」中放行；若你愿意承担跳过校验的风险，也可以安装时加 `--no-quarantine`。
 
@@ -317,6 +317,12 @@ brew install --cask moonfruit/tap/geogebra
 - **主页**：[GeoGebra](https://www.geogebra.org/)
 - **仓库**：N/A
 - **简介**：数学软件，可求解、保存和分享数学问题，绘制函数图像等
+
+#### ⚫ katrain
+
+- **主页**：[KaTrain](https://github.com/sanderland/katrain)
+- **仓库**：[sanderland/katrain](https://github.com/sanderland/katrain)
+- **简介**：利用 KataGo 的 AI 反馈分析围棋棋局及对弈
 
 #### 📺 macast
 
