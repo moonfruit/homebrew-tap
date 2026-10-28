@@ -22,7 +22,7 @@ cask "rar" do
   artifact "rar/default.sfx", target: "#{HOMEBREW_PREFIX}/lib/default.sfx"
   artifact "rar/rarfiles.lst", target: "#{HOMEBREW_PREFIX}/etc/rarfiles.lst"
 
-  # No zap stanza required
+  zap :not_required
 
   caveats <<~EOS
     #{token} is not signed by an identified developer, so macOS Gatekeeper
