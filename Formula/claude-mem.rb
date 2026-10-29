@@ -1,8 +1,8 @@
 class ClaudeMem < Formula
   desc "Persistent memory compression system for Claude Code"
   homepage "https://github.com/thedotmack/claude-mem"
-  url "https://registry.npmjs.org/claude-mem/-/claude-mem-15.3.0.tgz"
-  sha256 "d10aa91a8cd800fefd6a511bd46ec859502afe1ee224ca294257be3b92a7fd37"
+  url "https://registry.npmjs.org/claude-mem/-/claude-mem-15.4.0.tgz"
+  sha256 "0a44b1525a14dda4c4109818897fd23a5108e46b0be5800a2b6bd3c45a902ca0"
   license "Apache-2.0"
 
   bottle do
