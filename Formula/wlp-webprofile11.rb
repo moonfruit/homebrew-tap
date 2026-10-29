@@ -9,11 +9,6 @@ class WlpWebprofile11 < Formula
     regex(/wlp-webProfile11[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
-  bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, all: "03663d54151ceb28e2ae5cef7d53665ba3fe9423f84b63365797497cb696ad7f"
-  end
-
   depends_on "openjdk"
 
   def install
