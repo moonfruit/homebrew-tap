@@ -232,12 +232,6 @@ brew untap moonfruit/tap        # remove the tap entirely
 - **Repository**: [lsof-org/lsof](https://github.com/lsof-org/lsof)
 - **Description**: Utility to list open files with CJK/UTF-8 wide-char fix
 
-#### 🎨 colorsvn
-
-- **Homepage**: [ColorSVN](https://web.archive.org/web/20170725092001/colorsvn.tigris.org/)
-- **Repository**: N/A
-- **Description**: Subversion output colorization tool making SVN command output more readable
-
 #### 🗜️ p7zip-full
 
 - **Homepage**: [p7zip](https://github.com/p7zip-project/p7zip)
