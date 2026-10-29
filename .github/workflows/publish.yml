@@ -39,25 +39,54 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           PULL_REQUEST: ${{ github.event.pull_request.number }}
         run: |
-          files="$(gh pr view "$PULL_REQUEST" --json files --jq '.files[].path')"
+          files="$(gh pr view "$PULL_REQUEST" --json files)"
           formulae=false
           casks=false
           while read -r file; do
             case "$file" in
               Formula/*.rb) formulae=true ;;
               Casks/*.rb) casks=true ;;
-              audit_exceptions/*.json | formula_renames.json | cask_renames.json | README.md | README_zh.md) ;;
+              audit_exceptions/*.json | formula_renames.json | cask_renames.json | no_bottle_formulae.json | README.md | README_zh.md) ;;
               *)
                 echo "::error::Cannot pr-pull #${PULL_REQUEST}: unsupported change to \`${file}\`."
                 exit 1
                 ;;
             esac
-          done <<<"$files"
+          done < <(jq -r '.files[].path' <<<"$files")
 
-          if [[ "$formulae" == true ]]; then
+          raw_file() {
+            gh api -H "Accept: application/vnd.github.raw" "repos/${GH_REPO}/contents/$1?ref=${HEAD_SHA}"
+          }
+
+          # Deleted formulae and those in `no_bottle_formulae.json` have no bottles to pull.
+          no_bottle="$(raw_file no_bottle_formulae.json)"
+          bottled=false
+          unbottled=false
+          while read -r change name; do
+            if [[ "$change" == DELETED ]]; then
+              unbottled=true
+            elif jq -e --arg name "$name" 'any(.[]; . == $name)' <<<"$no_bottle" &>/dev/null; then
+              unbottled=true
+              if raw_file "Formula/${name}.rb" | grep -q '^  bottle do$'; then
+                echo "::error::\`${name}\` is in \`no_bottle_formulae.json\` but has a \`bottle do\` block."
+                exit 1
+              fi
+            else
+              bottled=true
+            fi
+          done < <(jq -r '.files[] | select(.path | test("^Formula/.+\\.rb$"))
+                          | "\(.changeType) \(.path | ltrimstr("Formula/") | rtrimstr(".rb"))"' <<<"$files")
+
+          if [[ "$bottled" == true && "$unbottled" == true ]]; then
+            echo "::error::Cannot pr-pull #${PULL_REQUEST}: it mixes formulae with and without bottles."
+            exit 1
+          elif [[ "$bottled" == true ]]; then
             echo "kind=formula" >>"$GITHUB_OUTPUT"
+          elif [[ "$formulae" == true ]]; then
+            echo "kind=no-bottle" >>"$GITHUB_OUTPUT"
           elif [[ "$casks" == true ]]; then
             echo "kind=cask" >>"$GITHUB_OUTPUT"
           else
@@ -65,8 +94,8 @@ jobs:
             exit 1
           fi
 
-      - name: Merge cask pull request
-        if: steps.classify.outputs.kind == 'cask'
+      - name: Merge pull request without bottles
+        if: steps.classify.outputs.kind == 'cask' || steps.classify.outputs.kind == 'no-bottle'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -80,7 +109,7 @@ jobs:
             exit 1
           fi
 
-          # Squash a single commit to keep the PR number; rebase to keep one commit per cask.
+          # Squash a single commit to keep the PR number; rebase to keep one commit per package.
           commits="$(gh pr view "$PULL_REQUEST" --json commits --jq '.commits | length')"
           if [[ "$commits" == 1 ]]; then
             method=--squash

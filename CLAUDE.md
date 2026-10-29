@@ -13,6 +13,7 @@ This is a personal Homebrew third-party tap (`moonfruit/tap`) containing Formula
 - `audit_exceptions/` — JSON files suppressing specific `brew audit` warnings
   - `github_prerelease_allowlist.json` — JSON array of formula/cask names allowed to track prereleases
   - `flat_namespace_allowlist.json` — JSON object `{ "<name>": "any" | ["dylib", ...] }` for casks with non-relocatable Mach-O
+- `no_bottle_formulae.json` — JSON array of formula names that ship without bottles (prebuilt archives that only need unpacking); listed formulae must not have a `bottle do` block
 - `cask_renames.json` — JSON object `{ "<old-token>": "<new-token>" }` mapping renamed casks so the old token still resolves (formulae use `formula_renames.json`)
 
 ## Reference Implementations
@@ -115,6 +116,13 @@ brew test moonfruit/tap/<name>           # formula 才有
 5. 开 PR，等待 CI 完成 audit/test 与多平台 bottle 构建
 6. Review 通过后给 PR 打上 `pr-pull` 标签
 7. CI 检测到 `pr-pull` 标签，自动把 bottle 上传到 `ghcr.io/v2/moonfruit/bottle`，把 `sha256` 行回写进对应 Formula 并合并 PR
+
+### 无 bottle 的 Formula
+
+只需解压/复制预构建包、无需编译的 formula 列入 `no_bottle_formulae.json`，且不带 `bottle do` 块。删除 formula 同理。流程同上，打 `pr-pull` 标签后 `publish.yml` 识别为 `no-bottle`，跳过 bottle 上传直接合并。
+
+- 转为无 bottle：同一提交里删掉 `bottle do` 块并加入清单；反之从清单移除后走正常 `pr-pull`
+- 同一 PR 不能混合有 bottle 和无 bottle（含删除）的 formula，`publish.yml` 会拒绝
 
 ### Cask 升级 / 新增
 
