@@ -230,12 +230,6 @@ brew untap moonfruit/tap        # 完全移除 tap
 - **仓库**：[lsof-org/lsof](https://github.com/lsof-org/lsof)
 - **简介**：列出打开文件的工具，修复了 CJK/UTF-8 宽字符显示问题
 
-#### 🎨 colorsvn
-
-- **主页**：[ColorSVN](https://web.archive.org/web/20170725092001/colorsvn.tigris.org/)
-- **仓库**：N/A
-- **简介**：Subversion 输出着色工具，让 SVN 命令输出更易读
-
 #### 🗜️ p7zip-full
 
 - **主页**：[p7zip](https://github.com/p7zip-project/p7zip)
