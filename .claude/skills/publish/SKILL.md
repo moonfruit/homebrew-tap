@@ -31,6 +31,10 @@ The two routes differ because of how the tap's CI is wired (see
 - **Cask** → no bottles. Once CI is green there is nothing to write back, so the
   PR is finished by **merging it directly**.
 
+Formulae listed in `no_bottle_formulae.json` (and deleted formulae) still take
+the `pr-pull` label: `publish.yml` classifies them as `no-bottle` and merges
+without uploading bottles.
+
 The argument is the package name (e.g. `rmux` for `Formula/rmux.rb`). If no name
 was given, ask which package to publish.
 
@@ -103,7 +107,8 @@ Call this `<version>`. Choose the branch:
 
 ### 4. Commit
 
-Stage only the target file (plus any required `audit_exceptions/` change), per
+Stage only the target file (plus any required `audit_exceptions/` or
+`no_bottle_formulae.json` change), per
 the one-package-per-commit convention:
 
 ```bash

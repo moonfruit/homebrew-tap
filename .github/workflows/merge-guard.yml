@@ -25,10 +25,15 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
+          MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
           PULL_REQUEST: ${{ github.event.pull_request.number }}
         run: |
-          formulae="$(gh pr view "$PULL_REQUEST" --json files \
-            --jq '.files[].path | select(test("^Formula/.+\\.rb$"))')"
+          # Deleted formulae and those in `no_bottle_formulae.json` have no bottles to pull.
+          no_bottle="$(gh api -H "Accept: application/vnd.github.raw" \
+            "repos/${GH_REPO}/contents/no_bottle_formulae.json?ref=${MERGE_SHA}")"
+          formulae="$(gh pr view "$PULL_REQUEST" --json files | jq -r --argjson no_bottle "$no_bottle" '
+            .files[] | select(.changeType != "DELETED") | .path | select(test("^Formula/.+\\.rb$"))
+            | select(ltrimstr("Formula/") | rtrimstr(".rb") | IN($no_bottle[]) | not)')"
           [[ -z "$formulae" ]] && exit 0
 
           body="$(
