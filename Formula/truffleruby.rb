@@ -15,11 +15,6 @@ class Truffleruby < Formula
     sha256 "ecd071f9c051d1e3fc40c3b97e39e822d5157c2f8703f34f2f08e04305f05f52"
   end
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
   on_macos do
     depends_on arch: :arm64
   end
