@@ -76,6 +76,57 @@ jobs:
           fi
           mv "${sandbox_rb}.new" "${sandbox_rb}"
 
+      # `brew test-bot` checks the linkage of a poured bottle, which does not
+      # match how prebuilt formulae without bottles are installed, and ignores
+      # failures of formulae without bottles for the current version.
+      # Mirrors the changed-formulae detection in `test_bot/formulae_detect.rb`.
+      - name: Detect changed formulae without bottles
+        id: no-bottle
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          cd "$(brew --repository)/Library/Taps/${GITHUB_REPOSITORY}"
+          git fetch origin "+refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}"
+          base="$(git merge-base "origin/${BASE_REF}" HEAD)"
+          formulae=""
+          new=""
+          bottled=false
+          while read -r status file; do
+            name="$(basename "$file" .rb)"
+            if jq -e --arg name "$name" 'any(.[]; . == $name)' no_bottle_formulae.json &>/dev/null; then
+              formulae="${formulae} ${name}"
+              [[ "$status" == A ]] && new="${new} ${name}"
+            else
+              bottled=true
+            fi
+          done < <(git diff-tree -r --name-status --diff-filter=AM "$base" HEAD -- 'Formula/*.rb')
+
+          if [[ "$bottled" == true && -n "$formulae" ]]; then
+            echo "::error::Do not mix formulae with and without bottles in one pull request."
+            exit 1
+          fi
+          echo "formulae=${formulae# }" >>"$GITHUB_OUTPUT"
+          echo "new=${new# }" >>"$GITHUB_OUTPUT"
+
+      - name: Test formulae without bottles
+        if: steps.no-bottle.outputs.formulae != ''
+        env:
+          FORMULAE: ${{ steps.no-bottle.outputs.formulae }}
+          NEW: ${{ steps.no-bottle.outputs.new }}
+        run: |
+          for formula in $FORMULAE; do
+            # Mirrors `audit_args` in `test_bot/formulae.rb`: tap syntax already ran `brew style`,
+            # but `--new` also runs the `FormulaAuditStrict` cops that it excludes.
+            if [[ " ${NEW} " == *" ${formula} "* ]]; then
+              brew audit --formula --online --new "${GITHUB_REPOSITORY}/${formula}"
+            else
+              brew audit --formula --online --git --skip-style "${GITHUB_REPOSITORY}/${formula}"
+            fi
+            brew install --include-test "${GITHUB_REPOSITORY}/${formula}"
+            brew test --verbose "${GITHUB_REPOSITORY}/${formula}"
+          done
+
       - name: Base64-encode GITHUB_TOKEN for HOMEBREW_DOCKER_REGISTRY_TOKEN
         id: base64-encode
         if: github.event_name == 'pull_request'
@@ -87,7 +138,7 @@ jobs:
           echo "token=${base64_token}" >> "${GITHUB_OUTPUT}"
 
       - run: brew test-bot --only-formulae --only-json-tab --root-url=https://ghcr.io/v2/moonfruit/bottle
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && steps.no-bottle.outputs.formulae == ''
         env:
           HOMEBREW_DOCKER_REGISTRY_TOKEN: ${{ steps.base64-encode.outputs.token }}
 
