@@ -7,7 +7,7 @@ class ZaiMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, all: "23c52681380c16eec15ed79acd9dda9e1dc98facefa77e580de565d2511ed3e1"
+    sha256 cellar: :any_skip_relocation, all: "055b684115cfd4dfc188ff7715c05bc0ba8d53106950a1bd69f3aeab7bc04e92"
   end
 
   depends_on "node"
