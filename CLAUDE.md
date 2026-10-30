@@ -123,6 +123,7 @@ brew test moonfruit/tap/<name>           # formula 才有
 
 - 转为无 bottle：同一提交里删掉 `bottle do` 块并加入清单；反之从清单移除后走正常 `pr-pull`
 - 同一 PR 不能混合有 bottle 和无 bottle（含删除）的 formula，`publish.yml` 会拒绝
+- `tests.yml` 对清单内的 formula 不跑 `brew test-bot`，改为 `brew audit`/`brew install`/`brew test`：test-bot 检查的是 bottle 浇注后的 linkage（预编译包会误报系统库），且对当前版本无 bottle 的已有 formula 会忽略失败
 
 ### Cask 升级 / 新增
 
