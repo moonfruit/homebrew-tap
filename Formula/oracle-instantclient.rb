@@ -1,19 +1,13 @@
 class OracleInstantclient < Formula
   desc "Instant Client for Oracle"
   homepage "https://www.oracle.com/database/technologies/instant-client.html"
-  url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-basic-macos.arm64-23.26.2.0.0.dmg", using: :nounzip
-  sha256 "c3c4fce37a557192322717c1a8422fe098fc829a41f382f57a288b24ad6ba11e"
+  url "https://download.oracle.com/otn_software/mac/instantclient/2326300/instantclient-basic-macos.arm64-23.26.3.0.0.dmg", using: :nounzip
+  sha256 "9ad4824c5dca702e6bb68d459e2cd738e6ee1e750c668e54a09a43fee9f5d08a"
   license :cannot_represent
 
   livecheck do
     url "https://www.oracle.com/database/technologies/instant-client/macos-arm64-downloads.html"
     regex(/href=.*instantclient-\w*-macos.arm64[._-]v?(\d+(?:\.\d+)+(?:-\d+)?).dmg/i)
-  end
-
-  bottle do
-    root_url "https://ghcr.io/v2/moonfruit/bottle"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "caed36056fdccd8565ab8c9b47e7bde218d78dd6767771214129f268989f13ee"
   end
 
   depends_on "sevenzip" => :build
@@ -27,18 +21,18 @@ class OracleInstantclient < Formula
   preserve_rpath
 
   resource "sqlplus" do
-    url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-sqlplus-macos.arm64-23.26.2.0.0.dmg", using: :nounzip
-    sha256 "c3b10537194a5267a3ed18d09fddae1f864191e0de25ad78042940bb82496294"
+    url "https://download.oracle.com/otn_software/mac/instantclient/2326300/instantclient-sqlplus-macos.arm64-23.26.3.0.0.dmg", using: :nounzip
+    sha256 "332d6b73e213cd4652888430368f3ba258b03a7f1ec6837c13d0f6c3637fbe68"
   end
 
   resource "sdk" do
-    url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-sdk-macos.arm64-23.26.2.0.0.dmg", using: :nounzip
-    sha256 "5ee0dffe7ff0ac55eea198ef69681cc729fc7fdf17cc9089f8bfd5d93c51413e"
+    url "https://download.oracle.com/otn_software/mac/instantclient/2326300/instantclient-sdk-macos.arm64-23.26.3.0.0.dmg", using: :nounzip
+    sha256 "e61b71c32ca51a3546a480bd25f9f7ecdae66ac56abec4004c70246cc451d71f"
   end
 
   resource "precompiler" do
-    url "https://download.oracle.com/otn_software/mac/instantclient/2326200/instantclient-precomp-macos.arm64-23.26.2.0.0.dmg", using: :nounzip
-    sha256 "aa32fe5ce1d4f1041bdfa73f00996c045d752718ea88be9428d54030cf52d349"
+    url "https://download.oracle.com/otn_software/mac/instantclient/2326300/instantclient-precomp-macos.arm64-23.26.3.0.0.dmg", using: :nounzip
+    sha256 "d583fde11f67f3f6e5ca21c83470d0ac06657a5205ff564c907a422f58650d09"
   end
 
   def install
