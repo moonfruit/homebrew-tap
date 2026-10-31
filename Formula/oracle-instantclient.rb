@@ -10,6 +10,11 @@ class OracleInstantclient < Formula
     regex(/href=.*instantclient-\w*-macos.arm64[._-]v?(\d+(?:\.\d+)+(?:-\d+)?).dmg/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, all: "7d44183d5069c38d0de6cdc1ba5855a69edc1802605acebc8e9dda6462694009"
+  end
+
   depends_on "sevenzip" => :build
   depends_on arch: :arm64
   depends_on :macos
