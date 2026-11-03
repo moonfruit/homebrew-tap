@@ -1,6 +1,6 @@
 cask "graalvm-jdk@latest" do
-  version "25.4.4.1.1,25.0.4.1.1"
-  sha256 "5980097f9c824b17872f9b59ee7dd1be6cd79f4626664f3fbecdcd5d8aa1705c"
+  version "25.5.5.0.3,25.0.5.0.3"
+  sha256 "3c51d8ef62c63eb8454727f32d67aaff39afabe4c90b3c811c11547029c10819"
 
   url "https://gds.oracle.com/download/graal/#{version.major}i#{version.minor}/archive/graalvm-jdk-#{version.major}i#{version.minor}-#{version.csv.second}_macos-aarch64_bin.tar.gz"
   name "GraalVM Java Development Kit"
