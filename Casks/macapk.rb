@@ -1,6 +1,6 @@
 cask "macapk" do
-  version "1.0.2377"
-  sha256 "76b44b45cd776f3c67e4438bf14e493b7960c3f914b4dc1e8434dc439964a61f"
+  version "1.0.2379"
+  sha256 "4ab633e6559a33a281b97aa19f249f8aae8fd177275890695658a6b2ab88bad2"
 
   url "https://github.com/kksimp/Mac.apk/releases/download/v#{version}/macapk.dmg"
   name "Mac.apk"
