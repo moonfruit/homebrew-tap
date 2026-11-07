@@ -5,6 +5,12 @@ class Hghub < Formula
   sha256 "59d88d9cbafdd63aead3a87dabedd5633d0ccf69e30e010417560e7806dafdf6"
   license "PolyForm-Noncommercial-1.0.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/moonfruit/bottle"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f5c8c128a08c5e1056f6926c84a7a291c166752333f773a93f3d2e9ff2659881"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b673ae4121fa9904a95e86f8ffb9a3e80dc6a59e0ca7d5db1fbd26e6450d8713"
+  end
+
   depends_on "node" => :build
   depends_on "pnpm" => :build
   depends_on "rust" => :build
