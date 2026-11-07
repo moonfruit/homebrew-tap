@@ -1,13 +1,14 @@
 class SevenzipFull < Formula
   desc "7-Zip file archiver with RAR support"
   homepage "https://7-zip.org"
-  url "https://github.com/ip7z/7zip/releases/download/26.05/7z2605-src.tar.xz"
-  sha256 "0b6080b8c3e7a579161d2d495224c0e51c467576cb4c7048b0ab485ef44cc22e"
+  url "https://github.com/ip7z/7zip/releases/download/26.06/7z2606-src.tar.xz"
+  sha256 "a4e374c8f864f51df48c2cfd0e1413ec3b2ea030deae852d6a655402ebb61ac4"
   license all_of: ["LGPL-2.1-or-later", "BSD-3-Clause", :cannot_represent]
   head "https://github.com/ip7z/7zip.git", branch: "main"
 
   livecheck do
-    formula "sevenzip"
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
