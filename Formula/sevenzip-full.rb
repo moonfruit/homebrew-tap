@@ -6,11 +6,6 @@ class SevenzipFull < Formula
   license all_of: ["LGPL-2.1-or-later", "BSD-3-Clause", :cannot_represent]
   head "https://github.com/ip7z/7zip.git", branch: "main"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
     sha256 cellar: :any, arm64_golden_gate: "91c5b18e632e0535ee5f66fea62ebaac9c5cb617c07a3749adbf0bd9c66fd28b"
