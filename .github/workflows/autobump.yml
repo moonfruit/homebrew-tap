@@ -8,8 +8,8 @@ on:
       - .github/workflows/autobump.yml
   workflow_dispatch:
   schedule:
-    # Every day at 7:40 UTC
-    - cron: "40 7 * * *"
+    # Every day at 08:00 Asia/Shanghai (00:00 UTC).
+    - cron: "0 0 * * *"
 
 permissions: {}
 
@@ -19,7 +19,16 @@ defaults:
 
 jobs:
   autobump:
-    runs-on: ubuntu-latest
+    name: Bump ${{ matrix.type }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - type: formulae
+            os: ubuntu-latest
+          - type: casks
+            os: macos-26
+    runs-on: ${{ matrix.os }}
     permissions:
       contents: read
     steps:
@@ -44,10 +53,11 @@ jobs:
         with:
           username: ${{ steps.app-token.outputs.app-slug }}[bot]
 
-      - name: Bump formulae and casks
+      - name: Bump ${{ matrix.type }}
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ steps.app-token.outputs.token }}
           HOMEBREW_GIT_NAME: ${{ steps.git_setup.outputs.name }}
           HOMEBREW_GIT_EMAIL: ${{ steps.git_setup.outputs.email }}
           TAP_NAME: ${{ steps.set-up-homebrew.outputs.tap-name }}
-        run: brew bump --no-fork --open-pr --bump-synced --tap="$TAP_NAME"
+          BUMP_TYPE: ${{ matrix.type }}
+        run: brew bump --"$BUMP_TYPE" --no-fork --open-pr --bump-synced --tap="$TAP_NAME"
