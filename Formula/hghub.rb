@@ -7,8 +7,8 @@ class Hghub < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f5c8c128a08c5e1056f6926c84a7a291c166752333f773a93f3d2e9ff2659881"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b673ae4121fa9904a95e86f8ffb9a3e80dc6a59e0ca7d5db1fbd26e6450d8713"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "70f8aefbf10912783003c14a48135ab22e6adf3730ea0e7329f4d3b07eca4931"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b1577601c3f2a8f4db13a25a41f1e173094fa7b08dc25d2c7510f4c85e0ad74f"
   end
 
   depends_on "node" => :build
