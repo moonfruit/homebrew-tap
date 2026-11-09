@@ -49,7 +49,7 @@ jobs:
             case "$file" in
               Formula/*.rb) formulae=true ;;
               Casks/*.rb) casks=true ;;
-              audit_exceptions/*.json | formula_renames.json | cask_renames.json | no_bottle_formulae.json | README.md | README_zh.md) ;;
+              audit_exceptions/*.json | formula_renames.json | cask_renames.json | tap_migrations.json | no_bottle_formulae.json | README.md | README_zh.md) ;;
               *)
                 echo "::error::Cannot pr-pull #${PULL_REQUEST}: unsupported change to \`${file}\`."
                 exit 1
