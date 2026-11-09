@@ -8,8 +8,9 @@ on:
       - .github/workflows/autobump.yml
   workflow_dispatch:
   schedule:
-    # Every day at 08:00 Asia/Shanghai (00:00 UTC).
-    - cron: "0 0 * * *"
+    # Every day at 06:17 and 18:43 Asia/Shanghai (22:17 and 10:43 UTC).
+    - cron: "17 22 * * *"
+    - cron: "43 10 * * *"
 
 permissions: {}
 
