@@ -1,8 +1,8 @@
 class SonarqubeMcpServer < Formula
   desc "Code quality and security tools for AI agents via SonarQube"
   homepage "https://github.com/SonarSource/sonarqube-mcp-server"
-  url "https://github.com/SonarSource/sonarqube-mcp-server/archive/refs/tags/1.31.0.4891.tar.gz"
-  sha256 "b538491318ef5e4aff96d934c04bc310a647f5fe744c7718dbfc6c8c16277f1b"
+  url "https://github.com/SonarSource/sonarqube-mcp-server/archive/refs/tags/1.32.0.5118.tar.gz"
+  sha256 "b9be1421f16e1f89509eee09355b2f3bf079ee60d9c7438e790d2d3922400480"
   license :cannot_represent # Sonar Source-Available License v1.0
 
   livecheck do
