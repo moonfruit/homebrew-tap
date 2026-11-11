@@ -12,10 +12,10 @@ class SonarqubeMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f639b74144cd7c7d08aa25316b728b53874dae8de92ffeaefde0b375ce76751c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f639b74144cd7c7d08aa25316b728b53874dae8de92ffeaefde0b375ce76751c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fda7faba95908405e29a52c590a74a98023aaf5764c737191188d9dea4cfd6cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fda7faba95908405e29a52c590a74a98023aaf5764c737191188d9dea4cfd6cd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fbe07a162f7e2b4d17ffdab3891b29a9a025ad1b41e06e5326fdc6cec5466a50"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fbe07a162f7e2b4d17ffdab3891b29a9a025ad1b41e06e5326fdc6cec5466a50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d10a163e12b3cb75cf17ea2000af5450f7ce0d6d27528c7f3b413651639ee806"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d10a163e12b3cb75cf17ea2000af5450f7ce0d6d27528c7f3b413651639ee806"
   end
 
   depends_on "gradle" => :build
