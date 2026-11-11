@@ -1,7 +1,7 @@
 class Hghub < Formula
   desc "Third-party YellowFruit short drama client"
-  homepage "https://github.com/Minireel/HGhub"
-  url "https://github.com/Minireel/HGhub/archive/refs/tags/v1.2.1.tar.gz"
+  homepage "https://github.com/moonfruit/HGhub"
+  url "https://github.com/moonfruit/HGhub/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "a1ef316780a4ff143308a70e47626d998b66b2b77f7a4a2c6026252a29b67596"
   license "PolyForm-Noncommercial-1.0.0"
 
