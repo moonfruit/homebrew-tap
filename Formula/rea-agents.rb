@@ -1,8 +1,8 @@
 class ReaAgents < Formula
   desc "Reverse engineer anything from your terminal or agent via CLI and MCP"
   homepage "https://github.com/morluto/rea"
-  url "https://registry.npmjs.org/rea-agents/-/rea-agents-6.8.0.tgz"
-  sha256 "8d542ec76a9cb350584b60a6c9c088706ff812d5bb5b094c20c95b6dc25698bb"
+  url "https://registry.npmjs.org/rea-agents/-/rea-agents-6.9.0.tgz"
+  sha256 "322338a1505e2557702a16012e7d46abdb5729641d98938662762dfbfb79262a"
   license "MIT"
 
   bottle do
@@ -24,6 +24,13 @@ class ReaAgents < Formula
 
     # frida's mocha test fixtures ship non-native unixvictim binaries
     rm_r libexec/"lib/node_modules/rea-agents/node_modules/frida/test"
+
+    # The npm tarball bundles node-pty binaries for every supported platform.
+    os = OS.mac? ? "darwin" : "linux"
+    arch = Hardware::CPU.arm? ? "arm64" : "x64"
+    libexec.glob("lib/node_modules/rea-agents/node_modules/@lydell/node-pty-*").each do |platform|
+      rm_r platform if platform.basename.to_s != "node-pty-#{os}-#{arch}"
+    end
 
     generate_completions_from_executable(bin/"rea", "completions")
   end
