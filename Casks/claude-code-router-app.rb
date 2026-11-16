@@ -4,10 +4,10 @@ cask "claude-code-router-app" do
   os macos: "-mac"
   url_end = on_system_conditional macos: "dmg", linux: "AppImage"
 
-  version "3.1.3"
-  sha256 arm:          "c0df550306051eea7f1132d4c76f7ee6b6bc7f296be7d03cfc0784e0f697fd93",
-         intel:        "59daa9580d21d7037d9aaf5adaaa6a2631a18124e6eabf9046fe142020f03c6b",
-         x86_64_linux: "f8a089205e5d06af96e7fab4a89c61c433fd4a56734f901bafd15abc9b852cea"
+  version "3.1.5"
+  sha256 arm:          "1b9f2072459774b33c426bcb7b707572c44f16494db489481d1d89ac1f94eb58",
+         intel:        "314c7ab7f98a6cd15bab5379ae0ec3079a8df26e3282e7c04cd99f2efc395cc7",
+         x86_64_linux: "275ac2927e2e8c7edaa094948a5456b1ce3e60b02405310274e06e371f245977"
 
   on_macos do
     depends_on macos: :monterey
