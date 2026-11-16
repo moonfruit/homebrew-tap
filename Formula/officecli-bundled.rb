@@ -1,8 +1,8 @@
 class OfficecliBundled < Formula
   desc "AI-friendly CLI for Office documents (.docx, .xlsx, .pptx)"
   homepage "https://officecli.ai"
-  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.161.tar.gz"
-  sha256 "87d6954541e25fdbe56dce3328d497e6b397108f11ad0f1979818f4bd8a44201"
+  url "https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.162.tar.gz"
+  sha256 "99e6ae2fa573d990fd7515147befc8ed758642024d68ae1f3503de7773e05177"
   license "Apache-2.0"
 
   bottle do
@@ -13,7 +13,7 @@ class OfficecliBundled < Formula
     sha256 cellar: :any, x86_64_linux:      "775c1f99df812e4a74c3e3222e0aa2b159fbeb87e0e02c62311b836e4d6de1bc"
   end
 
-  depends_on "dotnet" => :build
+  depends_on "dotnet@10" => :build
   depends_on "brotli"
 
   on_linux do
@@ -30,7 +30,7 @@ class OfficecliBundled < Formula
     # .NET's user-scoped named mutexes need a writable runtime directory on Linux.
     ENV["XDG_RUNTIME_DIR"] = buildpath
 
-    dotnet = Formula["dotnet"]
+    dotnet = Formula["dotnet@10"]
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     os = OS.mac? ? "osx" : "linux"
 
