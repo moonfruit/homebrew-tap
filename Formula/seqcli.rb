@@ -12,10 +12,10 @@ class Seqcli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any, arm64_golden_gate: "32d0d87e1a5824ca9dda468d7240de83201b4668f50f098acd3aa74d6e21c55c"
-    sha256 cellar: :any, arm64_tahoe:       "c531b5f7e1172958471e72ebd6d0a2d64b844d418087e3e02c40b1cc331ba4c2"
-    sha256 cellar: :any, arm64_linux:       "6b6bb7238e72efc25b71790cede5bda0a21c52a5cd213a1b051458cf733fc74e"
-    sha256 cellar: :any, x86_64_linux:      "fba94cd4777ffe1ba7051caa28ee5d6408507e37362b2739d963bd28e589f7b5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0ccd7b87b65fe5543f094bba55ce52bae5370dae21b6f02af6c87aff2dcc282e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a9c9f6fba3f17c1fa522d0da4f7caf8a63242751fef14caf9791a0517fd8f59d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e04a7fc6634154ff1ef228f6f0f02a4cdbdea0ce6993609b0fc91cd758b48d3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bc1f1b4a1c5a3c0cc959cc772b1191e1903c20181041cfd73561d44e809c2c93"
   end
 
   depends_on "dotnet" => :build
