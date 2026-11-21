@@ -1,6 +1,7 @@
 {
   "flclash": "all",
   "float": "all",
+  "hclient-cli": "all",
   "katrain": "all",
   "peach": "all"
 }
