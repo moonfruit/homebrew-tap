@@ -35,13 +35,13 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@63a2d4d8d4193eab3e62b1b782ff3ab8408f5b29 # 2026.11.09.1
+        uses: Homebrew/actions/setup-homebrew@ceec4e8419bb3c97ce96e9dda7738499ed5f869d # 2026.11.14.1
 
       # Bump PRs opened with `GITHUB_TOKEN` wait for manual CI approval; an
       # app token runs CI at once and shows the PRs as authored by the bot.
       - name: Create GitHub App token
         id: app-token
-        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        uses: actions/create-github-app-token@f418cff399f7aef4c2f0ad47e25ca7a6abbdd6fc # v3.4.0
         with:
           client-id: ${{ secrets.AUTOBUMP_APP_CLIENT_ID }}
           private-key: ${{ secrets.AUTOBUMP_APP_PRIVATE_KEY }}
@@ -50,7 +50,7 @@ jobs:
 
       - name: Set up git
         id: git_setup
-        uses: Homebrew/actions/git-user-config@63a2d4d8d4193eab3e62b1b782ff3ab8408f5b29 # 2026.11.09.1
+        uses: Homebrew/actions/git-user-config@ceec4e8419bb3c97ce96e9dda7738499ed5f869d # 2026.11.14.1
         with:
           username: ${{ steps.app-token.outputs.app-slug }}[bot]
 
