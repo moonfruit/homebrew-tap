@@ -7,10 +7,11 @@ class Codegraph < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/moonfruit/bottle"
-    sha256 cellar: :any,                 arm64_golden_gate: "8fc5b3dfc3fcceb09bfb59991acaaa55914313d9b7688c0e73fc2b026156335d"
-    sha256 cellar: :any,                 arm64_tahoe:       "8fc5b3dfc3fcceb09bfb59991acaaa55914313d9b7688c0e73fc2b026156335d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "73d358170ac4657cd42e04b904b6ffa083771b3a1f4faadb6a289eeaf387ed52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3e292465f258eed244d18a78c3ad2cfe894476e2f4d633c6ff37d43f7a8b22ba"
+    manifest_sha256 "09646365786fbbb7e8eeb87d99a3e1732587e43eb88643e07b07d2ba52775d3c"
+    sha256 cellar: :any,                 arm64_golden_gate: "12a1387bfd667325f034990d1614d8736743c8b70f6c2e9ca37e677d8a5fe4a8"
+    sha256 cellar: :any,                 arm64_tahoe:       "12a1387bfd667325f034990d1614d8736743c8b70f6c2e9ca37e677d8a5fe4a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5a241e27d539b1fe0b86a0e8fd8426c72c819433d52cbc54bb6faca2da7d37d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ccc21239dec02edbbf109c7ccdf69a1391fd5bf67460df8ea696964c660d16ad"
   end
 
   depends_on "node" => :test
