@@ -1,9 +1,9 @@
 cask "peach" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.60.0"
-  sha256 arm:   "1a00729de8a67b6743b8706975a6c63b74e5915eadb538aee33b332771aee77f",
-         intel: "64f6f8e1a866c89aa1bd57f721097fe0b5a813ab66917c6ea87b20253f4edeab"
+  version "0.61.0"
+  sha256 arm:   "dc920b2f537753e4d23f7437891beddc0be9008bfadc3e73eb9278fca8e9232c",
+         intel: "5d18504c4d50c0eee6009027c6f17a8b5a6479e77cbdf6339412e0d57147d409"
 
   url "https://github.com/peach-mitao/peach/releases/download/v#{version}/Peach-#{version}-macos-#{arch}.dmg"
   name "Peach"
