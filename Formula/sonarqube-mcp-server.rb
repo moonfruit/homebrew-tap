@@ -23,8 +23,8 @@ class SonarqubeMcpServer < Formula
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home
-    inreplace "build.gradle.kts", "JavaLanguageVersion.of(21)",
-                                 "JavaLanguageVersion.of(#{Formula["openjdk"].version.major})"
+    java_major = Formula["openjdk"].version.major
+    inreplace "build.gradle.kts", "JavaLanguageVersion.of(21)", "JavaLanguageVersion.of(#{java_major})"
     system "gradle", "--no-daemon", "--no-build-cache", "-Pversion=#{version}", "jar"
     libexec.install "build/libs/sonarqube-mcp-server-#{version}.jar" => "sonarqube-mcp-server.jar"
     bin.write_jar_script libexec/"sonarqube-mcp-server.jar", "sonarqube-mcp-server",
