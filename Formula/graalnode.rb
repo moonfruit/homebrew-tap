@@ -1,18 +1,18 @@
 class Graalnode < Formula
   desc "GraalVM implementation of Node.js"
   homepage "https://www.graalvm.org/javascript/"
-  version "25.5.5.0.3"
+  version "25.6.5.1"
   license :cannot_represent # GraalVM Free Terms and Conditions
 
   if OS.mac?
     url "https://github.com/oracle/graaljs/releases/download/graal-#{version}/graalnode24-#{version}-macos-aarch64.tar.gz"
-    sha256 "275a6cbde73a3411f266d7155afb86d5c8c052aeb29c0e92cf62c9ba039f95eb"
+    sha256 "ff6a3d1227c57b0185a907f3d42943e4879f11e18fc2056ab2e8dab7c1a4084a"
   elsif Hardware::CPU.arm?
     url "https://github.com/oracle/graaljs/releases/download/graal-#{version}/graalnode24-#{version}-linux-aarch64.tar.gz"
-    sha256 "a6619c2c66a5674e26bb925ac03df09884b3c8b39cb53974c14b9a1dcdb8e87b"
+    sha256 "4a076df5847f606c118940c4b0b3a71b88885a8d11235b9d294d1098dd9b5f85"
   else
     url "https://github.com/oracle/graaljs/releases/download/graal-#{version}/graalnode24-#{version}-linux-amd64.tar.gz"
-    sha256 "36d774ee5e030c1616963e120cb2f2cd4c440297db003abfe334ff6d7d983613"
+    sha256 "0bbfc5eae41bfc1995031b050767ec639b7dd8bc4d0244dc052408e703580b25"
   end
 
   livecheck do
