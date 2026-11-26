@@ -1,18 +1,18 @@
 class Graalpy < Formula
   desc "GraalVM implementation of Python"
   homepage "https://www.graalvm.org/python/"
-  version "25.5.5"
+  version "25.6.5"
   license :cannot_represent # GraalVM Free Terms and Conditions
 
   if OS.mac?
     url "https://github.com/oracle/graalpython/releases/download/graal-#{version}/graalpy3.13-#{version}-macos-aarch64.tar.gz"
-    sha256 "3228f2075a02d1a614f5584b53707565c37d7c24dc9bcd8b4812e413db377da6"
+    sha256 "7c01562f074c1c3f75c412ce6ec2a27a6feaa5337525983665cdac1d9f081633"
   elsif Hardware::CPU.arm?
     url "https://github.com/oracle/graalpython/releases/download/graal-#{version}/graalpy3.13-#{version}-linux-aarch64.tar.gz"
-    sha256 "f9a7b3a572c8a907cf517647f1f58f02e241f08a66da73bb1174493b15f91233"
+    sha256 "b8568470a622bc29c2e2dffead099b23b06b805d3bd76ea6aacc446087cc02dd"
   else
     url "https://github.com/oracle/graalpython/releases/download/graal-#{version}/graalpy3.13-#{version}-linux-amd64.tar.gz"
-    sha256 "b4ff1358c47d832f48e334bdabff2d632fcf9670519cee50694ffc38bc01dab6"
+    sha256 "c8f10df34606a4c0b19b75ad2e2ff9c75b2215b372bc21b36763b89d3adf5568"
   end
 
   livecheck do
